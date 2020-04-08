@@ -92,10 +92,10 @@
 
                         // 查詢 email (這裡導向 ajax )
                         // 會自動帶入 email
-                        console.log( $wg );
                         $wg.setAddItemHandler(function( email ){
 
                             // 這裡請進行其他 ajax 查詢
+                            // ...
 
                             // 成功後請如以下呼叫：
                             addItem({
@@ -105,7 +105,10 @@
                             });
                         });
 
-                        // 新增資料
+                        // 取得資料請執行以下：
+                        // $wg.getList();
+
+                        // 測試用新增資料
                         $wg.addRow({
                             id : null,
                             name : '第1位',
@@ -117,9 +120,6 @@
                             name : '第2位',
                             email : 'another@email.com'
                         });
-
-                        // 取得資料
-                        // $wg.getList();
                     })();
                     </script>
                 </div>
