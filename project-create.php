@@ -85,10 +85,10 @@
                     (function(){
 
                         // ebe-widget.js
-                        // window.Ebe.Widget.ProjectManagerManageBox
+                        // window.Ebe.Widget.ProjectUserManageBox
 
                         // 建立元件
-                        var $wg = Ebe.Widget.ProjectManagerManageBox.init('#wg1');
+                        var $wg = Ebe.Widget.ProjectUserManageBox.init('#wg1');
 
                         // 查詢 email (這裡導向 ajax )
                         // 會自動帶入 email

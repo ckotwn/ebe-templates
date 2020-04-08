@@ -64,7 +64,7 @@
 
 
     // 計劃管理員管理
-    window.Ebe.Widget.ProjectManagerManageBox = (function(){
+    window.Ebe.Widget.ProjectUserManageBox = (function(){
 
         var $instance;
         var addItemHandler;
@@ -72,7 +72,7 @@
         function init( elName ){
 
             var $container = $( elName );
-            $instance = $('<div class="widgetBox wgProjectManagerManageBox">'
+            $instance = $('<div class="widgetBox wgProjectUserManageBox">'
                 + '<div class="listPane">'
                     + '<table>'
                     + '<thead><tr><th width=160>名字</th><th>電子郵件</th><th width=56></th></tr></thead>'
@@ -89,7 +89,7 @@
 
             $container.append( $instance );
 
-            return Ebe.Widget.ProjectManagerManageBox;
+            return Ebe.Widget.ProjectUserManageBox;
         }
 
 

@@ -9,7 +9,50 @@ $wg-border-radius: 4px;
     border-radius: $wg-border-radius;
 }
 
-.wgProjectManagerManageBox{
+
+.wgProjectUserViewBox{
+    width: 640px;
+
+    .listPane{
+        padding: 7px 15px 0px;
+
+        table{
+            width: 100%;
+
+            thead{
+                border-bottom: 1px solid #999;
+            }
+
+            th, td{
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            th{
+                font-weight: bold;
+                color: #0D7BC4;
+            }
+
+            tbody tr{
+
+                + tr{
+                    border-top: 1px solid #cccc;
+                }
+
+                td{
+                    padding: 8px 0;
+                }
+            }
+
+            td.fn{
+                text-align: right;
+            }
+        }
+    }
+}
+
+
+.wgProjectUserManageBox{
     width: 640px;
     height: 256px;
 
