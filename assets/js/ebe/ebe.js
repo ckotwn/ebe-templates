@@ -1,6 +1,0 @@
-;(function(){
-    widow.Ebe = {};
-
-
-
-})();

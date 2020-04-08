@@ -21,15 +21,17 @@ td:last-child{
 ### 樣板檔案
 | 資料夾 | 內容 | 額外資源引用
 |-|-|-|
-| <code>--                  | all page   | <code>ebe.css ebe.js
-| <code>frame.php           | page frame and menu |
+| <code>--                  | all page   | <code>reset.css, ebe.css ebe.js
+| <code>_header.php         | header     |
+| <code>_footer.php         | footer     |
+|
 | <code>home.php            | home       | <code>home.css
 | <b>PROJECT
 | <code>project-home.php    |            | <code>project.css, project.js
 | <code>project-create.php  |  - create  |
 | <code>project-edit.php    |  - edit    |
 | <b>SURVEY
-| <code>survey-create.php   |  - create  | <code>survey.css, survey.js
+| <code>survey-create.php   |  - create  | <code>project.css, project.js
 | <code>survey-edit.php     |  - edit    |
 | <b>BOAT
 | <code>boat-home.php       |            | <code>boat.css, boat.js

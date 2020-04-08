@@ -1,7 +1,0 @@
-(function(){
-    widow.Ebe.Project = {};
-
-
-
-
-})();

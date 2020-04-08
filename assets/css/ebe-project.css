@@ -1,0 +1,158 @@
+@charset "UTF-8";
+#ProjectHomeContentPane {
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 48px;
+  bottom: 32px;
+}
+
+#projectPaneGroup {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 88px;
+  bottom: 0;
+}
+
+#pProjectListPane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+#pProjectListPane .projectItemList {
+  padding: 24px;
+}
+
+#pProjectListPane .projectItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #333;
+  background: #fff;
+  border-left: 4px solid #fff;
+  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+}
+
+#pProjectListPane .projectItem .col1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 316px;
+          flex: 0 0 316px;
+  padding: 12px 16px 12px 12px;
+}
+
+#pProjectListPane .projectItem .col2 {
+  padding: 16px;
+  padding-left: 15px;
+  border-left: 1px solid #CCC;
+}
+
+#pProjectListPane .projectItem .col2 > * + * {
+  margin-top: 8px;
+}
+
+#pProjectListPane .projectItem .openDetail {
+  border-left: 1px solid #CCC;
+}
+
+#pProjectListPane .projectItem .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  line-height: 24px;
+}
+
+#pProjectListPane .projectItem .statusText {
+  min-width: 52px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#pProjectListPane .projectItem .projectNo {
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+#pProjectListPane .projectItem .name {
+  padding: 4px 0;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+#pProjectListPane .projectItem .period,
+#pProjectListPane .projectItem .type,
+#pProjectListPane .projectItem .windfield {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#pProjectListPane .projectItem .period .label,
+#pProjectListPane .projectItem .type .label,
+#pProjectListPane .projectItem .windfield .label {
+  margin-right: 8px;
+  font-weight: bold;
+  color: #999;
+}
+
+#pProjectListPane .projectItem[data-status="進行中"] {
+  border-left-color: #62DE00;
+}
+
+#pProjectListPane .projectItem[data-status="進行中"] .statusText {
+  background: #62DE00;
+  color: #000;
+}
+
+#pProjectListPane .projectItem[data-status="已完成"] {
+  border-left-color: #63C1FF;
+}
+
+#pProjectListPane .projectItem[data-status="已完成"] .statusText {
+  background: #62DE00;
+  color: #fff;
+}
+
+#pProjectListPane .projectItem[data-status="取消"] {
+  border-left-color: #CCCCCC;
+}
+
+#pProjectListPane .projectItem[data-status="取消"] .statusText {
+  background: #CCCCCC;
+  color: #fff;
+}
+
+#pProjectDetailPane {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-left: 1px solid #e8e8e8;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+#pSurvayDetailPane {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+/*# sourceMappingURL=ebe-project.css.map */

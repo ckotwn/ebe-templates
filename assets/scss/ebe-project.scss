@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+@import "ebe/config";
+
+
+// project home
+
+#ProjectHomeContentPane{
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    top: $s-headerH;
+    bottom: $s-footerH;
+}
+
+
+#projectPaneGroup{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 88px;
+    bottom: 0;
+}
+
+
+#pProjectListPane{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+
+    .projectItemList{
+        padding: 24px;
+
+    }
+
+    .projectItem{
+        display: flex;
+        color: #333;
+        background: #fff;
+        border-left: 4px solid #fff;
+        box-shadow: $fx-frameUIShadow;
+
+        // cols
+
+        .col1{
+            flex: 0 0 320px - 4px;
+            padding: 12px 16px 12px 12px;
+        }
+
+        .col2{
+            padding: 16px;
+            padding-left: 15px;
+            border-left: 1px solid #CCC;
+
+            > * + *{
+                margin-top: 8px;
+            }
+        }
+
+        .openDetail{
+            border-left: 1px solid #CCC;
+        }
+
+        // el
+
+        .status{
+            display: flex;
+            justify-content: flex-start;
+            line-height: 24px;
+        }
+
+        .statusText{
+            min-width: 52px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .projectNo{
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        .name{
+            padding: 4px 0;
+            margin-bottom: 4px;
+            font-size: 18px;
+            line-height: 24px;;
+            font-weight: bold;
+        }
+
+        .period   ,
+        .type     ,
+        .windfield{
+            display: flex;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .period    .label,
+        .type      .label,
+        .windfield .label{
+            margin-right: 8px;
+            font-weight: bold;
+            color: #999;
+        }
+
+        .period    .value,
+        .type      .value,
+        .windfield .value{}
+
+        .openFolder{}
+
+        &[data-status="進行中"]{
+            border-left-color: $c-status-onprogress;
+            .statusText{ background: $c-status-onprogress; color: #000; }
+        }
+
+        &[data-status="已完成"]{
+            border-left-color: $c-status-complete;
+            .statusText{ background: $c-status-onprogress; color: #fff; }
+        }
+
+        &[data-status="取消"]{
+            border-left-color: $c-status-cancel;
+            .statusText{ background: $c-status-cancel; color: #fff; }
+        }
+    }
+}
+
+
+#pProjectDetailPane{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-left: 1px solid #e8e8e8;
+    box-shadow: $fx-paneShadow;
+}
+
+
+#pSurvayDetailPane{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}

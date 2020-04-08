@@ -1,0 +1,90 @@
+$wg-c-border: #999;
+$wg-border: solid 1px $wg-c-border;
+$wg-border-radius: 4px;
+
+
+.widgetBox{
+    position: relative;
+    border: $wg-border;
+    border-radius: $wg-border-radius;
+}
+
+.wgProjectManagerManageBox{
+    width: 640px;
+    height: 256px;
+
+    .listPane{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 48px;
+        padding: 7px 15px 15px;
+        overflow-y: auto;
+        border-bottom: $wg-border;
+
+        table{
+            width: 100%;
+
+            thead{
+                border-bottom: 1px solid #999;
+            }
+
+            th, td{
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            th{
+                font-weight: bold;
+                color: #0D7BC4;
+            }
+
+            tbody tr{
+                border-bottom: 1px solid #cccc;
+
+                td{
+                    padding: 8px 0;
+                }
+            }
+
+            td.fn{
+                text-align: right;
+            }
+        }
+    }
+
+    .addPane{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 48px;
+        background: #fff;
+        border-radius: 0 0 $wg-border-radius $wg-border-radius;
+
+        .emailField{
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 88px;
+
+            input{
+                width: 100%;
+                height: 100%;
+                padding: 0 15px;
+                font-size: 16px;
+                background: transparent;
+                border: 0;
+            }
+        }
+
+        .-action-addItem{
+            position: absolute;
+            display: block;
+            right: 8px;
+            top: 8px;
+        }
+    }
+}

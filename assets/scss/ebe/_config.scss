@@ -1,6 +1,30 @@
-// 顏色
+// Color
 
-$mainColor: #0D7BC4;
+$c-main    : #0D7BC4;
+$c-textLink: #0D7BC4;
+$c-hilight : #62DE00;
+
+$c-status-onprogress: #62DE00;
+$c-status-complete  : #63C1FF;
+$c-status-cancel    : #CCCCCC;
+
+// Z-Index
+
+$z-frameUI     :  1000;
+$z-popupMenu   :  1500;
+$z-dialog      : 10000;
+$z-filter      :   500;
 
 
-// 尺寸
+// Size
+$s-logoW       : 200px;
+$s-headerH     : 48px;
+$s-footerH     : 32px;
+$s-headPaneH   : 56px;
+$s-headPaneExpH: 88px;
+
+
+// Effect
+
+$fx-paneShadow   : 0 0 12px rgba( 0,0,0, .1);
+$fx-frameUIShadow: 0 0 16px rgba( 0,0,0, .2);
