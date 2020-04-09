@@ -58,6 +58,7 @@ $wg-border-radius: 4px;
 
         > *[class*="-r-"]{
             display: flex;
+            align-items: center;
 
             .wgLabel{
                 flex: 0 0 72px;

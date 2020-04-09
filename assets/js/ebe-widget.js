@@ -122,15 +122,44 @@
             wg.closeAddForm();
         }
 
+
         function addItemClickHandler( e ){
             var $wg = $(e.currentTarget).parents('.widgetBox');
             var wg  = $wg.data( 'obj' );
+            var $addForm = $wg.find('.addFormPane');
+
+            var data = {
+                ref_no    : $addForm.find('.-f-ref_no').val(),
+                name      : $addForm.find('.-f-name').val(),
+                port_id   : $addForm.find('.-f-port option:selected').val(),
+                latitude  : $addForm.find('.-f-latitude').val(),
+                longitude : $addForm.find('.-f-longitude').val(),
+                datum     : $addForm.find('.-f-datum option:selected').val(),
+                device    : $addForm.find('.-f-device').val()
+            };
+
+            // 都要填
+            if( data.ref_no == '' || data.name == '' || data.latitude == ''
+                    || data.longitude == '' || data.device == '' ){
+                alert( '請填寫所有欄位。' );
+                return false;
+            }
 
             // 執行新增
+            if( typeof wg.addItemHandler == "function" ){
+                wg.showMessage('請稍後');
+                return wg.addItemHandler( data );
+            }
         }
 
 
         function addItem( row ){
+            var $wg = this.$wg;
+            var wg  = $wg.data( 'obj' );
+
+            wg.hideMessage();
+            wg.closeAddForm();
+            wg.addRow( row );
         }
 
 
@@ -210,9 +239,10 @@
             var $wg = this.$wg;
 
             $wg.find('.addFormPane').hide();
-            $wg.find('.addFormPane input').val();
-            $wg.find('.addFormPane select option:eq(0)').prop('selected', 'true');
-
+            $wg.find('.addFormPane input').val("");
+            $wg.find('.addFormPane select').each(function(){
+                $(this).find('option:eq(0)').prop('selected', 'true');
+            });
         }
 
 
@@ -358,7 +388,7 @@
             var $wg = this.$wg;
             var wg  = $wg.data( 'obj' );
 
-            wg.hideMessage('');
+            wg.hideMessage();
 
             $wg.find('.addPane .-f-email').val('');
             wg.addRow( row );
