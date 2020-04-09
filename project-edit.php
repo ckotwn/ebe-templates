@@ -18,7 +18,7 @@
         </div>
 
         <div class="subHeaderPanel">
-            <h1>新增監測計畫</h1>
+            <h1>[計畫名稱]</h1>
         </div>
     </div>
 
@@ -48,13 +48,10 @@
                 <div class="fieldRow">
                     <div class="label">作業類群</div>
                     <div class="field ebSelectGroup">
-                        <label class="ebCheckbox"><input type="checkbox"><span>鳥類</span></label>
-                        <label class="ebCheckbox"><input type="checkbox"><span>底棲生物</span></label>
-                        <label class="ebCheckbox"><input type="checkbox"><span>鯨豚</span></label>
-                        <label class="ebCheckbox"><input type="checkbox"><span>魚類</span></label>
-                        <label class="ebCheckbox"><input type="checkbox"><span>水下噪音</span></label>
+                        <div class="ebDisplayText -hilight">鳥類</div>
                     </div>
                 </div>
+
                 <div class="fieldRow -required">
                     <div class="label">執行期間</div>
                     <div class="field">
@@ -65,6 +62,14 @@
                         <span class="icon fal fa-calendar-alt"></span>
                     </div>
                 </div>
+
+                <div class="fieldRow">
+                    <div class="label">風場</div>
+                    <div class="field ebSelectGroup">
+                        <div class="ebDisplayText -hilight">海洋竹南風力發電場</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
