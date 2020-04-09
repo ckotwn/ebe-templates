@@ -27,6 +27,10 @@
   line-height: 24px;
 }
 
+.ebButton.-n {
+  min-width: 32px;
+}
+
 .ebInput {
   margin: 0;
   padding: 0 3px;
@@ -215,6 +219,251 @@
   position: relative;
   border: solid 1px #999;
   border-radius: 4px;
+}
+
+.widgetBox .listPane table th + th,
+.widgetBox .listPane table td + td {
+  padding-left: 8px !important;
+}
+
+.widgetBox .messagePane {
+  position: absolute;
+  display: none;
+  left: 1px;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+}
+
+.widgetBox .messagePane .messageText {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.widgetBox .addFormPane {
+  position: absolute;
+  display: none;
+  left: 8px;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: #ffffff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+
+.widgetBox .addFormPane > * {
+  position: absolute;
+}
+
+.widgetBox .addFormPane > *[class*="-r-"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.widgetBox .addFormPane > *[class*="-r-"] .wgLabel {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 72px;
+          flex: 0 0 72px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.widgetBox .addFormPane > *[class*="-r-"] .wgField {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 192px;
+          flex: 0 0 192px;
+}
+
+.widgetBox .addFormPane .title {
+  left: 24px;
+  top: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #0D7BC4;
+}
+
+.widgetBox .addFormPane .button {
+  right: 24px;
+  bottom: 24px;
+}
+
+.widgetBox .addFormPane .close {
+  right: 0;
+  top: 0;
+  width: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.wgProjectStationManageBox {
+  width: 640px;
+  height: 320px;
+}
+
+.wgProjectStationManageBox .listPane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 48px;
+  padding: 7px 15px 15px;
+  overflow-y: auto;
+  border-bottom: solid 1px #999;
+}
+
+.wgProjectStationManageBox .listPane table {
+  width: 100%;
+}
+
+.wgProjectStationManageBox .listPane table thead {
+  border-bottom: 1px solid #999;
+}
+
+.wgProjectStationManageBox .listPane table th, .wgProjectStationManageBox .listPane table td {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.wgProjectStationManageBox .listPane table th {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0D7BC4;
+}
+
+.wgProjectStationManageBox .listPane table td {
+  font-size: 13px;
+}
+
+.wgProjectStationManageBox .listPane table tbody tr {
+  border-bottom: 1px solid #cccc;
+}
+
+.wgProjectStationManageBox .listPane table tbody tr td {
+  padding: 8px 0;
+}
+
+.wgProjectStationManageBox .listPane table td.fn {
+  text-align: right;
+}
+
+.wgProjectStationManageBox .addPane {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 48px;
+  background: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+.wgProjectStationManageBox .addPane .emailField {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 88px;
+}
+
+.wgProjectStationManageBox .addPane .emailField input {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+}
+
+.wgProjectStationManageBox .addPane .-action-openAddForm {
+  position: absolute;
+  display: block;
+  right: 8px;
+  top: 8px;
+}
+
+.wgProjectStationManageBox .addFormPane .line {
+  left: 312px;
+  top: 64px;
+  bottom: 24px;
+  border-left: 1px solid  #ccc;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-ref_no {
+  left: 24px;
+  top: 64px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-ref_no input {
+  width: 192px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-name {
+  left: 24px;
+  top: 104px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-name input {
+  width: 192px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-port {
+  left: 24px;
+  top: 144px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-port select {
+  width: 192px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-latitude {
+  left: 24px;
+  top: 184px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-latitude input {
+  width: 128px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-longitude {
+  left: 24px;
+  top: 224px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-longitude input {
+  width: 128px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-datum {
+  left: 336px;
+  top: 64px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-datum select {
+  width: 192px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-device {
+  left: 336px;
+  top: 104px;
+}
+
+.wgProjectStationManageBox .addFormPane .-r-device input {
+  width: 128px;
 }
 
 .wgProjectUserViewBox {

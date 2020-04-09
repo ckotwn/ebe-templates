@@ -88,17 +88,24 @@
                         // window.Ebe.Widget.ProjectUserManageBox
 
                         // 建立元件
-                        var $wg = Ebe.Widget.ProjectUserManageBox.init('#wg1');
+                        var wg = Ebe.Widget.ProjectUserManageBox.init('#wg1');
 
                         // 查詢 email (這裡導向 ajax )
                         // 會自動帶入 email
-                        $wg.setAddItemHandler(function( email ){
+                        wg.setAddItemHandler(function( email ){
 
                             // 這裡請進行其他 ajax 查詢
                             // ...
 
                             // 成功後請如以下呼叫：
-                            addItem({
+                            wg.addItem({
+                                id    : null,
+                                name  : '名字',
+                                email : email
+                            });
+
+                            // 或是呼叫
+                            Ebe.Widget.ProjectUserManageBox.addItem( '#wg1', {
                                 id    : null,
                                 name  : '名字',
                                 email : email
@@ -106,16 +113,16 @@
                         });
 
                         // 取得資料請執行以下：
-                        // $wg.getList();
+                        // wg.getList();
 
                         // 測試用新增資料
-                        $wg.addRow({
+                        wg.addRow({
                             id : null,
                             name : '第1位',
                             email : 'some@email.com'
                         });
 
-                        $wg.addRow({
+                        wg.addRow({
                             id : null,
                             name : '第2位',
                             email : 'another@email.com'
