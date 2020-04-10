@@ -3,32 +3,126 @@
     window.Ebe.Widget = {};
 
 
-    // 選擇框
+    // 通用選擇框
     window.Ebe.Widget.SelectorBox = (function(){
 
-        var $instance;
+        var wgList = {};
 
-        function init( el, tableConfig ){}
+        function init( elName, config ){
+
+            var $wrapper = $( elName );
+            var $wg = $('<div class="widgetBox wgSelectorBox">'
+                + '<div class="listPane">'
+                    + '<table>'
+                    + '<thead></thead>'
+                    + '<tbody></tbody>'
+                    + '</table>'
+                + '</div>'
+                + '<div class="messagePane">'
+                    + '<div class="messageText"></div>'
+                + '</div>'
+                + '</div>' );
+
+            // gen table header
+            var $theadRow = $('<tr><th></th></tr>');
+            for( var i in config.cols ){
+                var colConfig = config.cols[ i ];
+                $theadRow.append( $('<th></th>').text( colConfig.label ) );
+            }
+            $wg.find('thead').append( $theadRow );
+
+            $wrapper.append( $wg );
+
+            wgObj = {
+                config            : config,
+                $wg               : $wg,
+                addRow            : addRow,
+                addRowArray       : addRowArray,
+                showMessage       : showMessage,
+                hideMessage       : hideMessage,
+                getSelected       : getSelected
+            }
+
+            $wg.data( 'obj',  wgObj );
+            wgList[ elName ] = wgObj;
+
+            return wgObj;
+        }
 
 
-        function setTable( tableConfig ){}
+        function getInstance( elName ){
+            return wgList[ elName ];
+        }
 
 
-        function addRow( row ){}
+        function addRow( row ){
+            var $wg = this.$wg;
+            var cfg = this.config;
+
+            var $row = $('<tr></tr>');
+            $row.attr( 'data-id',  row.id );
+            $row.data( 'row', row );
+            $row.on('click', function(){
+                var $chk   = $(this).find('input[type="checkbox"]');
+                $chk.prop('checked', !$chk.prop('checked'));
+            })
+
+            var $chk = $('<td><label class="wgSelectCheckbox"><input type="checkbox"></label></td>');
+
+            $row.append( $chk );
+
+            for( var i in cfg.cols ){
+                var colCfg = cfg.cols[ i ];
+                var ref    = colCfg.ref;
+
+                $tr = $('<td></td>');
+                $tr.text( row[ ref ] );
+                $row.append( $tr );
+            }
+
+            $wg.find('tbody').append( $row );
+        }
 
 
-        function addRowArray( rowList ){}
+        function addRowArray( rowList ){
+            for( var i in rowList ){
+                var row = rowList[i];
+                this.addRow( row );
+            }
+        }
 
 
-        function getSelected(){}
+        function showMessage( messageHtml ){
+            var $wg = this.$wg;
+            $wg.find('.messageText').html( messageHtml );
+            $wg.find('.messagePane').show();
+        }
+
+
+        function hideMessage(){
+            var $wg = this.$wg;
+            $wg.find('.messagePane').hide();
+            $wg.find('.messageText').empty();
+        }
+
+
+        function getSelected(){
+            var $wg = this.$wg;
+            var stationList = [];
+
+            $wg.find('tbody tr').each(function(){
+                var $this = $(this);
+                if( $(this).find('input[type="checkbox"]').prop('checked') == false ) return;
+                stationList.push( $(this).attr( 'data-id') );
+            });
+
+            return stationList;
+        }
 
 
         return {
             init        : init,
-            setTable    : setTable,
-            addRow      : addRow,
-            addRowArray : addRowArray,
-            getSelected : getSelected
+            getInstance : getInstance
         }
     })();
 
@@ -92,13 +186,19 @@
                 openAddForm       : openAddForm,
                 closeAddForm      : closeAddForm,
                 setPortList       : setPortList,
-                setDatumList      : setDatumList
+                setDatumList      : setDatumList,
+                getList           : getList
             };
 
             $wg.data( 'obj',  wgObj );
             wgList[ elName ] = wgObj;
 
             return wgObj;
+        }
+
+
+        function getInstance( elName ){
+            return wgList[ elName ];
         }
 
 
@@ -293,6 +393,7 @@
             $wg.find('tbody tr').each(function(){
                 var $row = $(this);
                 userList.push({
+                    id : $row.attr('data-id' )
                 });
             });
 
@@ -301,14 +402,178 @@
 
 
         return {
-            init : init,
-            addItem : addItemGlobal
+            init        : init,
+            getInstance : getInstance,
+            addItem     : addItemGlobal
         }
     })();
 
 
     // 隨行人員編輯框
     window.Ebe.Widget.EntourageManageBox = (function(){
+
+        var wgList  = {}
+
+        function init( elName ){
+
+            var $wrapper = $( elName );
+            var $wg = $('<div class="widgetBox wgEntourageManageBox">'
+                + '<div class="listPane">'
+                    + '<table>'
+                    + '<thead><tr><th width=96>名字</th><th width=144>手機</th><th>電子郵件</th><th width=40></th></tr></thead>'
+                    + '<tbody></tbody>'
+                    + '</table>'
+                + '</div>'
+                + '<div class="addPane">'
+                    + '<div class="nameField" ><input class="-f-name"  type="text" placeHolder="名字"></div>'
+                    + '<div class="phoneField"><input class="-f-phone" type="text" placeHolder="電話"></div>'
+                    + '<div class="emailField"><input class="-f-email" type="text" placeHolder="E-Mail"></div>'
+                    + '<div class="ebButton -action-addItem">新增</div>'
+                + '</div>'
+                + '<div class="messagePane">'
+                    + '<div class="messageText"></div>'
+                + '</div>'
+                + '</div>' );
+
+            $wg.find('.-action-addItem').on('click', addItemClickHandler);
+
+            $wrapper.append( $wg );
+
+            wgObj = {
+                $wg               : $wg,
+                setAddItemHandler : setAddItemHandler,
+                addRow            : addRow,
+                addRowList        : addRowList,
+                addItem           : addItem,
+                showMessage       : showMessage,
+                hideMessage       : hideMessage,
+                getList           : getList
+            }
+
+            $wg.data( 'obj',  wgObj );
+            wgList[ elName ] = wgObj;
+
+            return wgObj;
+        }
+
+
+        function getInstance( elName ){
+            return wgList[ elName ];
+        }
+
+
+        function setAddItemHandler( fn ){
+            this.addItemHandler = fn;
+        }
+
+
+        function addItemClickHandler( e ){
+            var $wg = $(e.currentTarget).parents('.widgetBox');
+            var wg  = $wg.data( 'obj' );
+
+            var email = $wg.find('.addPane .-f-email').val();
+            var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if( email == '' ) return;
+            if( emailRe.test( email) == false ){
+                alert( 'E-Mail 格式錯誤' );
+                return false;
+            }
+
+            if( typeof wg.addItemHandler == "function" ){
+                wg.showMessage('請稍後');
+                return wg.addItemHandler( email );
+            }
+        }
+
+
+        function addItem( row ){
+            var $wg = this.$wg;
+            var wg  = $wg.data( 'obj' );
+
+            wg.hideMessage();
+
+            $wg.find('.addPane .-f-name' ).val('');
+            $wg.find('.addPane .-f-phone').val('');
+            $wg.find('.addPane .-f-email').val('');
+            wg.addRow( row );
+        }
+
+
+        function addItemGlobal( elName, row ){
+            var wg = wgList[ elName ];
+
+            wg.addItem( row );
+        }
+
+
+        function addRow( row ){
+            var $wg = this.$wg;
+
+            var $row = $('<tr data-id="">'
+                + '<td class="-f-name"></td>'
+                + '<td class="-f-phone"></td>'
+                + '<td class="-f-email"></td>'
+                + '<td class="fn"><div class="ebButton -color-warn -n -action-removeItem fal fa-times"></div></td>'
+                + '</tr>' );
+
+            $row.attr('data-id',  row.id )
+                .data('data-row', row );
+
+            $row.find('.-f-name') .text( row.name ) ;
+            $row.find('.-f-phone').text( row.phone );
+            $row.find('.-f-email').text( row.email );
+            $row.find('.-action-removeItem').on('click', removeItemHandler);
+
+            $wg.find('tbody').append( $row );
+        }
+
+
+        function addRowList( rowList ){
+            for( var i in rowList ){
+                var row = rowList[i];
+                this.addRow( row );
+            }
+        }
+
+
+        function showMessage( messageHtml ){
+            var $wg = this.$wg;
+            $wg.find('.messageText').html( messageHtml );
+            $wg.find('.messagePane').show();
+        }
+
+
+        function hideMessage(){
+            var $wg = this.$wg;
+            $wg.find('.messagePane').hide();
+            $wg.find('.messageText').empty();
+        }
+
+
+        function removeItemHandler( e ){
+            var $row = $( e.currentTarget ).parents('tr');
+            $row.remove();
+        }
+
+
+        function getList(){
+            var $wg = this.$wg;
+
+            var entourageList = [];
+            $wg.find('tbody tr').each(function(){
+                var $row = $(this);
+                entourageList.push( $row.data('data-row') );
+            });
+
+            return entourageList;
+        }
+
+        return {
+            init        : init,
+            getInstance : getInstance,
+            addItem     : addItemGlobal
+        };
 
     })();
 
@@ -337,25 +602,30 @@
                 + '</div>'
                 + '</div>' );
 
-                $wg.find('.-action-addItem').on('click', addItemClickHandler);
+            $wg.find('.-action-addItem').on('click', addItemClickHandler);
 
-                $wrapper.append( $wg );
+            $wrapper.append( $wg );
 
-                wgObj = {
-                    $wg               : $wg,
-                    setAddItemHandler : setAddItemHandler,
-                    addRow            : addRow,
-                    addRowList        : addRowList,
-                    addItem           : addItem,
-                    showMessage       : showMessage,
-                    hideMessage       : hideMessage,
-                    getList           : getList
-                }
+            wgObj = {
+                $wg               : $wg,
+                setAddItemHandler : setAddItemHandler,
+                addRow            : addRow,
+                addRowList        : addRowList,
+                addItem           : addItem,
+                showMessage       : showMessage,
+                hideMessage       : hideMessage,
+                getList           : getList
+            }
 
-                $wg.data( 'obj',  wgObj );
-                wgList[ elName ] = wgObj;
+            $wg.data( 'obj',  wgObj );
+            wgList[ elName ] = wgObj;
 
             return wgObj;
+        }
+
+
+        function getInstance( elName ){
+            return wgList[ elName ];
         }
 
 
@@ -467,8 +737,9 @@
         }
 
         return {
-            init    : init,
-            addItem : addItemGlobal
+            init        : init,
+            getInstance : getInstance,
+            addItem     : addItemGlobal
         };
     })();
 

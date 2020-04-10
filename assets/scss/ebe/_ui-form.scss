@@ -25,27 +25,35 @@
         margin-left: 4px;
     }
 
+    &.-small,
     &.-s{
         height: 24px;
         font-size: 12px;
         line-height: 24px;
     }
 
+    &.-narrow,
     &.-n{
         min-width: 32px;
     }
 }
 
 
+$ebInput-h: 32px;
+$ebInput-bg: #fff;
+$ebInput-border: 1px solid #ccc;
+$ebInput-border-r: 4px;
+
+
 .ebInput{
     margin: 0;
     padding: 0 3px;
-    height: 32px;
+    height: $ebInput-h;
     width: 128px;
     font-size: 13px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background: $ebInput-bg;
+    border: $ebInput-border;
+    border-radius: $ebInput-border-r;
 
     &.-block{
         width: 100%;
@@ -75,20 +83,20 @@
     width: 256px;
     font-size: 16px;
     line-height: 24px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background: $ebInput-bg;
+    border: $ebInput-border;
+    border-radius: $ebInput-border-r;
 }
 
 
 .ebSelect{
     margin: 0;
     padding: 0 3px;
-    height: 32px;
+    height: $ebInput-h;
     font-size: 13px;
-    background: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background: $ebInput-bg;
+    border: $ebInput-border;
+    border-radius: $ebInput-border-r;
 
     &.-block{
         width: 100%;
@@ -97,6 +105,8 @@
 
 
 .ebDisplayText{
+    font-weight: bold;
+    line-height: $ebInput-h;
     color: $c-main;
 }
 
@@ -142,6 +152,10 @@
         bottom: 0px;
         right: 0;
         border-bottom: 1px solid #e8e8e8;
+    }
+
+    + .fieldSection{
+        margin-top: 24px !important;
     }
 }
 
@@ -214,7 +228,7 @@
                 content: '';
                 position: absolute;
                 right: 8px;
-                top: 20px;
+                bottom: 20px;
                 width: 6px;
                 height: 6px;
                 border-radius: 100%;
@@ -224,7 +238,8 @@
     }
 
     &.-buttons{
-        width: 144px + 16px + 40px  +  16px + 640px;
+        margin-left: 144px + 16px + 40px + 16px;
+        width: 640px;
         display: block;
         text-align: right;
         padding-top: 16px;

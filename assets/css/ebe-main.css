@@ -21,13 +21,13 @@
   margin-left: 4px;
 }
 
-.ebButton.-s {
+.ebButton.-small, .ebButton.-s {
   height: 24px;
   font-size: 12px;
   line-height: 24px;
 }
 
-.ebButton.-n {
+.ebButton.-narrow, .ebButton.-n {
   min-width: 32px;
 }
 
@@ -75,7 +75,7 @@
   padding: 0 3px;
   height: 32px;
   font-size: 13px;
-  background: #f8f8f8;
+  background: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -85,6 +85,8 @@
 }
 
 .ebDisplayText {
+  font-weight: bold;
+  line-height: 32px;
   color: #0D7BC4;
 }
 
@@ -122,6 +124,10 @@
   bottom: 0px;
   right: 0;
   border-bottom: 1px solid #e8e8e8;
+}
+
+.fixedTopSection + .fieldSection {
+  margin-top: 24px !important;
 }
 
 .fieldSection + .fieldSection {
@@ -189,7 +195,7 @@
   content: '';
   position: absolute;
   right: 8px;
-  top: 20px;
+  bottom: 20px;
   width: 6px;
   height: 6px;
   border-radius: 100%;
@@ -197,7 +203,8 @@
 }
 
 .fieldRow.-buttons {
-  width: 856px;
+  margin-left: 216px;
+  width: 640px;
   display: block;
   text-align: right;
   padding-top: 16px;
@@ -270,6 +277,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .widgetBox .addFormPane > *[class*="-r-"] .wgLabel {
@@ -309,6 +319,55 @@
   line-height: 40px;
   text-align: center;
   cursor: pointer;
+}
+
+.wgSelectorBox {
+  width: 640px;
+  max-height: 240px;
+}
+
+.wgSelectorBox .listPane {
+  max-height: 240px;
+  padding: 7px 15px 0px;
+  overflow-y: auto;
+}
+
+.wgSelectorBox .listPane table {
+  width: 100%;
+}
+
+.wgSelectorBox .listPane table thead {
+  border-bottom: 1px solid #999;
+}
+
+.wgSelectorBox .listPane table th, .wgSelectorBox .listPane table td {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.wgSelectorBox .listPane table th {
+  font-weight: bold;
+  color: #0D7BC4;
+}
+
+.wgSelectorBox .listPane table tbody tr {
+  cursor: pointer;
+}
+
+.wgSelectorBox .listPane table tbody tr + tr {
+  border-top: 1px solid #cccc;
+}
+
+.wgSelectorBox .listPane table tbody tr td {
+  padding: 8px 0;
+}
+
+.wgSelectorBox .listPane table tbody tr:hover {
+  background: #e8e8e8;
+}
+
+.wgSelectorBox .listPane table td.fn {
+  text-align: right;
 }
 
 .wgProjectStationManageBox {
@@ -466,6 +525,122 @@
   width: 128px;
 }
 
+.wgEntourageManageBox {
+  width: 640px;
+  height: 256px;
+}
+
+.wgEntourageManageBox .listPane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 48px;
+  padding: 7px 15px 15px;
+  overflow-y: auto;
+  border-bottom: solid 1px #999;
+}
+
+.wgEntourageManageBox .listPane table {
+  width: 100%;
+}
+
+.wgEntourageManageBox .listPane table thead {
+  border-bottom: 1px solid #999;
+}
+
+.wgEntourageManageBox .listPane table th, .wgEntourageManageBox .listPane table td {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.wgEntourageManageBox .listPane table th {
+  font-weight: bold;
+  color: #0D7BC4;
+}
+
+.wgEntourageManageBox .listPane table tbody tr {
+  border-bottom: 1px solid #cccc;
+}
+
+.wgEntourageManageBox .listPane table tbody tr td {
+  padding: 8px 0;
+}
+
+.wgEntourageManageBox .listPane table td.fn {
+  text-align: right;
+}
+
+.wgEntourageManageBox .addPane {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 48px;
+  background: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+.wgEntourageManageBox .addPane .nameField {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 96px;
+}
+
+.wgEntourageManageBox .addPane .nameField input {
+  width: 100%;
+  height: 100%;
+  padding: 0 7px;
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+}
+
+.wgEntourageManageBox .addPane .phoneField {
+  position: absolute;
+  left: 104px;
+  top: 8px;
+  bottom: 8px;
+  width: 144px;
+}
+
+.wgEntourageManageBox .addPane .phoneField input {
+  width: 100%;
+  height: 100%;
+  padding: 0 7px;
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid #ccc;
+}
+
+.wgEntourageManageBox .addPane .emailField {
+  position: absolute;
+  left: 248px;
+  top: 8px;
+  bottom: 8px;
+  right: 88px;
+}
+
+.wgEntourageManageBox .addPane .emailField input {
+  width: 100%;
+  height: 100%;
+  padding: 0 7px;
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid #ccc;
+}
+
+.wgEntourageManageBox .addPane .-action-addItem {
+  position: absolute;
+  display: block;
+  right: 8px;
+  top: 8px;
+}
+
 .wgProjectUserViewBox {
   width: 640px;
 }
@@ -582,6 +757,11 @@
   display: block;
   right: 8px;
   top: 8px;
+}
+
+.wgSelectCheckbox {
+  width: 32px;
+  height: 32px;
 }
 
 *, *::before, *::after {
