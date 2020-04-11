@@ -615,21 +615,24 @@
             $wrapper.append( $wg );
 
             wgObj = {
-                tableConfig       : tableConfig,
-                addFormConfig     : addFormConfig,
-                $wg               : $wg,
-                addItemHandler    : null,
-                setAddItemHandler : setAddItemHandler,
-                addRow            : addRow,
-                addRowList        : addRowList,
-                addItem           : addItem,
-                showMessage       : showMessage,
-                hideMessage       : hideMessage,
-                openAddForm       : openAddForm,
-                closeAddForm      : closeAddForm,
-                setPortList       : setPortList,
-                setDatumList      : setDatumList,
-                getList           : getList
+                tableConfig          : tableConfig,
+                addFormConfig        : addFormConfig,
+                $wg                  : $wg,
+                addItemHandler       : null,
+                removeItemHandler    : null,
+                setAddItemHandler    : setAddItemHandler,
+                setRemoveItemHandler : setRemoveItemHandler,
+                addRow               : addRow,
+                addRowList           : addRowList,
+                addItem              : addItem,
+                removeItem           : removeItem,
+                showMessage          : showMessage,
+                hideMessage          : hideMessage,
+                openAddForm          : openAddForm,
+                closeAddForm         : closeAddForm,
+                setPortList          : setPortList,
+                setDatumList         : setDatumList,
+                getList              : getList
             };
 
             $wg.data( 'obj',  wgObj );
@@ -646,6 +649,11 @@
 
         function setAddItemHandler( fn ){
             this.addItemHandler = fn;
+        }
+
+
+        function setRemoveItemHandler( fn ){
+            this.removeItemHandler = fn;
         }
 
 
@@ -823,8 +831,33 @@
 
 
         function removeItemHandler( e ){
-            var $row = $( e.currentTarget ).parents('tr');
+            var $wg = $(e.currentTarget).parents('.widgetBox');
+            var wg  = $wg.data( 'obj' );
+
+            var $row  = $( e.currentTarget ).parents('tr');
+            var rowId = $row.attr('data-id');
+
+            // 執行新增
+            if( typeof wg.addItemHandler == "function" ){
+                wg.showMessage('請稍後');
+                return wg.removeItemHandler( rowId );
+            }
+        }
+
+
+        function removeItem( rowId ){
+            var $wg = this.$wg;
+            var $row = $wg.find('tbody tr[data-id="' + rowId +'"]');
+
+            this.hideMessage();
             $row.remove();
+        }
+
+
+        function removeItemGlobal( elName, rowId ){
+            var wg  = wgList[ elName ];
+
+            wg.removeItem( rowId );
         }
 
 
@@ -844,7 +877,8 @@
         return {
             init        : init,
             getInstance : getInstance,
-            addItem     : addItemGlobal
+            addItem     : addItemGlobal,
+            removeItem  : removeItemGlobal
         }
     })();
 
