@@ -160,7 +160,7 @@
                             ]
                         };
 
-                        var wg = Ebe.Widget.SelectorBox.init('#wg1', wgConfig);
+                        var wg = Ebe.Widget.SelectorBox.init('#wg1', Ebe.Widget.Station.TABLE_CONFIG.AVES );
 
                         // 取得選取的欄位請執行以下：
                         // wg.getSelected();

@@ -462,67 +462,49 @@
   border-left: 1px solid  #ccc;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-ref_no {
+.wgProjectStationManageBox .addFormPane > .-r-0 {
   left: 24px;
   top: 64px;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-ref_no input {
-  width: 192px;
-}
-
-.wgProjectStationManageBox .addFormPane .-r-name {
+.wgProjectStationManageBox .addFormPane > .-r-1 {
   left: 24px;
   top: 104px;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-name input {
-  width: 192px;
-}
-
-.wgProjectStationManageBox .addFormPane .-r-port {
+.wgProjectStationManageBox .addFormPane > .-r-2 {
   left: 24px;
   top: 144px;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-port select {
-  width: 192px;
-}
-
-.wgProjectStationManageBox .addFormPane .-r-latitude {
+.wgProjectStationManageBox .addFormPane > .-r-3 {
   left: 24px;
   top: 184px;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-latitude input {
-  width: 128px;
-}
-
-.wgProjectStationManageBox .addFormPane .-r-longitude {
+.wgProjectStationManageBox .addFormPane > .-r-4 {
   left: 24px;
   top: 224px;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-longitude input {
-  width: 128px;
-}
-
-.wgProjectStationManageBox .addFormPane .-r-datum {
+.wgProjectStationManageBox .addFormPane > .-r-5 {
   left: 336px;
   top: 64px;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-datum select {
-  width: 192px;
-}
-
-.wgProjectStationManageBox .addFormPane .-r-device {
+.wgProjectStationManageBox .addFormPane > .-r-6 {
   left: 336px;
   top: 104px;
 }
 
-.wgProjectStationManageBox .addFormPane .-r-device input {
-  width: 128px;
+.wgProjectStationManageBox .addFormPane > .-r-7 {
+  left: 336px;
+  top: 144px;
+}
+
+.wgProjectStationManageBox .addFormPane > .-r-8 {
+  left: 336px;
+  top: 224px;
 }
 
 .wgEntourageManageBox {

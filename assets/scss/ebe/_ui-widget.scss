@@ -243,54 +243,16 @@ $wg-border-radius: 4px;
             border-left: 1px solid  #ccc;
         }
 
-        .-r-ref_no{
-            left: 24px;
-            top: 64px;
+        > .-r-0{ left:  24px; top:  64px; }
+        > .-r-1{ left:  24px; top: 104px; }
+        > .-r-2{ left:  24px; top: 144px; }
+        > .-r-3{ left:  24px; top: 184px; }
+        > .-r-4{ left:  24px; top: 224px; }
+        > .-r-5{ left: 336px; top:  64px; }
+        > .-r-6{ left: 336px; top: 104px; }
+        > .-r-7{ left: 336px; top: 144px; }
+        > .-r-8{ left: 336px; top: 224px; }
 
-            input{ width: 192px; }
-        }
-
-        .-r-name{
-            left: 24px;
-            top: 104px;
-
-            input{ width: 192px; }
-        }
-
-        .-r-port{
-            left: 24px;
-            top: 144px;
-
-            select{ width: 192px; }
-        }
-
-        .-r-latitude{
-            left: 24px;
-            top: 184px;
-
-            input{ width: 128px; }
-        }
-
-        .-r-longitude{
-            left: 24px;
-            top: 224px;
-
-            input{ width: 128px; }
-        }
-
-        .-r-datum{
-            left: 336px;
-            top: 64px;
-
-            select{ width: 192px; }
-        }
-
-        .-r-device{
-            left: 336px;
-            top: 104px;
-
-            input{ width: 128px; }
-        }
     }
 }
 

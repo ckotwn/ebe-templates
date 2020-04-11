@@ -3,6 +3,422 @@
     window.Ebe.Widget = {};
 
 
+    // 作業地點設定
+    window.Ebe.Widget.Station = (function(){
+
+        var TABLE_CONFIG = {
+            AVES     : {  // 鳥類
+                cols : [
+                    { ref : 'ref_no',    label : '編號',     width : 32 },
+                    { ref : 'name',      label : '名稱',     width : null },
+                    { ref : 'port_name', label : '出入港口',  width : null },
+                    { ref : 'latitude',  label : '經度',      width : null },
+                    { ref : 'longitude', label : '緯度',      width : null },
+                    { ref : 'datum' ,    label : '大地基準',  width : null },
+                    { ref : 'device',    label : '儀器',      width : null }
+                ],
+                addFormFields : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        controlType  : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        controlType  : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'device',
+                        label        : '儀器架設<br>方式',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    }
+                ]
+            },
+            BENTHOS  : {  // 底棲生物
+                cols : [
+                    { ref : 'ref_no',    label : '編號',     width : 32 },
+                    { ref : 'name',      label : '名稱',     width : null },
+                    { ref : 'port_name', label : '出入港口',  width : null },
+                    { ref : 'latitude',  label : '經度',      width : null },
+                    { ref : 'longitude', label : '緯度',      width : null },
+                    { ref : 'datum' ,    label : '大地基準',  width : null },
+                ],
+                addFormFields : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        control      : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        control      : "select",
+                        controlWidth : 192
+                    }
+                ]
+            },
+            FISH     : {  // 魚類
+                cols : [
+                    { ref : 'ref_no',    label : '編號',     width : 32 },
+                    { ref : 'name',      label : '名稱',     width : null },
+                    { ref : 'port_name', label : '出入港口',  width : null },
+                    { ref : 'latitude',  label : '經度',      width : null },
+                    { ref : 'longitude', label : '緯度',      width : null },
+                    { ref : 'datum' ,    label : '大地基準',  width : null }
+                ],
+                addFormFields : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        control      : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        control      : "select",
+                        controlWidth : 192
+                    }
+                ]
+            },
+            UNOISE   : {  // 水下噪音
+                cols : [
+                    { ref : 'ref_no',    label : '編號',     width : 32 },
+                    { ref : 'name',      label : '名稱',     width : null },
+                    { ref : 'port_name', label : '出入港口',  width : null },
+                    { ref : 'latitude',  label : '經度',      width : null },
+                    { ref : 'longitude', label : '緯度',      width : null },
+                    { ref : 'datum' ,    label : '大地基準',  width : null }
+                ],
+                addFormFields : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        control      : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        control      : "select",
+                        controlWidth : 192
+                    }
+                ]
+            }
+        };
+
+        var ADDFORM_CONFIG = {
+            AVES     : {  // 鳥類
+                cols : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        controlType  : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        controlType  : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'device',
+                        label        : '儀器架設<br>方式',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    }
+                ]
+            },
+            BENTHOS  : {  // 底棲生物
+                cols : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        control      : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        control      : "select",
+                        controlWidth : 192
+                    }
+                ]
+            },
+            FISH     : {  // 魚類
+                cols : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        control      : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        control      : "select",
+                        controlWidth : 192
+                    }
+                ]
+            },
+            UNOISE   : {  // 水下噪音
+                cols : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        control      : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        control      : "input",
+                        controlType  : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        control      : "select",
+                        controlWidth : 192
+                    }
+                ]
+            }
+        };
+
+        return {
+            TABLE_CONFIG   : TABLE_CONFIG,
+            ADDFORM_CONFIG : ADDFORM_CONFIG
+        }
+
+    })();
+
+
     // 通用選擇框
     window.Ebe.Widget.SelectorBox = (function(){
 
@@ -132,18 +548,14 @@
 
         var wgList  = {}
 
-        function init( elName ){
+        function init( elName, tableConfig, addFormConfig ){
 
             var $wrapper = $( elName );
 
             var $wg = $('<div class="widgetBox wgProjectStationManageBox">'
                 + '<div class="listPane">'
                     + '<table>'
-                    + '<thead><tr>'
-                        + '<th>編號</th><th>名稱</th><th>出入港口</th>'
-                        + '<th>經度</th><th>緯度</th><th>大地基準</th>'
-                        + '<th>儀器</th>'
-                        + '</tr></thead>'
+                    + '<thead></thead>'
                     + '<tbody></tbody>'
                     + '</table>'
                 + '</div>'
@@ -155,18 +567,46 @@
                     + '<div class="close fal fa-times -action-closeAddForm"></div>'
                     + '<div class="line"></div>'
                     + '<div class="button"><div class="ebButton -action-addItem">新增</div></div>'
-                    + '<div class="wgFieldRow -r-ref_no"   ><div class="wgLabel">編號</div><div class="wgField"><input  class="ebInput -f-ref_no"   ></div></div>'
-                    + '<div class="wgFieldRow -r-name"     ><div class="wgLabel">名稱</div><div class="wgField"><input  class="ebInput -f-name"     ></div></div>'
-                    + '<div class="wgFieldRow -r-port"     ><div class="wgLabel">出入港口</div><div class="wgField"><select class="ebSelect -f-port"     ></select></div></div>'
-                    + '<div class="wgFieldRow -r-latitude" ><div class="wgLabel">經度</div><div class="wgField"><input  class="ebInput -f-latitude" ></div></div>'
-                    + '<div class="wgFieldRow -r-longitude"><div class="wgLabel">緯度</div><div class="wgField"><input  class="ebInput -f-longitude"></div></div>'
-                    + '<div class="wgFieldRow -r-datum"    ><div class="wgLabel">大地基準</div><div class="wgField"><select class="ebSelect -f-datum"    ></select></div></div>'
-                    + '<div class="wgFieldRow -r-device"   ><div class="wgLabel">儀器架設<br>方式</div><div class="wgField"><input class="ebInput -f-device"   ></div></div>'
                 + '</div>'
                 + '<div class="messagePane">'
                     + '<div class="messageText"></div>'
                 + '</div>'
                 + '</div>' );
+
+            // gen table header
+            var $theadRow = $('<tr></tr>');
+            for( var i in tableConfig.cols ){
+                var colConfig = tableConfig.cols[ i ];
+                $theadRow.append( $('<th></th>').text( colConfig.label ) );
+            }
+            $theadRow.append( $('<th width=48></th>') );
+            $wg.find('thead').append( $theadRow );
+
+            // gen addform
+            var $addFormPane = $wg.find('.addFormPane');
+            for( var i in addFormConfig.cols ){
+                var fieldConfig = addFormConfig.cols[ i ];
+                var $inputField = $('<div class="wgFieldRow"><div class="wgLabel"></div><div class="wgField"></div></div>');
+                $inputField.addClass('-r-'+ i );
+                $inputField.find('.wgLabel').html( fieldConfig.label );
+                var $input;
+                if( fieldConfig.controlType == 'input' ){
+                    $input = $('<input class="ebInput">');
+                    $input.prop('type', fieldConfig.inputType );
+                };
+                if( fieldConfig.controlType == 'select' ){
+                    $input = $('<select class="ebSelect"></select>');
+                }
+
+                console.log( fieldConfig );
+
+                $input.css({ width: fieldConfig.controlWidth + 'px' });
+                $input.addClass('-f-' + fieldConfig.ref );
+                $inputField.find('.wgField').append( $input );
+
+                $addFormPane.append( $inputField );
+            }
+
 
             $wg.find('.-action-openAddForm').on('click', openAddFormClickHandler);
             $wg.find('.-action-closeAddForm').on('click', closeAddFormClickHandler);
@@ -175,6 +615,8 @@
             $wrapper.append( $wg );
 
             wgObj = {
+                tableConfig       : tableConfig,
+                addFormConfig     : addFormConfig,
                 $wg               : $wg,
                 addItemHandler    : null,
                 setAddItemHandler : setAddItemHandler,
@@ -392,9 +834,7 @@
             var userList = [];
             $wg.find('tbody tr').each(function(){
                 var $row = $(this);
-                userList.push({
-                    id : $row.attr('data-id' )
-                });
+                userList.push( $row.attr('data-id' ) );
             });
 
             return userList;

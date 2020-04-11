@@ -173,10 +173,28 @@
                     (function(){
 
                         // ebe-widget.js
-                        // window.Ebe.Widget.ProjectStationManageBox
+                        // Ebe.Widget.ProjectStationManageBox
+
+                        // 表格設定
+                        // 列表欄位設定
+                        // Ebe.Widget.Station.TABLE_CONFIG.AVES      // 鳥類
+                        // Ebe.Widget.Station.TABLE_CONFIG.BENTHOS   // 底棲生物
+                        // Ebe.Widget.Station.TABLE_CONFIG.FISH      // 魚類
+                        // Ebe.Widget.Station.TABLE_CONFIG.UNOISE    // 水下噪音
+                        // 新增欄位設定
+                        // Ebe.Widget.Station.ADDFORM_CONFIG.AVES    // 鳥類
+                        // Ebe.Widget.Station.ADDFORM_CONFIG.BENTHOS // 底棲生物
+                        // Ebe.Widget.Station.ADDFORM_CONFIG.FISH    // 魚類
+                        // Ebe.Widget.Station.ADDFORM_CONFIG.UNOISE  // 水下噪音
+                        // 如果有其他的也可以直接另外定義
+
 
                         // 建立元件
-                        var wg = Ebe.Widget.ProjectStationManageBox.init('#wg2');
+                        var wg = Ebe.Widget.ProjectStationManageBox.init(
+                            '#wg2',
+                            Ebe.Widget.Station.TABLE_CONFIG.AVES,
+                            Ebe.Widget.Station.ADDFORM_CONFIG.AVES
+                        );
 
                         // 建立港口清單
                         wg.setPortList([
@@ -203,30 +221,28 @@
                             */
 
                             // 成功後請如以下呼叫：
-                            wg.addItem( stationData );
-                            // wg.addRow({
-                            //     id        : 1,
-                            //     ref_no    : "AAA123",
-                            //     name      : "芳苑海堤",
-                            //     port      : "外埔漁港",
-                            //     latitude  : "121.000000",
-                            //     longitude : "24.000000",
-                            //     datum     : "TWD97",
-                            //     device    : "雷達"
-                            // });
+                            wg.addItem({
+                                id        : 2,
+                                ref_no    : "AAA123",
+                                name      : "芳苑海堤",
+                                port      : "外埔漁港",
+                                latitude  : "121.000000",
+                                longitude : "24.000000",
+                                datum     : "TWD97",
+                                device    : "雷達"
+                            });
 
                             // 或是呼叫
-                            Ebe.Widget.ProjectStationManageBox.addItem( '#wg2', stationData );
-                            // Ebe.Widget.ProjectStationManageBox.addItem( '#wg2', {
-                            //     id        : 1,
-                            //     ref_no    : "AAA123",
-                            //     name      : "芳苑海堤",
-                            //     port      : "外埔漁港",
-                            //     latitude  : "121.000000",
-                            //     longitude : "24.000000",
-                            //     datum     : "TWD97",
-                            //     device    : "雷達"
-                            // });
+                            Ebe.Widget.ProjectStationManageBox.addItem( '#wg2', {
+                                id        : 3,
+                                ref_no    : "AAA123",
+                                name      : "芳苑海堤",
+                                port      : "外埔漁港",
+                                latitude  : "121.000000",
+                                longitude : "24.000000",
+                                datum     : "TWD97",
+                                device    : "雷達"
+                            });
                         });
 
                         // 取得資料請執行以下：
