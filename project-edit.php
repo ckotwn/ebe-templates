@@ -205,7 +205,7 @@
                         // 建立大地基準清單
                         wg.setDatumList([ 'TWD97', 'WGS84' ]);
 
-                        // 新增 (由這裡導向 ajax )
+                        // 新增 (由這裡導向 ajax)
                         wg.setAddItemHandler(function( stationData ){
 
                             /* stationData 資料格式
@@ -232,7 +232,7 @@
                                 device    : "雷達"
                             });
 
-                            // 或是呼叫
+                            // 或是呼叫 :
                             Ebe.Widget.ProjectStationManageBox.addItem( '#wg2', {
                                 id        : 3,
                                 ref_no    : "AAA123",
@@ -243,6 +243,16 @@
                                 datum     : "TWD97",
                                 device    : "雷達"
                             });
+                        });
+
+                        // 刪除 (由這裡導向 ajax)
+                        wg.setRemoveItemHandler(function( stationId ){
+
+                            // 成功後請如以下呼叫 :
+                            wg.removeItem( stationId );
+
+                            // 或是呼叫 :
+                            Ebe.Widget.ProjectStationManageBox.removeItem( '#wg2', stationId);
                         });
 
                         // 取得資料請執行以下：

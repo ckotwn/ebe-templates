@@ -120,46 +120,6 @@
                         // Ebe.Widget.SelectorBox
 
                         // 建立元件
-                        var wgConfig = {
-                            cols : [
-                                {
-                                    ref     : 'ref_no',
-                                    label   : '編號',
-                                    width   : 32
-                                },
-                                {
-                                    ref     : 'name',
-                                    label   : '名稱',
-                                    width   : null
-                                },
-                                {
-                                    ref     : 'port_name',
-                                    label   : '出入港口',
-                                    width   : null
-                                },
-                                {
-                                    ref     : 'latitude',
-                                    label   : '經度',
-                                    width   : null
-                                },
-                                {
-                                    ref     : 'longitude',
-                                    label   : '緯度',
-                                    width   : null
-                                },
-                                {
-                                    ref     : 'datum' ,
-                                    label   : '大地基準',
-                                    width   : null
-                                },
-                                {
-                                    ref     : 'device',
-                                    label   : '儀器',
-                                    width   : null
-                                }
-                            ]
-                        };
-
                         var wg = Ebe.Widget.SelectorBox.init('#wg1', Ebe.Widget.Station.TABLE_CONFIG.AVES );
 
                         // 取得選取的欄位請執行以下：
