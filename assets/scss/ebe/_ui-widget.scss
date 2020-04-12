@@ -1,4 +1,5 @@
 $wg-c-border: #999;
+$wg-c-innerBorder: #ccc;
 $wg-border: solid 1px $wg-c-border;
 $wg-border-radius: 4px;
 
@@ -240,7 +241,7 @@ $wg-border-radius: 4px;
             left: 312px;
             top: 64px;
             bottom: 24px;
-            border-left: 1px solid  #ccc;
+            border-left: 1px solid #ccc;
         }
 
         > .-r-0{ left:  24px; top:  64px; }
@@ -252,7 +253,6 @@ $wg-border-radius: 4px;
         > .-r-6{ left: 336px; top: 104px; }
         > .-r-7{ left: 336px; top: 144px; }
         > .-r-8{ left: 336px; top: 224px; }
-
     }
 }
 
@@ -492,6 +492,176 @@ $wg-border-radius: 4px;
             display: block;
             right: 8px;
             top: 8px;
+        }
+    }
+}
+
+
+.wgFolderListBox{
+    width: 640px;
+    height: 340px;
+
+    .titlePane{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 39px;
+        font-weight: bold;
+        color: #0D7BC4;
+        border-bottom: 1px solid $wg-c-innerBorder;
+
+        .icon{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 39px;
+            font-size: 20px;
+            line-height: 39px;
+            text-align: center;
+        }
+
+        .name{
+            position: absolute;
+            left: 39px;
+            font-size: 14px;
+            line-height: 39px;
+        }
+
+        .link{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 39px;
+            font-size: 16px;
+            line-height: 39px;
+            text-align: center;
+            color: #0D7BC4;
+            border-radius: 0 3px 0 0;
+
+            &:hover{
+                color: #fff;
+                background-color: #0D7BC4;
+            }
+        }
+    }
+
+    .folderListPane{
+        position: absolute;
+        left: 0;
+        top: 39px;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        border-radius: 0 0 3px 3px;
+
+        .folderItem{
+            position: relative;
+            height: 40px;
+            margin-right: 8px;
+
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                left: 40px;
+                bottom: 0;
+                right: 0;
+                border-bottom: 1px solid $wg-c-innerBorder;
+            }
+
+            &:last-child::before{
+                display: none;
+            }
+
+            .icon{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 39px;
+                font-size: 20px;
+                line-height: 39px;
+                text-align: center;
+            }
+
+            .name{
+                position: absolute;
+                left: 40px;
+                font-size: 14px;
+                line-height: 39px;
+            }
+
+            .link{
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 39px;
+                font-size: 16px;
+                line-height: 39px;
+                text-align: center;
+                color: #0D7BC4;
+                border-radius: 0 3px 0 0;
+
+                &:hover{
+                    color: #fff;
+                    background-color: #0D7BC4;
+                }
+            }
+
+            .lines{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                height: 40px;
+
+                &::before,
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 20px;
+                }
+
+                &::before{
+                    top: -20px;
+                    bottom: 20px;
+                    border-left: 1px dotted #ccc;
+                }
+
+                &::after{
+                    top: 20px;
+                    right: 0;
+                    border-top: 1px dotted #ccc;
+                }
+            }
+
+            &.-level-0{
+                &::before{ left:  40px; }
+                .icon{     left:   0px; }
+                .name{     left:  40px; }
+                .lines{    display: none; }
+            }
+
+            &.-level-0 + .-level-1{
+                .lines::before{ top: 0; }
+            }
+
+            &.-level-1{
+                &::before{ left:  80px; }
+                .icon{     left:  40px; }
+                .name{     left:  80px; }
+                .lines{    left:   0; }
+            }
+
+            &.-level-2{
+                &::before{ left: 120px; }
+                .lines{    }
+                .icon{     left:  80px; }
+                .name{     left: 120px; }
+                .lines{    left:  40px; }
+            }
+
         }
     }
 }

@@ -1,6 +1,45 @@
 (function(){
 
+
+    window.Ebe.EbControl = {};
     window.Ebe.Widget = {};
+
+
+    window.Ebe.EbControl.FileUpload = (function(){
+
+        var STRING = {
+            NOT_SELECT : '尚未選擇檔案'
+        };
+
+        $(window).on('load', function(){
+            init('.ebFileUpload');
+        });
+
+        function init( elQuery ){
+
+            $( elQuery ).each(function(){
+                var $ctrl     = $(this);
+                var $fileName = $(this).find('.fileName');
+                var $input    = $(this).find('input[type="file"]');
+
+                $ctrl.attr('eb-inited', 1);
+
+                $input.on('change', function(e){
+                    var files = e.currentTarget.files;
+                    if( files.length == 0 ){
+                        $fileName.text( STRING.NOT_SELECT );
+                    }else{
+                        $fileName.text( files[0].name );
+                    }
+                })
+            });
+        }
+
+        return {
+            init : init
+        }
+    })();
+
 
 
     // 作業地點設定
@@ -450,13 +489,13 @@
             $wrapper.append( $wg );
 
             wgObj = {
-                config            : config,
-                $wg               : $wg,
-                addRow            : addRow,
-                addRowArray       : addRowArray,
-                showMessage       : showMessage,
-                hideMessage       : hideMessage,
-                getSelected       : getSelected
+                config      : config,
+                $wg         : $wg,
+                addRow      : addRow,
+                addRowArray : addRowArray,
+                showMessage : showMessage,
+                hideMessage : hideMessage,
+                getSelected : getSelected
             }
 
             $wg.data( 'obj',  wgObj );
@@ -1215,6 +1254,121 @@
             getInstance : getInstance,
             addItem     : addItemGlobal
         };
+    })();
+
+
+    // 資料夾列表
+    window.Ebe.Widget.FolderListBox = (function(){
+
+        var wgList = {};
+
+        function init( elName ){
+
+            var $wrapper = $( elName );
+            var $wg = $('<div class="widgetBox wgFolderListBox">'
+                + '<div class="titlePane">'
+                    + '<div class="icon fab"></div>'
+                    + '<div class="name"></div>'
+                    + '<a class="link fal fa-external-link" target="_blank"></a>'
+                + '</div>'
+                + '<div class="folderListPane"></div>'
+                + '<div class="messagePane">'
+                    + '<div class="messageText"></div>'
+                + '</div>'
+                + '</div>' );
+
+            $wrapper.append( $wg );
+
+            wgObj = {
+                $wg           : $wg,
+                addFolderTree : addFolderTree,
+                showMessage   : showMessage,
+                hideMessage   : hideMessage
+            }
+
+            $wg.data( 'obj',  wgObj );
+            wgList[ elName ] = wgObj;
+
+            return wgObj;
+        }
+
+
+        function getInstance( elName ){
+            return wgList[ elName ];
+        }
+
+
+        function addFolderTree( folderTree ){
+            var $wg = this.$wg;
+
+            // set title
+            var $title = $wg.find('.titlePane');
+            $title.find('.icon').addClass( 'fa-' + folderTree.type );
+            $title.find('.name').text( folderTree.name );
+            $title.find('.link').attr( 'href', folderTree.link );
+
+            // set folder list
+            var $folderList = [];
+            var $folderListPane = $wg.find('.folderListPane');
+            buildFolderEl( $folderList, folderTree.subFolderList );
+
+            $folderListPane.append( $folderList );
+        }
+
+
+        function buildFolderEl( $folderList, folderList, level ){
+
+            if( level == undefined ){
+                var level = 0;
+            }
+            var nextLevel = level + 1;
+
+            for( var i in folderList ){
+                var folder = folderList[i];
+
+                var $el = $( '<div class="folderItem">'
+                    + '<div class="lines"></div>'
+                    + '<div class="icon fal fa-folder-open"></div>'
+                    + '<div class="name"></div>'
+                    + '<a class="link fal fa-external-link" target="_blank"></a>'
+                );
+
+                $el.addClass('-level-' + level);
+                $el.find('.name').text( folder.name );
+                if( folder.showLink != undefined && folder.showLink == true ){
+                    $el.find('.link').attr( 'href', folder.link );
+                }else{
+                    $el.find('.link').hide();
+                }
+
+                $folderList.push( $el );
+
+                if( folder.subFolderList != undefined
+                        && Array.isArray( folder.subFolderList ) ){
+                    buildFolderEl( $folderList, folder.subFolderList, nextLevel );
+                }
+            }
+        }
+
+
+        function showMessage( messageHtml ){
+            var $wg = this.$wg;
+            $wg.find('.messageText').html( messageHtml );
+            $wg.find('.messagePane').show();
+        }
+
+
+        function hideMessage(){
+            var $wg = this.$wg;
+            $wg.find('.messagePane').hide();
+            $wg.find('.messageText').empty();
+        }
+
+
+        return {
+            init        : init,
+            getInstance : getInstance
+        }
     })();
 
 

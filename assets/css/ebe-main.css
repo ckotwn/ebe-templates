@@ -58,6 +58,11 @@
   text-align: center;
 }
 
+.ebInput.-type-time {
+  width: 64px;
+  font-size: 16px;
+}
+
 .ebTextarea {
   margin: 0;
   padding: 7px;
@@ -111,6 +116,43 @@
   width: 16px;
 }
 
+.ebFileUpload {
+  position: relative;
+  margin: 0;
+  padding: 0 3px;
+  height: 32px;
+  width: 480px;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ebFileUpload .ebButton {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+
+.ebFileUpload .fileName {
+  position: absolute;
+  left: 80px;
+  top: 3px;
+  right: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 24px;
+}
+
+.ebFileUpload input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .05;
+}
+
 .fixedTopSection {
   position: relative;
   border-bottom: 4px solid #fff;
@@ -148,16 +190,31 @@
 }
 
 .fieldRow + .fieldRow > * {
-  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.fieldRow + .fieldRow > .label::after {
+  top: -16px;
 }
 
 .fieldRow .label {
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 160px;
           flex: 0 0 160px;
   padding-right: 16px;
+  line-height: 32px;
   text-align: right;
   font-weight: bold;
+}
+
+.fieldRow .label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
   border-right: 1px solid #ccc;
 }
 
@@ -167,6 +224,13 @@
 
 .fieldRow .field span.note {
   margin-left: 16px;
+  color: #999;
+}
+
+.fieldRow .field div.note {
+  margin: 8px;
+  font-size: 14px;
+  line-height: 24px;
   color: #999;
 }
 
@@ -195,7 +259,7 @@
   content: '';
   position: absolute;
   right: 8px;
-  bottom: 20px;
+  top: 4px;
   width: 6px;
   height: 6px;
   border-radius: 100%;
@@ -203,12 +267,35 @@
 }
 
 .fieldRow.-buttons {
-  margin-left: 216px;
+  margin-left: 200px;
+  padding: 16px 0;
+  padding-left: 16px;
   width: 640px;
   display: block;
   text-align: right;
-  padding-top: 16px;
   border-top: 1px solid #ccc;
+}
+
+.fieldRow.-text {
+  margin-left: 200px;
+  padding: 16px 0;
+  padding-left: 16px;
+  width: 640px;
+  display: block;
+  text-align: left;
+  border-top: 1px solid #ccc;
+}
+
+.fieldRow.-text ul.note {
+  margin: 8px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}
+
+.fieldRow.-text ul.note li {
+  list-style: circle;
+  list-style-position: outside;
 }
 
 .fieldTitle {
@@ -459,7 +546,7 @@
   left: 312px;
   top: 64px;
   bottom: 24px;
-  border-left: 1px solid  #ccc;
+  border-left: 1px solid #ccc;
 }
 
 .wgProjectStationManageBox .addFormPane > .-r-0 {
@@ -739,6 +826,199 @@
   display: block;
   right: 8px;
   top: 8px;
+}
+
+.wgFolderListBox {
+  width: 640px;
+  height: 340px;
+}
+
+.wgFolderListBox .titlePane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 39px;
+  font-weight: bold;
+  color: #0D7BC4;
+  border-bottom: 1px solid #ccc;
+}
+
+.wgFolderListBox .titlePane .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 39px;
+  font-size: 20px;
+  line-height: 39px;
+  text-align: center;
+}
+
+.wgFolderListBox .titlePane .name {
+  position: absolute;
+  left: 39px;
+  font-size: 14px;
+  line-height: 39px;
+}
+
+.wgFolderListBox .titlePane .link {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 39px;
+  font-size: 16px;
+  line-height: 39px;
+  text-align: center;
+  color: #0D7BC4;
+  border-radius: 0 3px 0 0;
+}
+
+.wgFolderListBox .titlePane .link:hover {
+  color: #fff;
+  background-color: #0D7BC4;
+}
+
+.wgFolderListBox .folderListPane {
+  position: absolute;
+  left: 0;
+  top: 39px;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  border-radius: 0 0 3px 3px;
+}
+
+.wgFolderListBox .folderListPane .folderItem {
+  position: relative;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.wgFolderListBox .folderListPane .folderItem::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 40px;
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.wgFolderListBox .folderListPane .folderItem:last-child::before {
+  display: none;
+}
+
+.wgFolderListBox .folderListPane .folderItem .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 39px;
+  font-size: 20px;
+  line-height: 39px;
+  text-align: center;
+}
+
+.wgFolderListBox .folderListPane .folderItem .name {
+  position: absolute;
+  left: 40px;
+  font-size: 14px;
+  line-height: 39px;
+}
+
+.wgFolderListBox .folderListPane .folderItem .link {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 39px;
+  font-size: 16px;
+  line-height: 39px;
+  text-align: center;
+  color: #0D7BC4;
+  border-radius: 0 3px 0 0;
+}
+
+.wgFolderListBox .folderListPane .folderItem .link:hover {
+  color: #fff;
+  background-color: #0D7BC4;
+}
+
+.wgFolderListBox .folderListPane .folderItem .lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.wgFolderListBox .folderListPane .folderItem .lines::before, .wgFolderListBox .folderListPane .folderItem .lines::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 20px;
+}
+
+.wgFolderListBox .folderListPane .folderItem .lines::before {
+  top: -20px;
+  bottom: 20px;
+  border-left: 1px dotted #ccc;
+}
+
+.wgFolderListBox .folderListPane .folderItem .lines::after {
+  top: 20px;
+  right: 0;
+  border-top: 1px dotted #ccc;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-0::before {
+  left: 40px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-0 .icon {
+  left: 0px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-0 .name {
+  left: 40px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-0 .lines {
+  display: none;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-0 + .-level-1 .lines::before {
+  top: 0;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-1::before {
+  left: 80px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-1 .icon {
+  left: 40px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-1 .name {
+  left: 80px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-1 .lines {
+  left: 0;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-2::before {
+  left: 120px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-2 .icon {
+  left: 80px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-2 .name {
+  left: 120px;
+}
+
+.wgFolderListBox .folderListPane .folderItem.-level-2 .lines {
+  left: 40px;
 }
 
 .wgSelectCheckbox {

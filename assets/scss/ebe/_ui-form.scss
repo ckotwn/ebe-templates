@@ -45,6 +45,9 @@ $ebInput-border: 1px solid #ccc;
 $ebInput-border-r: 4px;
 
 
+// control
+
+
 .ebInput{
     margin: 0;
     padding: 0 3px;
@@ -72,6 +75,11 @@ $ebInput-border-r: 4px;
                 text-align: center;
             }
         }
+    }
+
+    &.-type-time{
+        width: 64px;
+        font-size: 16px;
     }
 }
 
@@ -136,6 +144,47 @@ $ebInput-border-r: 4px;
 }
 
 
+.ebFileUpload{
+    position: relative;
+    margin: 0;
+    padding: 0 3px;
+    height: $ebInput-h;
+    width: 480px;
+    font-size: 13px;
+    background: $ebInput-bg;
+    border: $ebInput-border;
+    border-radius: $ebInput-border-r;
+
+    .ebButton{
+        position: absolute;
+        left: 3px;
+        top: 3px;
+    }
+
+    .fileName{
+        position: absolute;
+        left: 80px;
+        top: 3px;
+        right: 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 24px;
+    }
+
+    input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .05;
+    }
+}
+
+
+// layout
+
+
 .fieldSection{
 }
 
@@ -182,16 +231,31 @@ $ebInput-border-r: 4px;
     + .fieldRow{
 
         > *{
-            padding-top: 16px;
+            margin-top: 16px;
+        }
+
+        > .label::after{
+            top: -16px;
         }
     }
 
     .label{
+        position: relative;
         flex: 0 0 144px + 16px;
         padding-right: 16px;
+        line-height: 32px;
         text-align: right;
         font-weight: bold;
-        border-right: 1px solid #ccc;
+
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border-right: 1px solid #ccc;
+        }
     }
 
     .field{
@@ -199,6 +263,13 @@ $ebInput-border-r: 4px;
 
         span.note{
             margin-left: 16px;
+            color: #999;
+        }
+
+        div.note{
+            margin: 8px;
+            font-size: 14px;
+            line-height: 24px;
             color: #999;
         }
 
@@ -228,7 +299,7 @@ $ebInput-border-r: 4px;
                 content: '';
                 position: absolute;
                 right: 8px;
-                bottom: 20px;
+                top: 4px;
                 width: 6px;
                 height: 6px;
                 border-radius: 100%;
@@ -238,12 +309,35 @@ $ebInput-border-r: 4px;
     }
 
     &.-buttons{
-        margin-left: 144px + 16px + 40px + 16px;
+        margin-left: 144px + 16px + 40px;
+        padding: 16px 0;
+        padding-left: 16px;
         width: 640px;
         display: block;
         text-align: right;
-        padding-top: 16px;
         border-top: 1px solid #ccc;
+    }
+
+    &.-text{
+        margin-left: 144px + 16px + 40px;
+        padding: 16px 0;
+        padding-left: 16px;
+        width: 640px;
+        display: block;
+        text-align: left;
+        border-top: 1px solid #ccc;
+
+        ul.note{
+            margin: 8px;
+            font-size: 14px;
+            line-height: 24px;
+            color: #333;
+
+            li{
+                list-style: circle;
+                list-style-position: outside;
+            }
+        }
     }
 }
 
