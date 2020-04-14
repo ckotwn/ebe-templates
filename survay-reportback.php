@@ -203,6 +203,7 @@
 
                         // 測試用新增資料
                         wg.addRow({
+                            checked   : true,
                             id        : 1234,
                             ref_no    : 'AAA001',
                             name      : '芳苑海堤1',
@@ -214,6 +215,7 @@
                         });
 
                         wg.addRow({
+                            checked   : false,
                             id        : 5678,
                             ref_no    : 'AAA002',
                             name      : '芳苑海堤2',
@@ -341,7 +343,6 @@
                         });
 
                         // 移除 (如果沒設定，就直接 UI 移除)
-                        // 設定的話就可以接去跑 ajax
                         wg.setRemoveItemHandler(function( entourageId ){
 
                             console.log( 'remove action' );

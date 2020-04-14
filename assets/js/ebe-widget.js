@@ -545,6 +545,10 @@
 
             $row.append( $chk );
 
+            if( row.checked != undefined && row.checked == true ){
+                $chk.find('input[type="checkbox"]').prop('checked', true);
+            }
+
             for( var i in cfg.cols ){
                 var colCfg = cfg.cols[ i ];
                 var ref    = colCfg.ref;
