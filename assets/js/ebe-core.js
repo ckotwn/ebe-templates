@@ -1,5 +1,6 @@
 ;(function(){
     window.Ebe = {};
+    window.Ebe.Page = {};
 
 
     window.Ebe.Utility = (function(){

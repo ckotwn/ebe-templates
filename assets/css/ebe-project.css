@@ -1,4 +1,16 @@
 @charset "UTF-8";
+.fal-init, #pProjectDetailPane .group .titlebar::before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: inherit;
+}
+
 #ProjectHomeContentPane {
   position: fixed;
   z-index: 0;
@@ -24,19 +36,20 @@
   height: 100%;
 }
 
-#pProjectListPane .projectItemList {
-  padding: 24px;
+#pProjectListPane .projectItemListPane {
+  padding: 0 24px;
 }
 
 #pProjectListPane .projectItem {
+  margin: 24px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: #333;
   background: #fff;
-  border-left: 4px solid #fff;
-  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid #CCC;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 #pProjectListPane .projectItem .col1 {
@@ -47,17 +60,47 @@
 }
 
 #pProjectListPane .projectItem .col2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   padding: 16px;
   padding-left: 15px;
-  border-left: 1px solid #CCC;
+  border-left: 1px solid #e8e8e8;
 }
 
 #pProjectListPane .projectItem .col2 > * + * {
   margin-top: 8px;
 }
 
-#pProjectListPane .projectItem .openDetail {
-  border-left: 1px solid #CCC;
+#pProjectListPane .projectItem .openDetial {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48px;
+          flex: 0 0 48px;
+  border-left: 1px solid #e8e8e8;
+  cursor: pointer;
+}
+
+#pProjectListPane .projectItem .openDetial .icon {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  margin-top: -28px;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+}
+
+#pProjectListPane .projectItem .openDetial .label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
 }
 
 #pProjectListPane .projectItem .status {
@@ -108,31 +151,64 @@
   color: #999;
 }
 
-#pProjectListPane .projectItem[data-status="進行中"] {
+#pProjectListPane .projectItem[eb-status="進行中"] {
   border-left-color: #62DE00;
 }
 
-#pProjectListPane .projectItem[data-status="進行中"] .statusText {
+#pProjectListPane .projectItem[eb-status="進行中"] .statusText {
   background: #62DE00;
   color: #000;
 }
 
-#pProjectListPane .projectItem[data-status="已完成"] {
+#pProjectListPane .projectItem[eb-status="已完成"] {
   border-left-color: #63C1FF;
 }
 
-#pProjectListPane .projectItem[data-status="已完成"] .statusText {
+#pProjectListPane .projectItem[eb-status="已完成"] .statusText {
   background: #62DE00;
   color: #fff;
 }
 
-#pProjectListPane .projectItem[data-status="取消"] {
+#pProjectListPane .projectItem[eb-status="取消"] {
   border-left-color: #CCCCCC;
 }
 
-#pProjectListPane .projectItem[data-status="取消"] .statusText {
+#pProjectListPane .projectItem[eb-status="取消"] .statusText {
   background: #CCCCCC;
   color: #fff;
+}
+
+#pProjectListPane .messagePane {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#pProjectListPane .messagePane .messageBody {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #999;
+}
+
+#pProjectListPane .messagePane .messageBody .icon {
+  font-size: 40px;
+  line-height: 64px;
+}
+
+#pProjectListPane .floatButtons {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
 }
 
 #pProjectDetailPane {
@@ -145,6 +221,133 @@
   border-left: 1px solid #e8e8e8;
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+#pProjectDetailPane .projectDetailContentPane {
+  padding: 24px;
+}
+
+#pProjectDetailPane .projectDetailContentPane > .group {
+  margin: 16px 0;
+}
+
+#pProjectDetailPane .infoCard .col1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+#pProjectDetailPane .infoCard .col2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#pProjectDetailPane .infoCard .statusText {
+  padding: 0 8px;
+  background-color: #ccc;
+}
+
+#pProjectDetailPane .infoCard .projectNo {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+#pProjectDetailPane .infoCard .name {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  padding: 4px 0;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+#pProjectDetailPane .infoCard .fn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 144px;
+          flex: 0 0 144px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#pProjectDetailPane .infoCard .fn > * {
+  margin-left: 8px;
+}
+
+#pProjectDetailPane .group .titlebar {
+  position: relative;
+  padding-left: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  background-color: #e8e8e8;
+  border-radius: 1000px;
+}
+
+#pProjectDetailPane .group .titlebar::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  content: "\f13a";
+}
+
+#pProjectDetailPane .group .itemList {
+  padding: 16px 0;
+}
+
+#pProjectDetailPane .group .listTable {
+  width: 100%;
+}
+
+#pProjectDetailPane .group .listTable thead {
+  font-size: 14px;
+  line-height: 24px;
+  border-bottom: 1px solid #999;
+}
+
+#pProjectDetailPane .group .listTable thead th {
+  font-weight: bold;
+  text-align: left;
+  color: #0D7BC4;
+}
+
+#pProjectDetailPane .group .listTable tbody {
+  border-bottom: 1px solid #999;
+}
+
+#pProjectDetailPane .messagePane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#pProjectDetailPane .messagePane .messageBody {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #999;
+}
+
+#pProjectDetailPane .messagePane .messageBody .icon {
+  font-size: 40px;
+  line-height: 64px;
 }
 
 #pSurvayDetailPane {

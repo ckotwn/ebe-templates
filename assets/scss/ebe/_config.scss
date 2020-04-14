@@ -26,5 +26,22 @@ $s-headPaneExpH: 88px;
 
 // Effect
 
-$fx-paneShadow   : 0 0 12px rgba( 0,0,0, .1);
-$fx-frameUIShadow: 0 0 16px rgba( 0,0,0, .2);
+$fx-paneShadow       : 0 0 12px rgba( 0,0,0, .1);
+$fx-frameUIShadow    : 0 0 16px rgba( 0,0,0, .2);
+$fx-itemShadow       : 0 0  8px rgba( 0,0,0, .1);
+$fx-itemActiveShadow : 0 0 16px rgba( 0,0,0, .2);
+
+
+// fa
+
+.fal-init{
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: inherit;
+}

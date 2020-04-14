@@ -5,6 +5,9 @@
     window.Ebe.Widget = {};
 
 
+    $.datetimepicker.setLocale('zh-TW');
+
+
     window.Ebe.EbControl.FileUpload = (function(){
 
         var STRING = {
@@ -22,7 +25,7 @@
                 var $fileName = $(this).find('.fileName');
                 var $input    = $(this).find('input[type="file"]');
 
-                $ctrl.attr('eb-inited', 1);
+                $ctrl.attr('data-inited', 1);
 
                 $input.on('change', function(e){
                     var files = e.currentTarget.files;
@@ -40,6 +43,22 @@
         }
     })();
 
+
+    window.Ebe.EbControl.DateTimePicker = (function(){
+
+        $(window).on('load', function(){
+
+            $('input.-type-date').each(function(){
+                var $input = $(this);
+
+                $input.datetimepicker({
+                    timepicker : false,
+                    format     : 'Y-m-d'
+                });
+            });
+        });
+
+    })();
 
 
     // 作業地點設定
@@ -770,7 +789,7 @@
                 + '<td class="-f-longitude"></td>'
                 + '<td class="-f-datum"></td>'
                 + '<td class="-f-device"></td>'
-                + '<td class="fn"><div class="ebButton -n -color-warn -action-removeItem fal fa-times"></div></td>'
+                + '<td class="fn"><div class="ebButton -n -color-warn -action-rowemoveItem fal fa-times"></div></td>'
                 + '</tr>' );
 
             $row.attr('data-id', row.id )
@@ -789,7 +808,7 @@
             $row.find('.-f-longitude').text( row.longitude );
             $row.find('.-f-datum')    .text( row.datum );
             $row.find('.-f-device')   .text( row.device );
-            $row.find('.-action-removeItem').on('click', removeItemHandler);
+            $row.find('.-action-rowRemoveItem').on('click', rowRemoveItemHandler);
 
             $wg.find('tbody').append( $row );
         }
@@ -869,14 +888,14 @@
         }
 
 
-        function removeItemHandler( e ){
+        function rowRemoveItemHandler( e ){
             var $wg = $(e.currentTarget).parents('.widgetBox');
             var wg  = $wg.data( 'obj' );
 
             var $row  = $( e.currentTarget ).parents('tr');
             var rowId = $row.attr('data-id');
 
-            // 執行新增
+            // 執行
             if( typeof wg.addItemHandler == "function" ){
                 wg.showMessage('請稍後');
                 return wg.removeItemHandler( rowId );
@@ -953,14 +972,18 @@
             $wrapper.append( $wg );
 
             wgObj = {
-                $wg               : $wg,
-                setAddItemHandler : setAddItemHandler,
-                addRow            : addRow,
-                addRowList        : addRowList,
-                addItem           : addItem,
-                showMessage       : showMessage,
-                hideMessage       : hideMessage,
-                getList           : getList
+                $wg                  : $wg,
+                addItemHandler       : null,
+                removeItemHandler    : null,
+                setAddItemHandler    : setAddItemHandler,
+                setRemoveItemHandler : setRemoveItemHandler,
+                addRow               : addRow,
+                addRowList           : addRowList,
+                addItem              : addItem,
+                removeItem           : removeItem,
+                showMessage          : showMessage,
+                hideMessage          : hideMessage,
+                getList              : getList
             }
 
             $wg.data( 'obj',  wgObj );
@@ -980,6 +1003,11 @@
         }
 
 
+        function setRemoveItemHandler( fn ){
+            this.removeItemHandler = fn;
+        }
+
+
         function addItemClickHandler( e ){
             var $wg = $(e.currentTarget).parents('.widgetBox');
             var wg  = $wg.data( 'obj' );
@@ -993,9 +1021,17 @@
                 return false;
             }
 
+            var entourageData = {
+                name  : $wg.find('.addPane .-f-name').val(),
+                phone : $wg.find('.addPane .-f-phone').val(),
+                email : email,
+            };
+
             if( typeof wg.addItemHandler == "function" ){
                 wg.showMessage('請稍後');
-                return wg.addItemHandler( email );
+                return wg.addItemHandler( entourageData );
+            }else{
+                wg.addItem( entourageData );
             }
         }
 
@@ -1027,7 +1063,7 @@
                 + '<td class="-f-name"></td>'
                 + '<td class="-f-phone"></td>'
                 + '<td class="-f-email"></td>'
-                + '<td class="fn"><div class="ebButton -color-warn -n -action-removeItem fal fa-times"></div></td>'
+                + '<td class="fn"><div class="ebButton -color-warn -n -action-rowRemoveItem fal fa-times"></div></td>'
                 + '</tr>' );
 
             $row.attr('data-id',  row.id )
@@ -1036,9 +1072,19 @@
             $row.find('.-f-name') .text( row.name ) ;
             $row.find('.-f-phone').text( row.phone );
             $row.find('.-f-email').text( row.email );
-            $row.find('.-action-removeItem').on('click', removeItemHandler);
+            $row.find('.-action-rowRemoveItem').on('click', rowRemoveItemHandler);
 
             $wg.find('tbody').append( $row );
+        }
+
+
+        function removeItem( row_id ){
+            var $wg = this.$wg;
+
+            var $row = $wg.find('tr[data-id="'+ row_id +'"]');
+            $row.remove();
+
+            this.hideMessage();
         }
 
 
@@ -1064,9 +1110,18 @@
         }
 
 
-        function removeItemHandler( e ){
+        function rowRemoveItemHandler( e ){
+            var $wg = $(e.currentTarget).parents('.widgetBox');
+            var wg  = $wg.data( 'obj' );
             var $row = $( e.currentTarget ).parents('tr');
-            $row.remove();
+            var entourageData = $row.data('data-row');
+
+            if( typeof wg.removeItemHandler == "function" ){
+                wg.showMessage('請稍後');
+                return wg.removeItemHandler( entourageData.id, entourageData );
+            }else{
+                $row.remove();
+            }
         }
 
 

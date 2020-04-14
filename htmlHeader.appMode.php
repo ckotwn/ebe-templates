@@ -36,12 +36,12 @@
         <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/fa5/css/light.css' type='text/css' media='all' />
         <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/fa5/css/brands.css' type='text/css' media='all' />
         <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/fa5/css/regular.css' type='text/css' media='all' />
-        <script type='text/javascript' src='<?= SITE_URL; ?>/assets/dtp/jquery.datetimepicker.full.min.js?ver=<?= rand(); ?>'></script>
+        <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/dtp/jquery.datetimepicker.min.css' type='text/css' media='all' />
 
         <script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/jquery-3.4.1.min.js?ver=<?= rand(); ?>'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script type='text/javascript' src='<?= SITE_URL; ?>/assets/legacy/js/web/layout.js?ver=<?= rand(); ?>'></script>
-        <script type='text/javascript' src='<?= SITE_URL; ?>/assets/dtp/jquery.datetimepicker.full.min.js?ver=<?= rand(); ?>'></script>
+        <script type='text/javascript' src='<?= SITE_URL; ?>/assets/dtp/jquery.datetimepicker.full.min.js'></script>
 
         <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/reset.css' type='text/css' media='all' />
         <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/ebe-main.css?ver=<?= rand(); ?>' type='text/css' media='all' />

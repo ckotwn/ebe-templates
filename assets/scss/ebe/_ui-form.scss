@@ -5,7 +5,7 @@
 
 .ebButton{
     display: inline-block;
-    min-width: 72px;
+    min-width: 64px;
     padding: 0 8px;
     font-size: 14px;
     height: 32px;
@@ -35,6 +35,63 @@
     &.-narrow,
     &.-n{
         min-width: 32px;
+    }
+
+    &.-type-warn{
+        background-color: #ff9900;
+    }
+
+    &.-type-error{
+        background-color: #cc0000;
+    }
+}
+
+
+.ebFloatButton{
+    position: relative;
+    z-index: $z-popupMenu;
+    width: 48px;
+    height: 48px;
+    display: block;
+    font-size: 20px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    background: $c-main;
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(0,0,0, .1);
+    border-radius: 100%;
+
+    .bubbleLabel{
+        position: absolute;
+        padding: 8px 12px;
+        left: 50%;
+        bottom: 100%;
+        margin-bottom: 4px;
+        font-size: 15px;
+        line-height: 16px;
+        white-space: nowrap;
+        color: #fff;
+        background: #333;
+        opacity: 0;
+        box-shadow: 0 0 16px rgba(0,0,0, .1);
+        transform: translateX(-50%) scaleX(0);
+        transition:
+            transform .01s linear .5s,
+            opacity .25s ease-out,
+            margin .25s ease-out;
+    }
+
+    &:hover{
+        .bubbleLabel{
+            opacity: 1;
+            margin-bottom: 8px;
+            transform: translateX(-50%) scaleX(1);
+            transition:
+                transform .01s linear,
+                opacity .25s ease-out .01s,
+                margin .25s ease-out .01s;
+        }
     }
 }
 
@@ -140,6 +197,43 @@ $ebInput-border-r: 4px;
 .ebCheckbox{
     > input[type="checkbox"]{
         width: 16px;
+    }
+}
+
+
+.ebDatePicker{
+    position: relative;
+    width: 128px;
+    background: $ebInput-bg;
+    border: $ebInput-border;
+    border-radius: $ebInput-border-r;
+
+    &.-block{
+        width: 100%;
+    }
+
+    &::after{
+        @extend .fal-init;
+        content: "\f073";  // fa-calendar-alt
+
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    input{
+        margin: 0;
+        padding: 0 3px;
+        width: 100%;
+        height: $ebInput-h;
+        font-size: 13px;
+        border: 0;
+        background-color: transparent;
     }
 }
 

@@ -313,10 +313,9 @@
 
                         // 查詢 (這裡導向 ajax )
                         // 會自動帶入資料
-                        wg.setAddItemHandler(function( entourageList ){
+                        wg.setAddItemHandler(function( entourageData ){
 
-                            /* entourageList 資料格式
-                                {
+                            /*  entourageData = {
                                     name
                                     phone
                                     email
@@ -341,11 +340,26 @@
                             });
                         });
 
+                        // 移除 (如果沒設定，就直接 UI 移除)
+                        // 設定的話就可以接去跑 ajax
+                        wg.setRemoveItemHandler(function( entourageId ){
+
+                            console.log( 'remove action' );
+                            // 這裡請進行其他 ajax 查詢
+                            // ...
+
+                            // 成功後請如以下呼叫：
+                            wg.removeItem( entourageId );
+                        });
+
                         // 取得選取的欄位請執行以下：
                         // wg.getList();
 
+                        // 移除隨行人員
+
                         // 測試用新增資料
                         wg.addItem({
+                            id        : 22,
                             name      : '王大哥',
                             phone     : '0912345678',
                             email     : 'emipaggy@gmail.com',

@@ -31,17 +31,18 @@
     width: 50%;
     height: 100%;
 
-    .projectItemList{
-        padding: 24px;
+    .projectItemListPane{
+        padding: 0 24px;
 
     }
 
     .projectItem{
+        margin: 24px 0;
         display: flex;
         color: #333;
         background: #fff;
-        border-left: 4px solid #fff;
-        box-shadow: $fx-frameUIShadow;
+        border-left: 4px solid #CCC;
+        box-shadow: $fx-itemShadow;
 
         // cols
 
@@ -51,17 +52,43 @@
         }
 
         .col2{
+            flex: 1 1 auto;
             padding: 16px;
             padding-left: 15px;
-            border-left: 1px solid #CCC;
+            border-left: 1px solid #e8e8e8;
 
             > * + *{
                 margin-top: 8px;
             }
         }
 
-        .openDetail{
-            border-left: 1px solid #CCC;
+        .openDetial{
+            position: relative;
+            flex: 0 0 48px;
+            border-left: 1px solid #e8e8e8;
+            cursor: pointer;
+
+            .icon{
+                position: absolute;
+                left: 0;
+                width: 100%;
+                top: 50%;
+                margin-top: -28px;
+                font-size: 20px;
+                line-height: 32px;;
+                text-align: center;
+            }
+
+            .label{
+                position: absolute;
+                left: 0;
+                width: 100%;
+                top: 50%;
+                margin-top: 8px;
+                font-size: 14px;
+                line-height: 16px;
+                text-align: center;
+            }
         }
 
         // el
@@ -108,26 +135,52 @@
             color: #999;
         }
 
-        .period    .value,
-        .type      .value,
-        .windfield .value{}
-
-        .openFolder{}
-
-        &[data-status="進行中"]{
+        &[eb-status="進行中"]{
             border-left-color: $c-status-onprogress;
             .statusText{ background: $c-status-onprogress; color: #000; }
         }
 
-        &[data-status="已完成"]{
+        &[eb-status="已完成"]{
             border-left-color: $c-status-complete;
             .statusText{ background: $c-status-onprogress; color: #fff; }
         }
 
-        &[data-status="取消"]{
+        &[eb-status="取消"]{
             border-left-color: $c-status-cancel;
             .statusText{ background: $c-status-cancel; color: #fff; }
         }
+    }
+
+    .messagePane{
+        position: absolute;
+        display: none;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        .messageBody{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            line-height: 32px;
+            text-align: center;
+            color: #999;
+
+            .icon{
+                font-size: 40px;
+                line-height: 64px;
+            }
+        }
+    }
+
+    .floatButtons{
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
     }
 }
 
@@ -141,6 +194,130 @@
     background: #fff;
     border-left: 1px solid #e8e8e8;
     box-shadow: $fx-paneShadow;
+
+    .projectDetailContentPane{
+        padding: 24px;
+
+        > .group{
+            margin: 16px 0;
+        }
+    }
+
+    .infoCard{
+
+        .col1{
+            display: flex;
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        .col2{
+            display: flex;
+        }
+
+        .statusText{
+            padding: 0 8px;
+            background-color: #ccc;
+        }
+
+        .projectNo{
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
+        .name{
+            flex: 1 0 auto;
+            padding: 4px 0;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+
+        .fn{
+            flex: 0 0 144px;
+            display: flex;
+
+            > *{
+                margin-left: 8px;
+            }
+        }
+
+    }
+
+    .group{
+
+        .titlebar{
+            position: relative;
+            padding-left: 24px;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 24px;
+            background-color: #e8e8e8;
+            border-radius: 1000px;
+
+            &::before{
+                @extend .fal-init;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 24px;
+                height: 24px;
+                font-weight: bold;
+                line-height: 24px;
+                text-align: center;
+                content: "\f13a";
+            }
+        }
+
+        .itemList{
+            padding: 16px 0;
+        }
+
+        .listTable{
+            width: 100%;
+
+            thead{
+                font-size: 14px;
+                line-height: 24px;
+                border-bottom: 1px solid #999;
+
+                th{
+                    font-weight: bold;
+                    text-align: left;
+                    color: $c-main;
+                }
+            }
+
+            tbody{
+                border-bottom: 1px solid #999;
+            }
+        }
+    }
+
+    .messagePane{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        .messageBody{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            line-height: 32px;
+            text-align: center;
+            color: #999;
+
+            .icon{
+                font-size: 40px;
+                line-height: 64px;
+            }
+        }
+    }
 }
 
 
