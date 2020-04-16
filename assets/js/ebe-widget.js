@@ -660,8 +660,6 @@
                     $input = $('<select class="ebSelect"></select>');
                 }
 
-                console.log( fieldConfig );
-
                 $input.css({ width: fieldConfig.controlWidth + 'px' });
                 $input.addClass('-f-' + fieldConfig.ref );
                 $inputField.find('.wgField').append( $input );
@@ -793,7 +791,7 @@
                 + '<td class="-f-longitude"></td>'
                 + '<td class="-f-datum"></td>'
                 + '<td class="-f-device"></td>'
-                + '<td class="fn"><div class="ebButton -n -color-warn -action-rowemoveItem fal fa-times"></div></td>'
+                + '<td class="fn"><div class="ebButton -n -color-warn -action-rowRemoveItem fal fa-times"></div></td>'
                 + '</tr>' );
 
             $row.attr('data-id', row.id )
@@ -900,7 +898,7 @@
             var rowId = $row.attr('data-id');
 
             // 執行
-            if( typeof wg.addItemHandler == "function" ){
+            if( typeof wg.removeItemHandler == "function" ){
                 wg.showMessage('請稍後');
                 return wg.removeItemHandler( rowId );
             }
