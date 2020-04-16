@@ -20,7 +20,7 @@
         }
 
 
-        function getProjectDetail( project_id, handler ){
+        function getDetail( project_id, handler ){
             X.getDetail( project_id, handler );
         }
 
@@ -47,7 +47,7 @@
             setGetListHandler   : setGetListHandler,
             setGetDetailHandler : setGetDetailHandler,
             queryProject        : queryProject,
-            getProjectDetail    : getProjectDetail
+            getDetail           : getDetail
         };
     })();
 
@@ -61,9 +61,14 @@
         }
 
 
+        function getDetail( project_id, handler ){
+            X.getDetail( project_id, handler );
+        }
+
+
         var X = (function(){
 
-            function getDetail( survay_id ){
+            function getDetail( survay_id, handler ){
                 _getDetailHandler( survay_id, handler );
             }
 
@@ -75,6 +80,7 @@
 
         return {
             X : X,
+            getDetail : getDetail,
             setGetDetailHandler : setGetDetailHandler,
         }
     })();
@@ -145,10 +151,10 @@
         function viewProjectDetail( project_id ){
 
             currentProjectId = project_id;
-            $('.projectItem .-project-' +  project_id ).addClass('-active')
+            $('.-project-' +  project_id ).addClass('-active')
                     .siblings().removeClass('-active');
 
-            Ebe.Project.getProjectDetail( project_id, {
+            Ebe.Project.getDetail( project_id, {
                 success : Pane.ProjectDetail.setContent,
                 failed  : Pane.ProjectDetail.showMessage,
             });
@@ -156,7 +162,17 @@
 
 
         function viewSurvayDetail( survay_id ){
-            console.log( survay_id );
+
+            $('#projectPaneGroup').addClass('-mode-viewSurvay');
+
+            $('.-survay-' +  survay_id ).addClass('-active')
+                    .siblings().removeClass('-active');
+
+            Ebe.Survay.getDetail( survay_id, {
+                success : Pane.SurvayDetail.setContent,
+                failed  : Pane.SurvayDetail.showMessage,
+            });
+
         }
 
 
@@ -409,7 +425,8 @@
                 $w.find('.-f-note')          .text( projectData.note );
                 $w.find('.-f-storageLink')   .attr( 'href', projectData.storageLink );
 
-                $w.find('.-f-editLink')   .attr( 'href', projectData.editLink );
+                if( projectData.editLink ){ $w.find('.-f-editLink').attr( 'href', projectData.editLink ).show(); }
+                else{ $w.find('.-f-editLink').attr( 'href', '#' ).hide(); }
 
                 if( projectData.deleteLink ){ $w.find('.-f-deleteLink').attr( 'href', projectData.deleteLink ).show(); }
                 else{ $w.find('.-f-deleteLink').attr( 'href', '#' ).hide(); }
@@ -434,7 +451,6 @@
                     $w.find('.-f-user_list tbody').append($r);
                 }
 
-
                 // 調查規劃清單
                 for( var i in projectData.survay_list ){
                     var s = projectData.survay_list[i];
@@ -451,6 +467,7 @@
                                 + '<div class="-link -action-viewSurvayDetail">詳情 <i class="fal fa-arrow-right"></i></div>'
                             + '</td>'
                         + '</tr>');
+                    $r.addClass('-survay-' + s.id);
                     $r.attr('data-id', s.id);
                     $r.find('.-action-viewSurvayDetail').on('click', function(){ viewSurvayDetail( $(this).parents('tr').attr('data-id') ) })
 
@@ -487,7 +504,7 @@
             }
 
             return {
-                setContent : setContent,
+                setContent   : setContent,
                 showMessage  : showMessage,
                 hideMessage  : hideMessage
             }
@@ -495,6 +512,96 @@
 
 
         Pane.SurvayDetail = (function(){
+
+            $(window).on('load', function(){
+                $('#pSurvayDetailPane .-action-closeSurvayDetail').on('click', function(){
+                    $('#projectPaneGroup').removeClass('-mode-viewSurvay');
+                });
+            })
+
+            function setContent( survayData ){
+
+                var $w = $('#pSurvayDetailPane .survayDetailContentPane');
+
+                // 計畫屬性
+                $w.attr( 'data-status', survayData.status );
+                $w.find('.-f-name')          .text( survayData.name );
+                $w.find('.-f-survay_id')     .text( survayData.survay_id );
+                $w.find('.-f-status_text')   .text( survayData.status_text );
+                $w.find('.-f-date')          .text( survayData.date );
+                $w.find('.-f-total_hour')    .text( survayData.total_hour );
+                $w.find('.-f-contact_name')  .text( survayData.contact_name );
+                $w.find('.-f-contact_phone') .text( survayData.contact_phone );
+                $w.find('.-f-note')          .text( survayData.note );
+                $w.find('.-f-boat_name')     .text( survayData.boat_name );
+
+                if( survayData.editLink ){ $w.find('.-f-editLink').attr( 'href', survayData.editLink ).show(); }
+                else{ $w.find('.-f-editLink').attr( 'href', '#' ).hide(); }
+
+                if( survayData.deleteLink ){ $w.find('.-f-deleteLink').attr( 'href', survayData.deleteLink ).show(); }
+                else{ $w.find('.-f-deleteLink').attr( 'href', '#' ).hide(); }
+
+                $w.find('.-f-admin_list tbody') .empty();
+                $w.find('.-f-user_list tbody')  .empty();
+                $w.find('.-f-survay_list tbody').empty();
+
+                // 檔案
+                var wg1 = Ebe.Widget.FolderListBox.init('#swg1');
+                wg1.addFolderTree(survayData.folder_list);
+
+                // 計畫成員清單
+                for( var i in survayData.user_list ){
+                    var u = survayData.user_list[i];
+                    var $r = $('<tr><td>'+ u.name +'</td><td>'+ u.email +'</td><td width=48></td></tr>');
+                    $r.attr('data-id', u.id);
+                    $w.find('.-f-user_list tbody').append($r);
+                }
+
+                // 計畫成員清單
+                for( var i in survayData.entourage_list ){
+                    var u = survayData.entourage_list[i];
+                    var $r = $('<tr><td>'+ u.name +'</td><td>'+ u.phone +'</td><td>'+ u.email +'</td><td width=48></td></tr>');
+                    $w.find('.-f-entourage_list tbody').append($r);
+                }
+
+                // 測站
+                var wg4 = Ebe.Widget.ListBox.init('#swg4', Ebe.Widget.Station.TABLE_CONFIG[ survayData.station_list_type ]);
+                wg4.addRowArray( survayData.station_list );
+
+                hideMessage();
+                $w.show();
+            }
+
+            function showMessage( mesage, icon ){
+                if( mesage == undefined ) mesage = '發生錯誤';
+
+                var $content = $('#pProjectDetailPane .projectDetailContentPane');
+                var $msg     = $('#pProjectDetailPane .messagePane');
+                var $msgText = $msg.find('.text');
+                var $msgIcon = $msg.find('.icon');
+
+                $content.hide();
+
+                $msg.show();
+                $msgText.html( mesage );$msgIcon.show()
+                $msgIcon.removeClass(function(i,c){return (c.match (/(^|\s)fa-\S+/g) || []).join(' ')});
+
+                if( icon != undefined ){
+                    $msgIcon.show().addClass('fa-' + icon);
+                }else{
+                    $msgIcon.hide();
+                }
+            }
+
+            function hideMessage(){
+                $('#pProjectDetailPane .messagePane').hide();
+            }
+
+            return {
+                setContent   : setContent,
+                showMessage  : showMessage,
+                hideMessage  : hideMessage
+            }
         })();
 
 

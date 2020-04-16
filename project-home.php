@@ -138,11 +138,11 @@
                 <div class="projectDetailContentPane">
                     <div class="infoCard">
                         <div class="col1">
-                            <div class="statusText -f-status_text">進行中</div>
-                            <div class="projectNo -f-project_id">AAA0001</div>
+                            <div class="statusText -f-status_text"></div>
+                            <div class="projectNo -f-project_id"></div>
                         </div>
                         <div class="col2">
-                            <div class="name -f-name">離岸風場鳥類生態調查監測標準作業 建立計畫</div>
+                            <div class="name -f-name"></div>
                             <div class="fn">
                                 <a href="#" target="_blank" class="ebButton -f-editLink -action-goEditProject">編輯</a>
                                 <a href="#" target="_blank" class="ebButton -f-deleteLink -type-error -action-goDeleteProject">刪除</a>
@@ -150,66 +150,62 @@
                         </div>
                     </div>
 
-                    <div class="group -g-info" eb-collapse="expend">
-                        <div class="titlebar">計畫屬性</div>
-                        <div class="itemList">
-                            <div class="itemRow">
-                                <div class="label">狀態</div>
-                                <div class="value"><div class="ebDisplayText -s -f-status_text">進行中</div></div>
-                            </div>
-                            <div class="itemRow">
-                                <div class="label">期間</div>
-                                <div class="value"><div class="ebDisplayText -s"><span class="-f-start_date"></span> ~ <span class="-f-end_date"></span></div></div>
-                            </div>
-                            <div class="itemRow">
-                                <div class="label">類群</div>
-                                <div class="value"><div class="ebDisplayText -s -f-typeTextList"></div></div>
-                            </div>
-                            <div class="itemRow">
-                                <div class="label">風場</div>
-                                <div class="value"><div class="ebDisplayText -s -f-windfield_name"></div></div>
-                            </div>
-                            <div class="itemRow">
-                                <div class="label">描述</div>
-                                <div class="value"><div class="ebDisplayText -s -f-note"></div></div>
-                            </div>
-                            <div class="itemRow">
-                                <div class="label">檔案管理</div>
-                                <div class="value"><a class="ebButton -s -f-storageLink" target="_blank" href="#"><i class="fab fa-google-drive"></i>開啟計畫檔案資料夾<i class="fa fal fa-external-link tail"></i></a></div>
+                    <div class="scrollContent">
+                        <div class="group -g-info" data-collapse="expend">
+                            <div class="titlebar">計畫屬性</div>
+                            <div class="itemList">
+                                <div class="itemRow">
+                                    <div class="label">狀態</div>
+                                    <div class="value"><div class="ebDisplayText -s -f-status_text">進行中</div></div>
+                                </div>
+                                <div class="itemRow">
+                                    <div class="label">期間</div>
+                                    <div class="value"><div class="ebDisplayText -s"><span class="-f-start_date"></span> ~ <span class="-f-end_date"></span></div></div>
+                                </div>
+                                <div class="itemRow">
+                                    <div class="label">類群</div>
+                                    <div class="value"><div class="ebDisplayText -s -f-typeTextList"></div></div>
+                                </div>
+                                <div class="itemRow">
+                                    <div class="label">風場</div>
+                                    <div class="value"><div class="ebDisplayText -s -f-windfield_name"></div></div>
+                                </div>
+                                <div class="itemRow">
+                                    <div class="label">描述</div>
+                                    <div class="value"><div class="ebDisplayText -s -f-note"></div></div>
+                                </div>
+                                <div class="itemRow">
+                                    <div class="label">檔案管理</div>
+                                    <div class="value"><a class="ebButton -s -f-storageLink" target="_blank" href="#"><i class="fab fa-google-drive"></i>開啟計畫檔案資料夾<i class="fa fal fa-external-link tail"></i></a></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="group -g-adminList" eb-collapse="expend">
-                        <div class="titlebar">計畫管理員</div>
-                        <div class="itemList">
-                            <table class="listTable -f-admin_list">
-                                <thead><tr><th>名字</th><th>電子郵件</th><th></th></tr></thead>
-                                <tbody></tbody>
-                            </table>
+                        <div class="group -g-adminList" data-collapse="expend">
+                            <div class="titlebar">計畫管理員</div>
+                            <div class="itemList">
+                                <table class="listTable -f-admin_list">
+                                    <thead><tr><th>名字</th><th>電子郵件</th><th></th></tr></thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                    <div class="group -g-userList" eb-collapse="expend">
-                        <div class="titlebar">計畫成員</div>
-                        <div class="itemList">
-                            <table class="listTable -f-user_list">
-                                <thead><tr><th>名字</th><th>電子郵件</th><th></th></tr></thead>
-                                <tbody></tbody>
-                            </table>
+                        <div class="group -g-userList" data-collapse="expend">
+                            <div class="titlebar">計畫成員</div>
+                            <div class="itemList">
+                                <table class="listTable -f-user_list">
+                                    <thead><tr><th>名字</th><th>電子郵件</th><th></th></tr></thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                    <div class="group -g-survayList" eb-collapse="expend">
-                        <div class="titlebar">調查規劃</div>
-                        <div class="itemList">
-                            <table class="listTable -f-survay_list">
-                                <thead><tr>
-                                    <th>日期</th>
-                                    <th>類型</th>
-                                    <th>狀態</th>
-                                    <th>檔案管理</th>
-                                    <th></th>
-                                </tr></thead>
-                                <tbody></tbody>
-                            </table>
+                        <div class="group -g-survayList" data-collapse="expend">
+                            <div class="titlebar">測站</div>
+                            <div class="itemList">
+                                <table class="listTable -f-survay_list">
+                                    <thead></thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -225,6 +221,86 @@
         </div>
 
         <div id="pSurvayDetailPane">
+
+            <div class="survayDetailContentPane">
+
+                <div class="infoCard">
+                    <div class="col1">
+                        <div class="statusText -f-status_text">進行中</div>
+                        <div class="projectNo -f-survay_id">AAA0001</div>
+                    </div>
+                    <div class="col2">
+                        <div class="name -f-name">離岸風場鳥類生態調查監測標準作業 建立計畫</div>
+                        <div class="fn">
+                            <a href="#" target="_blank" class="ebButton -f-editLink -action-goEditSurvay">編輯</a>
+                            <a href="#" target="_blank" class="ebButton -f-deleteLink -type-error -action-goDeleteSurvay">刪除</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scrollContent">
+                    <div class="group -g-info" data-collapse="expend">
+                        <div class="titlebar">計畫屬性</div>
+                        <div class="itemList">
+                            <div class="itemRow">
+                                <div class="label">狀態</div>
+                                <div class="value"><div class="ebDisplayText -s -f-status_text">進行中</div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">日期</div>
+                                <div class="value"><div class="ebDisplayText -s -f-date"></div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">預計使用時間</div>
+                                <div class="value"><div class="ebDisplayText -s"><span class=" -f-total_hour"></span> 小時</div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">聯絡窗口</div>
+                                <div class="value"><div class="ebDisplayText -s"><span class="-f-contact_name"></span> (<span class="-f-contact_phone"></span>)</div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">描述</div>
+                                <div class="value"><div class="ebDisplayText -s -f-note"></div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">船隻</div>
+                                <div class="value"><div class="ebDisplayText -s -f-boat_name"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group -g-folder_list" data-collapse="expend">
+                        <div class="titlebar">檔案管理</div>
+                        <div id="swg1" class="widgetBoxWrapper">
+                        </div>
+                    </div>
+                    <div class="group -g-userList" data-collapse="expend">
+                        <div class="titlebar">計畫成員</div>
+                        <div class="itemList">
+                            <table class="listTable -f-user_list">
+                                <thead><tr><th>名字</th><th>電子郵件</th><th></th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="group -g-entourageList" data-collapse="expend">
+                        <div class="titlebar">隨行人員</div>
+                        <div class="itemList">
+                            <table class="listTable -f-entourage_list">
+                                <thead><tr><th>名字</th><th>電話</th><th>電子郵件</th><th></th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="group -g-stationList" data-collapse="expend">
+                        <div class="titlebar">調查規劃</div>
+                        <div id="swg4" class="widgetBoxWrapper">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="closeButton fal fa-times -action-closeSurvayDetail"></div>
+
         </div>
 
     </div>
@@ -306,17 +382,23 @@
     });
 
     // 執行查詢
-    // Ebe.Page.ProjectHome.query({
-    //     type       :
-    //     windfield  :
-    //     keyword    :
-    //     status     :
-    //     start_date :
-    //     end_date   :
-    //     page       :
-    //     perPage    : // 預設為 50
-    // });
+    /*  Ebe.Page.ProjectHome.query({
+            type       :
+            windfield  :
+            keyword    :
+            status     :
+            start_date :
+            end_date   :
+            page       :
+            perPage    : // 預設為 50
+        });
+    */
 
+    Ebe.Survay.setGetDetailHandler(function( survay_id, handlers ){
+
+        handlers.success( SAMPLE_SURVAY_DATA );
+        // handlers.failed( '連線發生錯誤', 'exclamation-triangle' );
+    });
 
     // 示範資料
     var SAMPLE_PROJECT_LIST = [
@@ -360,8 +442,8 @@
         windfield_name  : "海洋竹南風力發電場",
         storageLink     : "#",
         note            : "",
-        editLink        : "",  // 編輯的連結
-        deleteLink      : null,  // 刪除的連結
+        editLink        : "",    // 編輯的連結  不提供參數或是null就不顯示
+        deleteLink      : null,  // 刪除的連結  不提供參數或是null就不顯示
 
         // 管理員
         admin_list : [
@@ -418,7 +500,126 @@
         ]
     }; // SAMPLE_PROJECT_DATA
 
-    var SAMPLE_SURVAY_DATA = {};
+    var SAMPLE_SURVAY_DATA = {
+        id            : 1,
+        survay_id     : "S123123",
+        status        : "進行中",
+        status_text   : "進行中",
+        name          : "儀器架設",
+        date          : "2020-04-15",
+        total_hour    : "4",
+        contact_name  : "王大哥",
+        contact_phone : "0912345678",
+        note          : "",
+        boat_number   : "B0001",
+        boat_name     : "千陽號",
+        editLink      : "#",  // 不提供參數或是null就不顯示
+        deleteLink    : "#",  // 不提供參數或是null就不顯示
+
+        folder_list : {
+            type          : 'google-drive',
+            name          : '2020-04-15  調查作業',
+            showLink      : true,
+            link          : '#',
+            subFolderList : [
+                {
+                    name          : '圖籍資料 geospatial-data',
+                    showLink      : false,
+                    link          : '#',
+                    subFolderList : [
+                        {
+                            name     : '觀測 observations',
+                            showLink : true,
+                            link     : '#'
+                        },
+                        {
+                            name     : '雷達追蹤 radar-tracing',
+                            showLink : true,
+                            link     : '#'
+                        },
+                        {
+                            name     : '測站 stations',
+                            showLink : true,
+                            link     : '#'
+                        },
+                        {
+                            name     : '航跡 tracks',
+                            showLink : true,
+                            link     : '#'
+                        }
+                    ]
+                },{
+                    name          : '文件 documents',
+                    showLink      : false,
+                    link          : '#',
+                    subFolderList : [
+                        {
+                            name     : '資料表 data-sheets',
+                            showLink : true,
+                            link     : '#'
+                        }
+                    ]
+                }
+            ]
+        },
+
+        user_list : [
+            {
+                id        : 1234,
+                name      : 'paggyemi',
+                email     : 'emipaggy@gmail.com',
+            },{
+                id        : 1234,
+                name      : 'HungChung-Hang',
+                email     : 'chrancor@gmail.com',
+            },{
+                id        : 1234,
+                name      : 'ChiangDec',
+                email     : 'dec@twsg.org',
+            },{
+                id        : 1234,
+                name      : 'LinC. S.',
+                email     : 'toby@twsg.org',
+            }
+        ],
+
+        entourage_list : [
+            {
+                name      : '王大哥1',
+                phone     : '0912345678',
+                email     : 'emipaggy@gmail.com',
+            },{
+                name      : '王大哥2',
+                phone     : '0912345678',
+                email     : 'emipaggy@gmail.com',
+            }
+        ],
+
+        station_list_type : "AVES",
+        station_list : [
+            {
+                checked   : true,
+                id        : 1234,
+                ref_no    : 'AAA001',
+                name      : '芳苑海堤1',
+                port_name : '外埔漁港',
+                latitude  : '121.1',
+                longitude : '24.1',
+                datum     : 'TWD97',
+                device    : '雷達'
+            },{
+                checked   : false,
+                id        : 5678,
+                ref_no    : 'AAA002',
+                name      : '芳苑海堤2',
+                port_name : '外埔漁港',
+                latitude  : '121.2',
+                longitude : '24.0',
+                datum     : 'TWD97',
+                device    : ''
+            }
+        ],
+    };
 
 
 </script>

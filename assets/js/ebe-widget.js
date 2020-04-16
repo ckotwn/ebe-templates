@@ -477,6 +477,123 @@
     })();
 
 
+    // 通用瀏覽框
+    window.Ebe.Widget.ListBox = (function(){
+
+        var wgList = {};
+
+        function init( elName, config ){
+
+            var $wrapper = $( elName );
+            var $wg = $('<div class="widgetBox wgSelectorBox">'
+                + '<div class="listPane">'
+                    + '<table>'
+                    + '<thead></thead>'
+                    + '<tbody></tbody>'
+                    + '</table>'
+                + '</div>'
+                + '<div class="messagePane">'
+                    + '<div class="messageText"></div>'
+                + '</div>'
+                + '</div>' );
+
+            // gen table header
+            var $theadRow = $('<tr></tr>');
+            for( var i in config.cols ){
+                var colConfig = config.cols[ i ];
+                $theadRow.append( $('<th></th>').text( colConfig.label ) );
+            }
+            $wg.find('thead').append( $theadRow );
+
+            $wrapper.empty();
+            $wrapper.append( $wg );
+
+            wgObj = {
+                config      : config,
+                $wg         : $wg,
+                addRow      : addRow,
+                addRowArray : addRowArray,
+                showMessage : showMessage,
+                hideMessage : hideMessage,
+                getSelected : getSelected
+            }
+
+            $wg.data( 'obj',  wgObj );
+            wgList[ elName ] = wgObj;
+
+            return wgObj;
+        }
+
+
+        function getInstance( elName ){
+            return wgList[ elName ];
+        }
+
+
+        function addRow( row ){
+            var $wg = this.$wg;
+            var cfg = this.config;
+
+            var $row = $('<tr></tr>');
+            $row.attr( 'data-id',  row.id );
+            $row.data( 'row', row );
+
+            for( var i in cfg.cols ){
+                var colCfg = cfg.cols[ i ];
+                var ref    = colCfg.ref;
+
+                $tr = $('<td></td>');
+                $tr.text( row[ ref ] );
+                $row.append( $tr );
+            }
+
+            $wg.find('tbody').append( $row );
+        }
+
+
+        function addRowArray( rowList ){
+            for( var i in rowList ){
+                var row = rowList[i];
+                this.addRow( row );
+            }
+        }
+
+
+        function showMessage( messageHtml ){
+            var $wg = this.$wg;
+            $wg.find('.messageText').html( messageHtml );
+            $wg.find('.messagePane').show();
+        }
+
+
+        function hideMessage(){
+            var $wg = this.$wg;
+            $wg.find('.messagePane').hide();
+            $wg.find('.messageText').empty();
+        }
+
+
+        function getSelected(){
+            var $wg = this.$wg;
+            var stationList = [];
+
+            $wg.find('tbody tr').each(function(){
+                var $this = $(this);
+                if( $(this).find('input[type="checkbox"]').prop('checked') == false ) return;
+                stationList.push( $(this).attr( 'data-id') );
+            });
+
+            return stationList;
+        }
+
+
+        return {
+            init        : init,
+            getInstance : getInstance
+        }
+    })();
+
+
     // 通用選擇框
     window.Ebe.Widget.SelectorBox = (function(){
 
@@ -505,6 +622,7 @@
             }
             $wg.find('thead').append( $theadRow );
 
+            $wrapper.empty();
             $wrapper.append( $wg );
 
             wgObj = {
@@ -672,6 +790,7 @@
             $wg.find('.-action-closeAddForm').on('click', closeAddFormClickHandler);
             $wg.find('.-action-addItem').on('click', addItemClickHandler);
 
+            $wrapper.empty();
             $wrapper.append( $wg );
 
             wgObj = {
@@ -971,6 +1090,7 @@
 
             $wg.find('.-action-addItem').on('click', addItemClickHandler);
 
+            $wrapper.empty();
             $wrapper.append( $wg );
 
             wgObj = {
@@ -1174,6 +1294,7 @@
 
             $wg.find('.-action-addItem').on('click', addItemClickHandler);
 
+            $wrapper.empty();
             $wrapper.append( $wg );
 
             wgObj = {
@@ -1334,6 +1455,7 @@
                 + '</div>'
                 + '</div>' );
 
+            $wrapper.empty();
             $wrapper.append( $wg );
 
             wgObj = {

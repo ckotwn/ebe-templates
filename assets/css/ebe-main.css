@@ -428,6 +428,11 @@
   border-radius: 4px;
 }
 
+.widgetBox .listPane table {
+  font-size: 14px;
+  line-height: 24px;
+}
+
 .widgetBox .listPane table th + th,
 .widgetBox .listPane table td + td {
   padding-left: 8px !important;
@@ -521,51 +526,63 @@
   cursor: pointer;
 }
 
+.wgListBox,
 .wgSelectorBox {
   width: 640px;
   max-height: 240px;
 }
 
+.wgListBox .listPane,
 .wgSelectorBox .listPane {
   max-height: 240px;
   padding: 7px 15px 0px;
   overflow-y: auto;
 }
 
+.wgListBox .listPane table,
 .wgSelectorBox .listPane table {
   width: 100%;
 }
 
+.wgListBox .listPane table thead,
 .wgSelectorBox .listPane table thead {
   border-bottom: 1px solid #999;
 }
 
-.wgSelectorBox .listPane table th, .wgSelectorBox .listPane table td {
+.wgListBox .listPane table th, .wgListBox .listPane table td,
+.wgSelectorBox .listPane table th,
+.wgSelectorBox .listPane table td {
   text-align: left;
   white-space: nowrap;
 }
 
+.wgListBox .listPane table th,
 .wgSelectorBox .listPane table th {
   font-weight: bold;
   color: #0D7BC4;
 }
 
+.wgListBox .listPane table tbody tr,
 .wgSelectorBox .listPane table tbody tr {
   cursor: pointer;
 }
 
+.wgListBox .listPane table tbody tr + tr,
 .wgSelectorBox .listPane table tbody tr + tr {
   border-top: 1px solid #cccc;
 }
 
+.wgListBox .listPane table tbody tr td,
 .wgSelectorBox .listPane table tbody tr td {
   padding: 8px 0;
 }
 
+.wgListBox .listPane table tbody tr:hover,
 .wgSelectorBox .listPane table tbody tr:hover {
   background: #e8e8e8;
 }
 
+.wgListBox .listPane table td.fn,
 .wgSelectorBox .listPane table td.fn {
   text-align: right;
 }

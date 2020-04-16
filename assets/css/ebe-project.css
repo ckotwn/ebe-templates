@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.fal-init, #pProjectDetailPane .group .titlebar::before {
+.fal-init, #pProjectDetailPane .group .titlebar::before, #pSurvayDetailPane .group .titlebar::before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -22,10 +22,29 @@
 
 #projectPaneGroup {
   position: absolute;
+  overflow: hidden;
   left: 0;
   right: 0;
   top: 88px;
   bottom: 0;
+}
+
+#projectPaneGroup.-mode-viewSurvay #pProjectListPane {
+  -webkit-transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  left: -50%;
+}
+
+#projectPaneGroup.-mode-viewSurvay #pProjectDetailPane {
+  -webkit-transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  left: 0;
+}
+
+#projectPaneGroup.-mode-viewSurvay #pSurvayDetailPane {
+  -webkit-transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  left: 50%;
 }
 
 #pProjectListPane {
@@ -34,8 +53,8 @@
   top: 0;
   width: 50%;
   height: 100%;
-  -webkit-transition: all .25s ease-out;
-  transition: all .25s ease-out;
+  -webkit-transition: all 0.99s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.99s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #pProjectListPane .projectItemListPane {
@@ -319,10 +338,10 @@
   height: 100%;
   background: #fff;
   border-left: 1px solid #e8e8e8;
-  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  -webkit-transition: all .25s ease-out;
-  transition: all .25s ease-out;
+  -webkit-box-shadow: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #pProjectDetailPane .projectDetailContentPane {
@@ -332,12 +351,21 @@
   top: 0;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   padding: 24px;
 }
 
 #pProjectDetailPane .projectDetailContentPane > .group {
   margin: 16px 0;
+}
+
+#pProjectDetailPane .infoCard {
+  position: absolute;
+  padding-top: 24px;
+  left: 24px;
+  right: 24px;
+  top: 0;
+  height: 100px;
+  border-bottom: 1px solid #ccc;
 }
 
 #pProjectDetailPane .infoCard .col1 {
@@ -366,12 +394,14 @@
 
 #pProjectDetailPane .infoCard .name {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  padding: 4px 0;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding-top: 4px 0;
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
+  height: 52px;
+  overflow: hidden;
 }
 
 #pProjectDetailPane .infoCard .fn {
@@ -388,6 +418,17 @@
 
 #pProjectDetailPane .infoCard .fn > * {
   margin-left: 8px;
+}
+
+#pProjectDetailPane .scrollContent {
+  position: absolute;
+  overflow-y: auto;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  bottom: 0;
+  padding: 24px;
+  padding-top: 24px;
 }
 
 #pProjectDetailPane .group .titlebar {
@@ -500,13 +541,203 @@
 }
 
 #pSurvayDetailPane {
-  display: none;
   position: absolute;
-  left: 0;
+  left: 100%;
   top: 0;
   width: 50%;
   height: 100%;
-  -webkit-transition: all .25s ease-out;
-  transition: all .25s ease-out;
+  -webkit-transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#pSurvayDetailPane .survayDetailContentPane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px;
+  padding-right: 64px;
+}
+
+#pSurvayDetailPane .survayDetailContentPane > .group {
+  margin: 16px 0;
+}
+
+#pSurvayDetailPane .survayDetailContentPane .widgetBoxWrapper {
+  margin: 16px 0;
+}
+
+#pSurvayDetailPane .survayDetailContentPane .widgetBoxWrapper .widgetBox {
+  width: 100% !important;
+}
+
+#pSurvayDetailPane .infoCard {
+  position: absolute;
+  padding-top: 24px;
+  left: 24px;
+  right: 24px;
+  top: 0;
+  height: 100px;
+  border-bottom: 1px solid #ccc;
+}
+
+#pSurvayDetailPane .infoCard .col1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+#pSurvayDetailPane .infoCard .col2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#pSurvayDetailPane .infoCard .statusText {
+  padding: 0 8px;
+  background-color: #ccc;
+}
+
+#pSurvayDetailPane .infoCard .projectNo {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+#pSurvayDetailPane .infoCard .name {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding-top: 4px 0;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  height: 52px;
+  overflow: hidden;
+}
+
+#pSurvayDetailPane .infoCard .fn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 144px;
+          flex: 0 0 144px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#pSurvayDetailPane .infoCard .fn > * {
+  margin-left: 8px;
+}
+
+#pSurvayDetailPane .scrollContent {
+  position: absolute;
+  overflow-y: auto;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  bottom: 0;
+  padding: 24px;
+  padding-top: 24px;
+}
+
+#pSurvayDetailPane .group .titlebar {
+  position: relative;
+  padding-left: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  background-color: #e8e8e8;
+  border-radius: 1000px;
+}
+
+#pSurvayDetailPane .group .titlebar::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  content: "\f13a";
+}
+
+#pSurvayDetailPane .group .itemList {
+  padding: 16px 0;
+}
+
+#pSurvayDetailPane .group .itemRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#pSurvayDetailPane .group .itemRow + .itemRow {
+  margin-top: 8px;
+}
+
+#pSurvayDetailPane .group .itemRow > .label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  font-weight: bold;
+  color: #0D7BC4;
+}
+
+#pSurvayDetailPane .group .itemRow > .value {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+#pSurvayDetailPane .group .itemRow > .value > * {
+  font-size: 14px !important;
+}
+
+#pSurvayDetailPane .group .listTable {
+  width: 100%;
+}
+
+#pSurvayDetailPane .group .listTable thead {
+  font-size: 14px;
+  line-height: 24px;
+  border-bottom: 1px solid #999;
+}
+
+#pSurvayDetailPane .group .listTable thead th {
+  font-weight: bold;
+  text-align: left;
+  color: #0D7BC4;
+}
+
+#pSurvayDetailPane .group .listTable tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+#pSurvayDetailPane .group .listTable tbody td {
+  padding: 6px 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#pSurvayDetailPane .closeButton {
+  position: absolute;
+  z-index: 1100;
+  right: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
 }
 /*# sourceMappingURL=ebe-project.css.map */

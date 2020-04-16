@@ -172,7 +172,17 @@ $ebInput-border-r: 4px;
 .ebDisplayText{
     font-weight: bold;
     line-height: $ebInput-h;
-    color: $c-main;
+
+    &.-hilight{
+        color: $c-main;
+    }
+
+    &.-s,
+    &.-small{
+        height: 24px;
+        font-size: 12px;
+        line-height: 24px;
+    }
 }
 
 
@@ -221,8 +231,8 @@ $ebInput-border-r: 4px;
         right: 0;
         top: 0;
         width: 32px;
-        height: 32px;
-        line-height: 32px;
+        height: 30px;
+        line-height: 30px !important;
         text-align: center;
     }
 
@@ -230,7 +240,7 @@ $ebInput-border-r: 4px;
         margin: 0;
         padding: 0 3px;
         width: 100%;
-        height: $ebInput-h;
+        height: 30px;
         font-size: 13px;
         border: 0;
         background-color: transparent;

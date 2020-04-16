@@ -12,6 +12,8 @@ $wg-border-radius: 4px;
     .listPane{
 
         table{
+            font-size: 14px;
+            line-height: 24px;
 
             th + th,
             td + td{
@@ -100,6 +102,7 @@ $wg-border-radius: 4px;
 }
 
 
+.wgListBox,
 .wgSelectorBox{
     width: 640px;
     max-height: 240px;
