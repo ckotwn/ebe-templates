@@ -541,9 +541,8 @@
                 if( survayData.deleteLink ){ $w.find('.-f-deleteLink').attr( 'href', survayData.deleteLink ).show(); }
                 else{ $w.find('.-f-deleteLink').attr( 'href', '#' ).hide(); }
 
-                $w.find('.-f-admin_list tbody') .empty();
                 $w.find('.-f-user_list tbody')  .empty();
-                $w.find('.-f-survay_list tbody').empty();
+                $w.find('.-f-entourage_list tbody').empty();
 
                 // 檔案
                 var wg1 = Ebe.Widget.FolderListBox.init('#swg1');
