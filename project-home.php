@@ -102,42 +102,17 @@
 
         <div id="pProjectListPane">
 
-            <div class="projectItemListPane">
+            <div class="projectItemListPane"></div>
 
-                <div class="projectItem" eb-status="進行中">
-                    <div class="col1">
-                        <div class="status">
-                            <div class="statusText">進行中</div>
-                            <div class="projectNo">#P000123</div>
-                        </div>
-                        <div class="name -f-name">離岸風場鳥類生態調查監測標準作業 建立計畫</div>
-                        <div class="period">
-                            <div class="label">計畫期間</div>
-                            <div class="value"><span class="-f-start_date">2018-02-01</span>
-                                    - <span class="-f-end_date">2018-12-10<span></div>
-                        </div>
+            <div class="projectItemListPager">
+                <div class="pagerBlock">
+                    <div class="pager -action-goBack fal fa-angle-left"></div>
+                    <div class="pagerSelect">
+                        <select class="-action-goPage"></select>
                     </div>
-                    <div class="col2">
-                        <div class="type">
-                            <div class="label">調查類型</div>
-                            <div class="value -f-type">鳥類</div>
-                        </div>
-                        <div class="windfield">
-                            <div class="label">風　　場</div>
-                            <div class="value -f-windfield_name">海洋竹南風力發電場</div>
-                        </div>
-                        <div class="openFolder">
-                            <a class="ebButton -s -f-storageLink" target="_blank" href="#">
-                                <i class="fab fa-google-drive"></i>開啟計畫檔案資料夾<i class="fa fal fa-external-link tail"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="openDetial">
-                        <div class="icon fa fal fa-arrow-right"></div>
-                        <div class="label">詳情</div>
-                    </div>
+                    <div class="totalPage"></div>
+                    <div class="pager -action-goNext fal fa-angle-right"></div>
                 </div>
-
             </div>
 
             <div class="messagePane">
@@ -169,8 +144,8 @@
                         <div class="col2">
                             <div class="name -f-name">離岸風場鳥類生態調查監測標準作業 建立計畫</div>
                             <div class="fn">
-                                <div class="ebButton">編輯</div>
-                                <div class="ebButton -type-error">刪除</div>
+                                <a href="#" target="_blank" class="ebButton -f-editLink -action-goEditProject">編輯</a>
+                                <a href="#" target="_blank" class="ebButton -f-deleteLink -type-error -action-goDeleteProject">刪除</a>
                             </div>
                         </div>
                     </div>
@@ -178,14 +153,37 @@
                     <div class="group -g-info" eb-collapse="expend">
                         <div class="titlebar">計畫屬性</div>
                         <div class="itemList">
-
+                            <div class="itemRow">
+                                <div class="label">狀態</div>
+                                <div class="value"><div class="ebDisplayText -s -f-status_text">進行中</div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">期間</div>
+                                <div class="value"><div class="ebDisplayText -s"><span class="-f-start_date"></span> ~ <span class="-f-end_date"></span></div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">類群</div>
+                                <div class="value"><div class="ebDisplayText -s -f-typeTextList"></div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">風場</div>
+                                <div class="value"><div class="ebDisplayText -s -f-windfield_name"></div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">描述</div>
+                                <div class="value"><div class="ebDisplayText -s -f-note"></div></div>
+                            </div>
+                            <div class="itemRow">
+                                <div class="label">檔案管理</div>
+                                <div class="value"><a class="ebButton -s -f-storageLink" target="_blank" href="#"><i class="fab fa-google-drive"></i>開啟計畫檔案資料夾<i class="fa fal fa-external-link tail"></i></a></div>
+                            </div>
                         </div>
                     </div>
                     <div class="group -g-adminList" eb-collapse="expend">
                         <div class="titlebar">計畫管理員</div>
                         <div class="itemList">
                             <table class="listTable -f-admin_list">
-                                <thead><tr><th>名字</th><th>電子郵件</th></tr></thead>
+                                <thead><tr><th>名字</th><th>電子郵件</th><th></th></tr></thead>
                                 <tbody></tbody>
                             </table>
                         </div>
@@ -194,7 +192,7 @@
                         <div class="titlebar">計畫成員</div>
                         <div class="itemList">
                             <table class="listTable -f-user_list">
-                                <thead><tr><th>名字</th><th>電子郵件</th></tr></thead>
+                                <thead><tr><th>名字</th><th>電子郵件</th><th></th></tr></thead>
                                 <tbody></tbody>
                             </table>
                         </div>
@@ -204,8 +202,10 @@
                         <div class="itemList">
                             <table class="listTable -f-survay_list">
                                 <thead><tr>
-                                    <th>日期</th><th>類型</th>
-                                    <th>狀態</th><th>檔案管理</th>
+                                    <th>日期</th>
+                                    <th>類型</th>
+                                    <th>狀態</th>
+                                    <th>檔案管理</th>
                                     <th></th>
                                 </tr></thead>
                                 <tbody></tbody>
@@ -217,8 +217,8 @@
 
             <div class="messagePane">
                 <div class="messageBody">
-                    <div class="icon fal fa-hand-point-left"></div>
-                    <div class="text">由左側清單選取計畫<br>以檢視詳情</div>
+                    <div class="icon fal"></div>
+                    <div class="text"></div>
                 </div>
             </div>
 
@@ -252,8 +252,14 @@
             };
 
             handlers = {
-                success : function( projectList ) array 專案物件列表
+                success : function( projectList, pager ) array 專案物件列表
                 failed  : function( [message] ) string 要顯示的訊息，預設為 "網路發生錯誤"
+            }
+
+            pager = {
+                total    : 總筆數
+                currPage : 目前頁碼 (1開始)
+                perPage  : 每頁筆數 (50p)
             }
 
             project = {
@@ -275,18 +281,41 @@
 
         // 執行後呼叫
         // - 成功的話
-        handlers.success([]);
+        var pager = {
+            total     : 188,
+            currPage  : conds.page,
+            perPage   : conds.perPage
+        }
+
+        handlers.success( SAMPLE_PROJECT_LIST, pager );
+        // - 空的就塞空白陣列
+        // handlers.success( [] );
         // - 失敗的話呼叫
+        // handlers.failed( '連線發生錯誤', [ICON] );
+        // handlers.failed( '連線發生錯誤', 'exclamation-triangle' );
         //     ICON 為 fontawesome
         //     - 錯誤請使用 exclamation-triangle
         //     - 訊息請使用 info-circle
-        // handlers.failed( '連線發生錯誤', [ICON] );
     });
 
     // - 讀取計畫內容
     Ebe.Project.setGetDetailHandler(function( project_id, handlers ){
 
+        handlers.success( SAMPLE_PROJECT_DATA );
+        // handlers.failed( '連線發生錯誤', 'exclamation-triangle' );
     });
+
+    // 執行查詢
+    // Ebe.Page.ProjectHome.query({
+    //     type       :
+    //     windfield  :
+    //     keyword    :
+    //     status     :
+    //     start_date :
+    //     end_date   :
+    //     page       :
+    //     perPage    : // 預設為 50
+    // });
 
 
     // 示範資料
@@ -331,6 +360,8 @@
         windfield_name  : "海洋竹南風力發電場",
         storageLink     : "#",
         note            : "",
+        editLink        : "",  // 編輯的連結
+        deleteLink      : null,  // 刪除的連結
 
         // 管理員
         admin_list : [
@@ -368,6 +399,22 @@
                 status_text : "進行中",
                 storageLink : "#",
             },
+            {
+                id          : 2,
+                date        : "2020-02-01",
+                name        : "儀器架設",
+                status      : "進行中",
+                status_text : "進行中",
+                storageLink : "#",
+            },
+            {
+                id          : 3,
+                date        : "2020-04-01",
+                name        : "儀器架設",
+                status      : "進行中",
+                status_text : "進行中",
+                storageLink : "#",
+            }
         ]
     }; // SAMPLE_PROJECT_DATA
 

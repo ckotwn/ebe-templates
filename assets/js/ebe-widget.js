@@ -1,14 +1,14 @@
 (function(){
 
 
-    window.Ebe.EbControl = {};
-    window.Ebe.Widget = {};
+    window.Ebe.Control = window.Ebe.Control || {};
+    window.Ebe.Widget  = window.Ebe.Widget  || {};
 
 
     $.datetimepicker.setLocale('zh-TW');
 
 
-    window.Ebe.EbControl.FileUpload = (function(){
+    window.Ebe.Control.FileUpload = (function(){
 
         var STRING = {
             NOT_SELECT : '尚未選擇檔案'
@@ -44,7 +44,7 @@
     })();
 
 
-    window.Ebe.EbControl.DateTimePicker = (function(){
+    window.Ebe.Control.DateTimePicker = (function(){
 
         $(window).on('load', function(){
 

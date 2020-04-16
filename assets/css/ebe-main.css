@@ -162,7 +162,16 @@
 .ebDisplayText {
   font-weight: bold;
   line-height: 32px;
+}
+
+.ebDisplayText.-hilight {
   color: #0D7BC4;
+}
+
+.ebDisplayText.-s, .ebDisplayText.-small {
+  height: 24px;
+  font-size: 12px;
+  line-height: 24px;
 }
 
 .ebSelectGroup {
@@ -205,8 +214,8 @@
   right: 0;
   top: 0;
   width: 32px;
-  height: 32px;
-  line-height: 32px;
+  height: 30px;
+  line-height: 30px !important;
   text-align: center;
 }
 
@@ -214,7 +223,7 @@
   margin: 0;
   padding: 0 3px;
   width: 100%;
-  height: 32px;
+  height: 30px;
   font-size: 13px;
   border: 0;
   background-color: transparent;
@@ -1173,6 +1182,10 @@ body {
   padding-top: 48px;
   padding-bottom: 32px;
   font-family: "Microsoft Jhenghei", sans-serif;
+}
+
+.-link {
+  cursor: pointer;
 }
 
 #header {

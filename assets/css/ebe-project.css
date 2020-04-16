@@ -34,6 +34,8 @@
   top: 0;
   width: 50%;
   height: 100%;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
 }
 
 #pProjectListPane .projectItemListPane {
@@ -50,12 +52,14 @@
   border-left: 4px solid #CCC;
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all .25s;
+  transition: all .25s;
 }
 
 #pProjectListPane .projectItem .col1 {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 316px;
-          flex: 0 0 316px;
+      -ms-flex: 0 0 284px;
+          flex: 0 0 284px;
   padding: 12px 16px 12px 12px;
 }
 
@@ -151,31 +155,127 @@
   color: #999;
 }
 
-#pProjectListPane .projectItem[eb-status="進行中"] {
+#pProjectListPane .projectItem[data-status="進行中"] {
   border-left-color: #62DE00;
 }
 
-#pProjectListPane .projectItem[eb-status="進行中"] .statusText {
+#pProjectListPane .projectItem[data-status="進行中"] .statusText {
   background: #62DE00;
   color: #000;
 }
 
-#pProjectListPane .projectItem[eb-status="已完成"] {
+#pProjectListPane .projectItem[data-status="已完成"] {
   border-left-color: #63C1FF;
 }
 
-#pProjectListPane .projectItem[eb-status="已完成"] .statusText {
+#pProjectListPane .projectItem[data-status="已完成"] .statusText {
   background: #62DE00;
   color: #fff;
 }
 
-#pProjectListPane .projectItem[eb-status="取消"] {
+#pProjectListPane .projectItem[data-status="取消"] {
   border-left-color: #CCCCCC;
 }
 
-#pProjectListPane .projectItem[eb-status="取消"] .statusText {
+#pProjectListPane .projectItem[data-status="取消"] .statusText {
   background: #CCCCCC;
   color: #fff;
+}
+
+#pProjectListPane .projectItem.-active {
+  color: #000;
+  -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+}
+
+#pProjectListPane .projectItemListPager {
+  position: absolute;
+  display: none;
+  left: 50%;
+  bottom: 20px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#pProjectListPane .projectItemListPager .pagerBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 16px;
+  min-width: 48px;
+  line-height: 40px;
+  border-radius: 4px;
+}
+
+#pProjectListPane .projectItemListPager .pagerBlock > * {
+  color: #fff;
+  background-color: #0D7BC4;
+}
+
+#pProjectListPane .projectItemListPager .pager {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 32px;
+          flex: 0 0 32px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#pProjectListPane .projectItemListPager .pager::before {
+  line-height: 40px;
+}
+
+#pProjectListPane .projectItemListPager .pager:hover {
+  background: #0b6cac;
+}
+
+#pProjectListPane .projectItemListPager .pager.-active {
+  font-weight: bold;
+  color: #fff;
+  background: #0a5d94;
+}
+
+#pProjectListPane .projectItemListPager .pager:first-child {
+  border-radius: 8px 0 0 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#pProjectListPane .projectItemListPager .pager:last-child {
+  border-radius: 0 8px 8px 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#pProjectListPane .projectItemListPager .totalPage {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 0 16px;
+  font-size: 14px;
+  min-width: 48px;
+}
+
+#pProjectListPane .projectItemListPager .pagerSelect {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 0 16px;
+  color: #fff;
+  text-align: right;
+  background-color: #0D7BC4;
+  border: 0;
+}
+
+#pProjectListPane .projectItemListPager .pagerSelect select {
+  margin-top: 4px;
+  padding: 0 8px;
+  height: 32px;
+  border: 0;
+}
+
+#pProjectListPane .projectItemListPager .pagerSelect option {
+  text-align: right;
 }
 
 #pProjectListPane .messagePane {
@@ -221,9 +321,18 @@
   border-left: 1px solid #e8e8e8;
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
 }
 
 #pProjectDetailPane .projectDetailContentPane {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
   padding: 24px;
 }
 
@@ -272,6 +381,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 #pProjectDetailPane .infoCard .fn > * {
@@ -304,6 +416,36 @@
   padding: 16px 0;
 }
 
+#pProjectDetailPane .group .itemRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#pProjectDetailPane .group .itemRow + .itemRow {
+  margin-top: 8px;
+}
+
+#pProjectDetailPane .group .itemRow > .label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 88px;
+          flex: 0 0 88px;
+  font-weight: bold;
+  color: #0D7BC4;
+}
+
+#pProjectDetailPane .group .itemRow > .value {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+#pProjectDetailPane .group .itemRow > .value > * {
+  font-size: 14px !important;
+}
+
 #pProjectDetailPane .group .listTable {
   width: 100%;
 }
@@ -320,12 +462,19 @@
   color: #0D7BC4;
 }
 
-#pProjectDetailPane .group .listTable tbody {
-  border-bottom: 1px solid #999;
+#pProjectDetailPane .group .listTable tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+#pProjectDetailPane .group .listTable tbody td {
+  padding: 6px 0;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 #pProjectDetailPane .messagePane {
   position: absolute;
+  display: none;
   left: 0;
   top: 0;
   width: 100%;
@@ -357,5 +506,7 @@
   top: 0;
   width: 50%;
   height: 100%;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
 }
 /*# sourceMappingURL=ebe-project.css.map */
