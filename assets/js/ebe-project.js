@@ -605,10 +605,12 @@
 
 
         return {
+            Pane    : Pane,
             init    : init,
             query   : query,
             doQuery : doQuery,
-            Pane    : Pane
+            viewProjectDetail : viewProjectDetail,
+            viewSurvayDetail  : viewSurvayDetail
         }
     })();
 
