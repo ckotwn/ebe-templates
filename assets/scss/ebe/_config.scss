@@ -10,10 +10,11 @@ $c-status-cancel    : #CCCCCC;
 
 // Z-Index
 
-$z-frameUI     :  1000;
-$z-popupMenu   :  1500;
-$z-dialog      : 10000;
-$z-filter      :   500;
+$z-dialog      : 100000;
+$z-popupForm   :  10000;
+$z-popupMenu   :   1500;
+$z-frameUI     :   1000;
+$z-filter      :    500;
 
 
 // Size
@@ -26,10 +27,12 @@ $s-headPaneExpH: 88px;
 
 // Effect
 
-$fx-paneShadow       : 0 0 12px rgba( 0,0,0, .1);
-$fx-frameUIShadow    : 0 0 16px rgba( 0,0,0, .2);
-$fx-itemShadow       : 0 0  8px rgba( 0,0,0, .1);
-$fx-itemActiveShadow : 0 0 24px rgba( 0,0,0, .5);
+$fx-paneShadow          : 0 0    12px rgba( 0,0,0, .1);
+$fx-frameUIShadow       : 0 0    16px rgba( 0,0,0, .2);
+$fx-itemShadow          : 0 1px   8px rgba( 0,0,0, .1);
+$fx-itemActiveShadow    : 0 4px  24px rgba( 0,0,0, .5);
+$fx-controlShadow       : 0 1px   4px rgba( 0,0,0, .1);
+$fx-controlActiveShadow : 0 2px  12px rgba( 0,0,0, .25);
 
 $easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
 

@@ -69,8 +69,8 @@
   color: #333;
   background: #fff;
   border-left: 4px solid #CCC;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   -webkit-transition: all .25s;
   transition: all .25s;
 }
@@ -203,8 +203,8 @@
 
 #pProjectListPane .projectItem.-active {
   color: #000;
-  -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
 #pProjectListPane .projectItemListPager {

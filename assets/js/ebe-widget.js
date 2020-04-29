@@ -477,6 +477,12 @@
     })();
 
 
+    // 彈出框管理
+    window.Ebe.Widget.PopupWrapper = (function(){
+
+    })();
+
+
     // 通用瀏覽框
     window.Ebe.Widget.ListBox = (function(){
 
@@ -728,7 +734,9 @@
 
         var wgList  = {}
 
-        function init( elName, tableConfig, addFormConfig ){
+        function init( elName, tableConfig, addFormConfig, options ){
+
+            if( options != undefined ) options = {};
 
             var $wrapper = $( elName );
 
@@ -796,6 +804,7 @@
             wgObj = {
                 tableConfig          : tableConfig,
                 addFormConfig        : addFormConfig,
+                options              : options,
                 $wg                  : $wg,
                 addItemHandler       : null,
                 removeItemHandler    : null,
@@ -960,16 +969,35 @@
         function openAddForm(){
             var $wg = this.$wg;
 
-            $wg.find('.addFormPane').show();
+            // switch add form type
+            if( this.options.usePopupAddForm != undefined
+                    && this.options.usePopupAddForm == true ){
+
+                // add popup
+                if( $('body > .wgPopupWrapper').length == 0 ){
+                    Ebe.Widget.PopupWrapper.show( $wg.find('.addFormPane') );
+                }
+            }else{
+                $wg.find('.addFormPane').show();
+            }
         }
 
 
         function closeAddForm(){
             var $wg = this.$wg;
+            var $addFormPane;
 
-            $wg.find('.addFormPane').hide();
-            $wg.find('.addFormPane input').val("");
-            $wg.find('.addFormPane select').each(function(){
+            if( this.options.usePopupAddForm != undefined
+                    && this.options.usePopupAddForm == true ){
+                Ebe.Widget.PopupWrapper.hide();
+                $addFormPane = Ebe.Widget.PopupWrapper.getEl();
+            }else{
+                $addFormPane = $wg.find('.addFormPane');
+                $wg.find('.addFormPane').hide();
+            }
+
+            $addFormPane.find('input').val("");
+            $addFormPane.find('select').each(function(){
                 $(this).find('option:eq(0)').prop('selected', 'true');
             });
         }

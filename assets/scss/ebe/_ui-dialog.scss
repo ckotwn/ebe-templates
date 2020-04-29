@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+@import "config";
+
+
+.ebDialog{
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 448px;
+    background: #fff;
+    box-shadow: $fx-paneShadow;
+
+    .title{
+        font-size: 20px;
+        line-height: 48px;
+        border-bottom: 1px dashed #ccc;
+
+        .icon{
+            width: 48px;
+            text-align: center;
+
+            &::before{ line-height: 48px; }
+        }
+    }
+
+    .body{
+        position: relative;
+        min-height: 200px;
+        padding: 12px 24px;
+        font-size: 14px;
+        line-height: 28px;
+
+        p{
+            margin: 12px 0;
+        }
+
+        .field{
+            margin: 12px 0;
+        }
+    }
+
+    .buttons{
+        display: flex;
+        padding: 16px 24px;
+        border-top: 1px dashed #ccc;
+
+        > *{
+            flex: 1 1;
+        }
+
+        > * + *{
+            margin-left: 16px;
+        }
+    }
+
+    &.-message{
+        .body{
+            font-size: 16px;
+            line-height: 32px;
+
+            p{
+                position: absolute;
+                margin: 0;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                padding: 0 24px;
+                text-align: center;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    &.-login{
+
+        .body{
+            min-height: 272px;
+
+            .loginButton{
+                text-align: center;
+                margin-top: 64px;
+            }
+        }
+    }
+
+    &.-adminlogin{
+
+        .body{
+            min-height: 0;
+        }
+    }
+}
+
+
+.goAdminLogin{
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 448px;
+    font-size: 12px;
+    line-height: 24px;
+    color: #ccc;
+    text-align: center;
+
+    a{
+        color: inherit;
+    }
+}

@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+@import "config";
+
+
+.ebImg-googleLoginTag{
+    display: inline-block;
+    width: 192px;
+    height: 40px;
+    background-image: url(../img/googleLoginTag.png);
+    cursor: pointer;
+    transition: all .25s;
+    box-shadow: $fx-controlShadow;
+
+    &:hover{
+        box-shadow: $fx-controlActiveShadow;
+    }
+}

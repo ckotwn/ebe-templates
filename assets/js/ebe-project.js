@@ -176,6 +176,11 @@
         }
 
 
+        function getCurrentProjectId(){
+            return currentProjectId;
+        }
+
+
         Pane.ProjectList = (function(){
 
             var DEFAULT_PER_PAGE = 50;
@@ -609,8 +614,9 @@
             init    : init,
             query   : query,
             doQuery : doQuery,
-            viewProjectDetail : viewProjectDetail,
-            viewSurvayDetail  : viewSurvayDetail
+            getCurrentProjectId : getCurrentProjectId,
+            viewProjectDetail   : viewProjectDetail,
+            viewSurvayDetail    : viewSurvayDetail
         }
     })();
 
