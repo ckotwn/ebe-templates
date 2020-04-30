@@ -793,10 +793,9 @@
                 $addFormPane.append( $inputField );
             }
 
-
-            $wg.find('.-action-openAddForm').on('click', openAddFormClickHandler);
+            $wg.find('.-action-openAddForm') .on('click', openAddFormClickHandler);
             $wg.find('.-action-closeAddForm').on('click', closeAddFormClickHandler);
-            $wg.find('.-action-addItem').on('click', addItemClickHandler);
+            $wg.find('.-action-addItem')     .on('click', addItemClickHandler);
 
             $wrapper.empty();
             $wrapper.append( $wg );

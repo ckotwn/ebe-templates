@@ -451,3 +451,37 @@ body{
         bottom: $s-footerH;
     }
 }
+
+
+.-appMode .contentPane{
+    position: fixed;
+    left: 0;
+    top: $s-headerH;
+    right: 0;
+    bottom: 0;
+}
+
+
+.hSplitContentPane{
+
+    > *{
+        position: absolute;
+        top: 0;
+        width: 50%;
+        bottom: 0;
+    }
+
+    > *:nth-child(1){
+        left: 0;
+    }
+
+    > *:nth-child(1){
+        right: 0;
+    }
+
+    .itemListPane{
+        background-color: #fff;;
+        box-shadow: $fx-paneShadow;
+    }
+
+}

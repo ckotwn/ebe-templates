@@ -531,6 +531,35 @@ body {
   bottom: 32px;
 }
 
+.-appMode .contentPane {
+  position: fixed;
+  left: 0;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+}
+
+.hSplitContentPane > * {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  bottom: 0;
+}
+
+.hSplitContentPane > *:nth-child(1) {
+  left: 0;
+}
+
+.hSplitContentPane > *:nth-child(1) {
+  right: 0;
+}
+
+.hSplitContentPane .itemListPane {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
 .fal-init, .ebDatePicker::after {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -924,7 +953,7 @@ body {
   margin-left: 200px;
   padding: 16px 0;
   padding-left: 16px;
-  width: 640px;
+  width: 656px;
   display: block;
   text-align: right;
   border-top: 1px solid #ccc;
@@ -1695,6 +1724,11 @@ body {
 .wgSelectCheckbox {
   width: 32px;
   height: 32px;
+}
+
+.wgSimpleMapBox {
+  width: 640px;
+  height: 360px;
 }
 
 .fal-init, .ebDatePicker::after {
