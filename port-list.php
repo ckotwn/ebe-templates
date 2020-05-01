@@ -13,36 +13,11 @@
 (function(){
 
     // 先不分頁，目前先做 50筆 應該夠用
-    // 直接顯示 HTML 然後先放入以下 HTML
+    // 直接顯示 HTML 然後執行以下程式初始化地圖
 
-    // ↓↓↓ 這邊先不要動
     $(function(){
-
-        var wg = Ebe.Widget.SimpleMapBox.init('#wg1', { mapBaseType : 'GOOGLE_MAP'});
-
-        $('.portListItem').each(function(){
-            var $this = $(this);
-
-            var n   = $this.attr('data-number');
-            var lat = $this.attr('data-lat');
-            var lng = $this.attr('data-lng');
-
-            // add map marker
-            portMarker = wg.addPoint( null,
-                Ebe.Widget.MapIconConfig.numberIcon(n),
-                [ lat, lng ], );
-
-            $this.find('.-action-centerMap').on('click', function(){
-                var $this = $(this).parents('.portListItem');
-                var lat = $this.attr('data-lat');
-                var lng = $this.attr('data-lng');
-
-                wg.lfMap.panTo([ lat, lng ]);
-            });
-        });
-
+        Ebe.Page.PortList.init();
     });
-    // ↑↑↑ 這邊先不要動
 
 })();
 </script>
