@@ -27,10 +27,30 @@
             popupAnchor : [  0, -41]
         };
 
+        function numberIcon( n ){
+            return {
+                iconUrl     : 'assets/img/mapIcon/number/'+ n +'.png',
+                iconSize    : [ 40,  40],
+                iconAnchor  : [ 20,  39],
+                popupAnchor : [  0, -41]
+            }
+        }
+
+        function alphabetIcon( a ){
+            return {
+                iconUrl     : 'assets/img/mapIcon/alphabet/'+ a +'.png',
+                iconSize    : [ 40,  40],
+                iconAnchor  : [ 20,  39],
+                popupAnchor : [  0, -41]
+            }
+        }
+
         return {
-            SHIP      : SHIP,
-            PORT      : PORT,
-            WINDFIELD : WINDFIELD
+            SHIP         : SHIP,
+            PORT         : PORT,
+            WINDFIELD    : WINDFIELD,
+            numberIcon   : numberIcon,
+            alphabetIcon : alphabetIcon
         }
     })();
 
@@ -142,6 +162,11 @@
         return {
             init : init
         }
+    })();
+
+
+    window.Ebe.Widget.MuitiMapBox = (function(){
+
     })();
 
 

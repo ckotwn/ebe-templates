@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+@import "ebe/config";
+
+
+#portListPane{
+    left: 0;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+
+#portMapPane{
+    right: 0;
+
+    .wgSimpleMapBox{
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+    }
+}
+
+
+.portListItem{
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+
+    .icon{
+        flex: 0 0 40px;
+
+        img{
+            width: 40px;
+        }
+    }
+
+    .name{
+        flex: 1 1 auto;
+        margin-left: 16px;
+        font-size: 14px;
+    }
+
+    .goto{
+        i{
+            display: block;
+            width: 32px;
+            font-size: 16px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+    }
+
+    .coord{
+        flex: 0 0 auto;
+        margin-left: 16px;
+        text-align: right;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .fn{
+        flex: 0 0 auto;
+        margin-left: 16px;
+    }
+}

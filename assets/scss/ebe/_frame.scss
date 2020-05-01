@@ -336,6 +336,10 @@ body{
     @at-root .-appMode #{&}{
         position: absolute;
         z-index: $z-filter;
+
+        + *{
+            top: 56px;
+        }
     }
 
     + #bodyPane{
@@ -439,6 +443,7 @@ body{
 }
 
 
+.bodyPane,
 #bodyPane{
     position: absolute;
     z-index: 0;
@@ -447,8 +452,12 @@ body{
     top: $s-headerH;
     padding-bottom: 48px + $s-footerH;
 
-    @at-root .-appStyle #{&}{
+    @at-root .-appMode #{&}{
+        left: 0;
+        right: 0;
+        top: $s-headerH;
         bottom: $s-footerH;
+        padding-bottom: 0;
     }
 }
 

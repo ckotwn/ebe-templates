@@ -417,6 +417,10 @@ body {
   z-index: 500;
 }
 
+.-appMode #headerPane + * {
+  top: 56px;
+}
+
 #headerPane + #bodyPane {
   top: 104px;
 }
@@ -518,6 +522,7 @@ body {
   line-height: 40px;
 }
 
+.bodyPane,
 #bodyPane {
   position: absolute;
   z-index: 0;
@@ -527,8 +532,12 @@ body {
   padding-bottom: 80px;
 }
 
-.-appStyle #bodyPane {
+.-appMode .bodyPane, #bodyPane {
+  left: 0;
+  right: 0;
+  top: 48px;
   bottom: 32px;
+  padding-bottom: 0;
 }
 
 .-appMode .contentPane {
