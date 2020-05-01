@@ -18,7 +18,7 @@
             <h1>港口</h1>
         </div>
         <div class="subHeaderPanel">
-            <h1>新增港口</h1>
+            <h1>編輯港口</h1>
         </div>
     </div>
 
@@ -27,8 +27,6 @@
     <?php /* 計畫設定 */ ?>
         <div class="fieldSection">
             <div class="fieldSet">
-
-                <div class="fieldTitle">編輯港口</div>
 
                 <div class="fieldRow -required">
                     <div class="label">港口名稱</div>

@@ -24,7 +24,7 @@
 
 
 <?php /* content start */ ?>
-<div class="contentPane" id="MiscEditContentPane">
+<div class="contentPane" id="MapListContentPane">
 
     <div id="headerPane">
         <div class="titlePanel">

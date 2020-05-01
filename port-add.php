@@ -24,11 +24,8 @@
 
     <div id="bodyPane" class="formPane">
 
-    <?php /* 計畫設定 */ ?>
         <div class="fieldSection">
             <div class="fieldSet">
-
-                <div class="fieldTitle">新增港口</div>
 
                 <div class="fieldRow -required">
                     <div class="label">港口名稱</div>
