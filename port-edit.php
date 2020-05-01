@@ -108,7 +108,7 @@
                 <div class="fieldSection">
                     <div class="fieldSet">
                         <div class="fieldRow -buttons">
-                            <div class="ebButton">新增港口</div>
+                            <div class="ebButton">儲存港口資料</div>
                         </div>
                     </div>
                 </div>
