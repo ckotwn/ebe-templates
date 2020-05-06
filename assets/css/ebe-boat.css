@@ -1,1 +1,101 @@
-/* No CSS *//*# sourceMappingURL=ebe-boat.css.map */
+.fal-init {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: inherit;
+}
+
+#boatListPane {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-y: auto;
+  padding: 8px 16px 24px 16px;
+  border-bottom: 1px dashed #ccc;
+}
+
+#boatListPane .boatListItem {
+  margin-top: 16px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.3%;
+          flex: 0 1 33.3%;
+}
+
+@media screen and (max-width: 767px) {
+  #boatListPane .boatListItem {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #boatListPane .boatListItem {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  #boatListPane .boatListItem {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 20%;
+            flex: 0 1 20%;
+  }
+}
+
+#boatListPane .boatListItem .wrapper {
+  margin: 0 8px;
+  padding: 8px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+#boatListPane .boatListItem .name {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+#boatListPane .boatListItem .photo {
+  height: 0;
+  padding-bottom: 66%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#boatListPane .boatListItem .adminLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 8px;
+  margin-top: 8px;
+  margin-left: -8px;
+  border-top: 1px dashed #ccc;
+}
+
+#boatListPane .boatListItem .adminLink > * {
+  margin-left: 8px;
+}
+/*# sourceMappingURL=ebe-boat.css.map */
