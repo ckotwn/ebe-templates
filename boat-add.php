@@ -2,7 +2,7 @@
 <?php include "header.v2.php" ?>
 
 
-<link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/ebe-ship.css?ver=<?= rand(); ?>' type='text/css' media='all' />
+<link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/ebe-boat.css?ver=<?= rand(); ?>' type='text/css' media='all' />
 <script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/ebe-widget.js?ver=<?= rand(); ?>'></script>
 
 
