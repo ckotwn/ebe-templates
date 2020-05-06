@@ -1014,7 +1014,8 @@
             var $wg = this.$wg;
 
             // switch add form type
-            if( this.options.usePopupAddForm != undefined
+            if( this.options != undefined
+                    && this.options.usePopupAddForm != undefined
                     && this.options.usePopupAddForm == true ){
 
                 // add popup
@@ -1031,7 +1032,8 @@
             var $wg = this.$wg;
             var $addFormPane;
 
-            if( this.options.usePopupAddForm != undefined
+            if( this.options != undefined
+                    && this.options.usePopupAddForm != undefined
                     && this.options.usePopupAddForm == true ){
                 Ebe.Widget.PopupWrapper.hide();
                 $addFormPane = Ebe.Widget.PopupWrapper.getEl();
