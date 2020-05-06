@@ -6,22 +6,24 @@
 
     window.Ebe.Widget.MapIconConfig = (function(){
 
+        var base = Ebe.getBase();
+
         var SHIP       = {
-            iconUrl     : 'assets/img/mapIcon/ship.png',
+            iconUrl     : base + 'assets/img/mapIcon/ship.png',
             iconSize    : [ 40,  40],
             iconAnchor  : [ 20,  39],
             popupAnchor : [  0, -41]
         };
 
         var PORT       = {
-            iconUrl     : 'assets/img/mapIcon/port.png',
+            iconUrl     : base + 'assets/img/mapIcon/port.png',
             iconSize    : [ 40,  40],
             iconAnchor  : [ 20,  39],
             popupAnchor : [  0, -41]
         };
 
         var WINDFIELD = {
-            iconUrl     : 'assets/img/mapIcon/windfield.png',
+            iconUrl     : base + 'assets/img/mapIcon/windfield.png',
             iconSize    : [ 40,  40],
             iconAnchor  : [ 20,  39],
             popupAnchor : [  0, -41]
@@ -29,7 +31,7 @@
 
         function numberIcon( n ){
             return {
-                iconUrl     : 'assets/img/mapIcon/number/'+ n +'.png',
+                iconUrl     : base + 'assets/img/mapIcon/number/'+ n +'.png',
                 iconSize    : [ 40,  40],
                 iconAnchor  : [ 20,  39],
                 popupAnchor : [  0, -41]
@@ -38,7 +40,7 @@
 
         function alphabetIcon( a ){
             return {
-                iconUrl     : 'assets/img/mapIcon/alphabet/'+ a +'.png',
+                iconUrl     : base + 'assets/img/mapIcon/alphabet/'+ a +'.png',
                 iconSize    : [ 40,  40],
                 iconAnchor  : [ 20,  39],
                 popupAnchor : [  0, -41]

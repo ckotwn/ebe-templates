@@ -1,6 +1,21 @@
 ;(function(){
-    window.Ebe = {};
-    window.Ebe.Page = {};
+    window.Ebe = (function(){
+
+        var _base = '/';
+
+        function setBase( base ){
+            _base = base;
+        }
+
+        function getBase(){
+           return _base;
+        }
+
+        return {
+            setBase : setBase,
+            getBase : getBase
+        };
+    })();
 
 
     window.Ebe.Utility = (function(){
@@ -40,7 +55,7 @@
     })();
 
 
-    (function(){})();
+    window.Ebe.Page = {};
 
 
 })();

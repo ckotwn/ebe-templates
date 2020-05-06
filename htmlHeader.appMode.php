@@ -46,6 +46,11 @@
         <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/reset.css' type='text/css' media='all' />
         <link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/ebe-main.css?ver=<?= rand(); ?>' type='text/css' media='all' />
         <script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/ebe-core.js?ver=<?= rand(); ?>'></script>
+        <script type='text/javascript'>
+            // 設定跟目錄的網址
+            // 預設為 Ebe.setBase('/');
+            Ebe.setBase('');
+        </script>
 
     </head>
     <body class="-appMode">
