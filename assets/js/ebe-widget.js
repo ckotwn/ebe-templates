@@ -44,6 +44,51 @@
     })();
 
 
+    window.Ebe.Control.ImageUpload = (function(){
+
+        var STRING = {
+            NOT_SELECT : '尚未選擇檔案'
+        };
+
+        $(window).on('load', function(){
+            init('.ebImageUpload');
+        });
+
+        function init( elQuery ){
+
+
+            $( elQuery ).each(function(){
+                var $ctrl     = $(this);
+                var $fileName = $(this).find('.fileName');
+                var $preview  = $(this).find('.preview');
+                var $input    = $(this).find('input[type="file"]');
+                var input     = $input[0];
+
+                $ctrl.attr('data-inited', 1);
+
+                $input.on('change', function(e){
+                    var files = e.currentTarget.files;
+                    if( files.length == 0 ){
+                        $fileName.text( STRING.NOT_SELECT );
+                        $preview.css('background-image', '');
+                    }else{
+                        $fileName.text( files[0].name );
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            $preview.css('background-image', 'url(' +  e.target.result  + ')');
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                })
+            });
+        }
+
+        return {
+            init : init
+        }
+    })();
+
+
     window.Ebe.Control.DateTimePicker = (function(){
 
         $(window).on('load', function(){

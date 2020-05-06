@@ -842,7 +842,56 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: .05;
+  opacity: 0;
+}
+
+.ebImageUpload {
+  position: relative;
+  margin: 0;
+  padding: 0 3px;
+  height: 32px;
+  width: 480px;
+  height: 360px;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ebImageUpload .ebButton {
+  position: absolute;
+  left: 3px;
+  bottom: 3px;
+}
+
+.ebImageUpload .fileName {
+  position: absolute;
+  left: 80px;
+  bottom: 3px;
+  right: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 24px;
+}
+
+.ebImageUpload .preview {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  right: 3px;
+  bottom: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ebImageUpload input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 .fixedTopSection {

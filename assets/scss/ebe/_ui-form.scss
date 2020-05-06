@@ -290,7 +290,57 @@ $ebInput-border-r: 4px;
         top: 0;
         width: 100%;
         height: 100%;
-        opacity: .05;
+        opacity: 0;
+    }
+}
+
+
+.ebImageUpload{
+    position: relative;
+    margin: 0;
+    padding: 0 3px;
+    height: $ebInput-h;
+    width: 480px;
+    height: 360px;
+    font-size: 13px;
+    background: $ebInput-bg;
+    border: $ebInput-border;
+    border-radius: $ebInput-border-r;
+
+    .ebButton{
+        position: absolute;
+        left: 3px;
+        bottom: 3px;
+    }
+
+    .fileName{
+        position: absolute;
+        left: 80px;
+        bottom: 3px;
+        right: 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 24px;
+    }
+
+    .preview{
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        right: 3px;
+        bottom: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
     }
 }
 
