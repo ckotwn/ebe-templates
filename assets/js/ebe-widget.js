@@ -119,55 +119,6 @@
                     { ref : 'longitude', label : '緯度',      width : null },
                     { ref : 'datum' ,    label : '大地基準',  width : null },
                     { ref : 'device',    label : '儀器',      width : null }
-                ],
-                addFormFields : [
-                    {
-                        ref          : 'ref_no',
-                        label        : '編號',
-                        controlType  : "input",
-                        inputType    : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'name',
-                        label        : '名稱',
-                        controlType  : "input",
-                        inputType    : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'port',
-                        label        : '出入港口',
-                        controlType  : "select",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'latitude',
-                        label        : '經度',
-                        controlType  : "input",
-                        inputType    : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'longitude',
-                        label        : '緯度',
-                        controlType  : "input",
-                        inputType    : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'datum' ,
-                        label        : '大地基準',
-                        controlType  : "select",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'device',
-                        label        : '儀器架設<br>方式',
-                        controlType  : "input",
-                        inputType    : "text",
-                        controlWidth : 192
-                    }
                 ]
             },
             BENTHOS  : {  // 底棲生物
@@ -178,48 +129,6 @@
                     { ref : 'latitude',  label : '經度',      width : null },
                     { ref : 'longitude', label : '緯度',      width : null },
                     { ref : 'datum' ,    label : '大地基準',  width : null },
-                ],
-                addFormFields : [
-                    {
-                        ref          : 'ref_no',
-                        label        : '編號',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'name',
-                        label        : '名稱',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'port',
-                        label        : '出入港口',
-                        control      : "select",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'latitude',
-                        label        : '經度',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'longitude',
-                        label        : '緯度',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'datum' ,
-                        label        : '大地基準',
-                        control      : "select",
-                        controlWidth : 192
-                    }
                 ]
             },
             FISH     : {  // 魚類
@@ -230,48 +139,6 @@
                     { ref : 'latitude',  label : '經度',      width : null },
                     { ref : 'longitude', label : '緯度',      width : null },
                     { ref : 'datum' ,    label : '大地基準',  width : null }
-                ],
-                addFormFields : [
-                    {
-                        ref          : 'ref_no',
-                        label        : '編號',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'name',
-                        label        : '名稱',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'port',
-                        label        : '出入港口',
-                        control      : "select",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'latitude',
-                        label        : '經度',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'longitude',
-                        label        : '緯度',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'datum' ,
-                        label        : '大地基準',
-                        control      : "select",
-                        controlWidth : 192
-                    }
                 ]
             },
             UNOISE   : {  // 水下噪音
@@ -282,48 +149,6 @@
                     { ref : 'latitude',  label : '經度',      width : null },
                     { ref : 'longitude', label : '緯度',      width : null },
                     { ref : 'datum' ,    label : '大地基準',  width : null }
-                ],
-                addFormFields : [
-                    {
-                        ref          : 'ref_no',
-                        label        : '編號',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'name',
-                        label        : '名稱',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'port',
-                        label        : '出入港口',
-                        control      : "select",
-                        controlWidth : 192
-                    },
-                    {
-                        ref          : 'latitude',
-                        label        : '經度',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'longitude',
-                        label        : '緯度',
-                        control      : "input",
-                        controlType  : "text",
-                        controlWidth : 128
-                    },
-                    {
-                        ref          : 'datum' ,
-                        label        : '大地基準',
-                        control      : "select",
-                        controlWidth : 192
-                    }
                 ]
             }
         };
@@ -385,41 +210,41 @@
                     {
                         ref          : 'ref_no',
                         label        : '編號',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 192
                     },
                     {
                         ref          : 'name',
                         label        : '名稱',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 192
                     },
                     {
                         ref          : 'port',
                         label        : '出入港口',
-                        control      : "select",
+                        controlType  : "select",
                         controlWidth : 192
                     },
                     {
                         ref          : 'latitude',
                         label        : '經度',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 128
                     },
                     {
                         ref          : 'longitude',
                         label        : '緯度',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 128
                     },
                     {
                         ref          : 'datum' ,
                         label        : '大地基準',
-                        control      : "select",
+                        controlType  : "select",
                         controlWidth : 192
                     }
                 ]
@@ -429,41 +254,41 @@
                     {
                         ref          : 'ref_no',
                         label        : '編號',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 192
                     },
                     {
                         ref          : 'name',
                         label        : '名稱',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 192
                     },
                     {
                         ref          : 'port',
                         label        : '出入港口',
-                        control      : "select",
+                        controlType  : "select",
                         controlWidth : 192
                     },
                     {
                         ref          : 'latitude',
                         label        : '經度',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 128
                     },
                     {
                         ref          : 'longitude',
                         label        : '緯度',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 128
                     },
                     {
                         ref          : 'datum' ,
                         label        : '大地基準',
-                        control      : "select",
+                        controlType  : "select",
                         controlWidth : 192
                     }
                 ]
@@ -473,41 +298,41 @@
                     {
                         ref          : 'ref_no',
                         label        : '編號',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 192
                     },
                     {
                         ref          : 'name',
                         label        : '名稱',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 192
                     },
                     {
                         ref          : 'port',
                         label        : '出入港口',
-                        control      : "select",
+                        controlType  : "select",
                         controlWidth : 192
                     },
                     {
                         ref          : 'latitude',
                         label        : '經度',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 128
                     },
                     {
                         ref          : 'longitude',
                         label        : '緯度',
-                        control      : "input",
-                        controlType  : "text",
+                        controlType  : "input",
+                        inputType    : "text",
                         controlWidth : 128
                     },
                     {
                         ref          : 'datum' ,
                         label        : '大地基準',
-                        control      : "select",
+                        controlType  : "select",
                         controlWidth : 192
                     }
                 ]
