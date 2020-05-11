@@ -1,0 +1,355 @@
+[
+    {
+        "type"     : "group",
+        "name"     : "觀測資料",
+        "children" : [
+
+            {
+                "type"     : "group",
+                "name"     : "底棲生物觀測資料",
+                "children" : [
+
+                    {
+                        "name"      : "底棲生物風場區調查測站",
+                        "file"      : "/mapset/files/2019/benthos-01.geojson",
+                        "graphType" : "point",
+                        "style"     : {
+                            "point" : {
+                                "type" : "image",
+                                "option" : {
+                                    "iconUrl"     : "/assets/img/mapIcon/circle-blue-icon-plus.png",
+                                    "iconSize"    : [ 40,  40],
+                                    "iconAnchor"  : [ 20,  20],
+                                    "popupAnchor" : [  0, -20]
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        "name"      : "底棲魚類對照區測站",
+                        "file"      : "/mapset/files/2019/benthos-02.geojson",
+                        "graphType" : "point",
+                        "style"     : {
+                            "point" : {
+                                "type" : "image",
+                                "option" : {
+                                    "iconUrl"     : "/assets/img/mapIcon/circle-pink-icon-plus.png",
+                                    "iconSize"    : [ 40,  40],
+                                    "iconAnchor"  : [ 20,  20],
+                                    "popupAnchor" : [  0, -20]
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+
+            {
+                "type"     : "group",
+                "name"     : "鳥類觀測資料",
+                "children" : [
+
+                    {
+                        "name"      : "鳥類目視風場區航程",
+                        "file"      : "/mapset/files/2019/aves-01.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 2,
+                                    "color"  : "#ff9e17"
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        "name"      : "鳥類目視風場區航程 (施工期)",
+                        "file"      : "/mapset/files/2019/aves-02.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 2,
+                                    "color"  : "#a0d051"
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        "name"      : "鳥類目視對照區航程",
+                        "file"      : "/mapset/files/2019/aves-03.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 2,
+                                    "color"  : "#fff817"
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        "name"      : "鳥類目視對照區航程 (施工期)",
+                        "file"      : "/mapset/files/2019/aves-04.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 2,
+                                    "color"  : "#51a4d0"
+                                }
+                            }
+                        }
+                    }
+
+                ]
+            },
+
+            {
+                "type"     : "group",
+                "name"     : "鯨豚觀測資料",
+                "children" : [
+
+                    {
+                        "name"      : "鯨豚調查目擊點位",
+                        "file"      : "/mapset/files/2019/cetasean-01.geojson",
+                        "graphType" : "point",
+                        "style"     : {
+                            "point" : {
+                                "type" : "image",
+                                "option" : {
+                                    "iconUrl"     : "/assets/img/mapIcon/circle-khaki-icon-dot.png",
+                                    "iconSize"    : [ 40,  40],
+                                    "iconAnchor"  : [ 20,  20],
+                                    "popupAnchor" : [  0, -20]
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        "name"      : "鯨豚風場區有效航程 穿越線",
+                        "file"      : "/mapset/files/2019/cetasean-02.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 2.5,
+                                    "color"  : "#e77148"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name"      : "鯨豚風場區有效航程(施工期) 平行海岸線",
+                        "file"      : "/mapset/files/2019/cetasean-03.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 1,
+                                    "color"  : "#e8718d"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name"      : "鯨豚風場區追蹤航程",
+                        "file"      : "/mapset/files/2019/cetasean-04.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 2.5,
+                                    "color"  : "#c43c39"
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        "name"      : "鯨豚對照區有效航程",
+                        "file"      : "/mapset/files/2019/cetasean-05.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 1,
+                                    "color"  : "#987db7"
+                                }
+                            }
+                        }
+                    },
+
+                    {
+                        "name"      : "鯨豚對照區追蹤航程",
+                        "file"      : "/mapset/files/2019/cetasean-06.geojson",
+                        "graphType" : "path",
+                        "style"     : {
+                            "path" :{
+                                "option" : {
+                                    "stroke" : true,
+                                    "weight" : 2.5,
+                                    "color"  : "#d5b43c"
+                                }
+                            }
+                        }
+                    }
+
+                ]
+            },
+
+            {
+                "type"     : "group",
+                "name"     : "魚類觀測資料",
+                "children" : [
+
+                    {
+                        "name"      : "魚類風場區底拖網及海底籠具測站",
+                        "file"      : "/mapset/files/2019/fish-01.geojson",
+                        "graphType" : "point",
+                        "style"     : {
+                            "type" : "image",
+                            "option" : {
+                                "iconUrl"     : "/assets/img/mapIcon/circle-green-icon-plus.png",
+                                "iconSize"    : [ 40,  40],
+                                "iconAnchor"  : [ 20,  20],
+                                "popupAnchor" : [  0, -20]
+                            }
+                        }
+                    }
+                ]
+            },
+
+            {
+                "type"     : "group",
+                "name"     : "水下噪音觀測資料",
+                "children" : [
+
+                    {
+                        "name"      : "水下聲學風場區測站",
+                        "file"      : "/mapset/files/2019/unoise-01.geojson",
+                        "graphType" : "point",
+                        "style"     : {
+                            "path" : {
+                                "type" : "circle",
+                                "option" : {
+                                    "stroke"      : true,
+                                    "weight"      : 1.25,
+                                    "color"       : "#000000",
+                                    "fillColor"   : "#ff9e17",
+                                    "fillOpacity" : 1
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name"      : "水下聲學風場區測站 (施工期)",
+                        "file"      : "/mapset/files/2019/unoise-02.geojson",
+                        "graphType" : "point",
+                        "style"     : {
+                            "path" : {
+                                "type" : "circle",
+                                "option" : {
+                                    "stroke"      : true,
+                                    "weight"      : 1.25,
+                                    "color"       : "#000000",
+                                    "fillColor"   : "#b2df8a",
+                                    "fillOpacity" : 1
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name"      : "水下聲學對照區測站",
+                        "file"      : "/mapset/files/2019/unoise-03.geojson",
+                        "graphType" : "point",
+                        "style"     : {
+                            "path" : {
+                                "type" : "circle",
+                                "option" : {
+                                    "stroke"      : true,
+                                    "weight"      : 1.25,
+                                    "color"       : "#000000",
+                                    "fillColor"   : "#FFFFFF",
+                                    "fillOpacity" : 1
+                                }
+                            }
+                        }
+                    }
+
+                ]
+            }
+
+        ]
+    },
+
+    {
+        "type"     : "group",
+        "name"     : "公告區域範圍",
+        "children" : [
+
+            {
+                "name"      : "海洋示範風場範圍",
+                "file"      : "/mapset/files/2019/area-01.geojson",
+                "graphType" : "polygon",
+                "style"     : {
+                    "path" : {
+                        "option" : {
+                            "stroke"      : true,
+                            "weight"      : 1.25,
+                            "color"       : "#000000",
+                            "fillColor"   : "#B3D399",
+                            "fillOpacity" : 0.2
+                        }
+                    }
+                }
+            },
+            {
+                "name"      : "中華白海豚野生動物重要棲息環境公告範圍",
+                "file"      : "/mapset/files/2019/area-02.geojson",
+                "graphType" : "polygon",
+                "style"     : {
+                    "path" : {
+                        "option" : {
+                            "stroke"      : true,
+                            "weight"      : 1.25,
+                            "color"       : "#4E95C3",
+                            "fillColor"   : "#4E95C3",
+                            "fillOpacity" : 0.2
+                        }
+                    }
+                }
+            },
+            {
+                "name"      : "底棲魚類調查對照區",
+                "file"      : "/mapset/files/2019/area-03.geojson",
+                "graphType" : "polygon",
+                "style"     : {
+                    "path" : {
+                        "option" : {
+                            "stroke"      : true,
+                            "weight"      : 1.25,
+                            "color"       : "#E5997E",
+                            "fillColor"   : "#E5997E",
+                            "fillOpacity" : 0.2
+                        }
+                    }
+                }
+            }
+
+        ]
+    }
+]

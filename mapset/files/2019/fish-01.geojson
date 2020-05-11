@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "fish-01",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": null, "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 120.824142851714001, 24.724770600199509, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": null, "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 120.825674510666104, 24.714026275478549, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": null, "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 120.834483861944804, 24.706808999873619, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": null, "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 120.806702586077606, 24.714759564564851, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": null, "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 120.804354119509398, 24.699241537234428, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": null, "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Point", "coordinates": [ 120.812282174784897, 24.690925832961891, 0.0 ] } }
+]
+}

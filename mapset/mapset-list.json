@@ -1,0 +1,10 @@
+[
+    {
+        "name" : "2019 年",
+        "file" : "/mapset/mapset-2019.json"
+    },
+    {
+        "name" : "2018 年",
+        "file" : "/mapset/mapset-2018.json"
+    }
+]
