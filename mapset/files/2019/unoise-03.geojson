@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "unoise-03",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ele": null, "time": "2019\/10\/23 03:03:45.000", "magvar": null, "geoidheigh": null, "name": "Ref-s2", "cmt": "�v", "desc": "�v", "src": null, "link1_href": null, "link1_text": null, "link1_type": null, "link2_href": null, "link2_text": null, "link2_type": null, "sym": "Waypoint", "type": null, "fix": null, "sat": null, "hdop": null, "vdop": null, "pdop": null, "ageofdgpsd": null, "dgpsid": null, "gpxx_Waypo": "<gpxx:DisplayMode>SymbolAndName<\/gpxx:DisplayMode>" }, "geometry": { "type": "Point", "coordinates": [ 120.733969454, 24.62183889, 0.0 ] } },
+{ "type": "Feature", "properties": { "ele": null, "time": "2019\/10\/23 03:04:39.000", "magvar": null, "geoidheigh": null, "name": "Ref-s3", "cmt": "�v", "desc": "�v", "src": null, "link1_href": null, "link1_text": null, "link1_type": null, "link2_href": null, "link2_text": null, "link2_type": null, "sym": "Waypoint", "type": null, "fix": null, "sat": null, "hdop": null, "vdop": null, "pdop": null, "ageofdgpsd": null, "dgpsid": null, "gpxx_Waypo": "<gpxx:DisplayMode>SymbolAndName<\/gpxx:DisplayMode>" }, "geometry": { "type": "Point", "coordinates": [ 120.672841659, 24.520400008, 0.0 ] } }
+]
+}

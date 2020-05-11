@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "area-03",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "對照區建議位址", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 120.755906, 24.660806 ], [ 120.745621, 24.649426 ], [ 120.734127, 24.651603 ], [ 120.722298, 24.640062 ], [ 120.735467, 24.632874 ], [ 120.725375, 24.622319 ], [ 120.735134, 24.617582 ], [ 120.743041, 24.618196 ], [ 120.755063, 24.628234 ], [ 120.755745, 24.637585 ], [ 120.766886, 24.650368 ], [ 120.76757, 24.655355 ], [ 120.777148, 24.660515 ], [ 120.769853, 24.665489 ], [ 120.755906, 24.660806 ] ] ] } }
+]
+}
