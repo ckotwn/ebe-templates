@@ -543,6 +543,9 @@
                 if( survayData.editLink ){ $w.find('.-f-editLink').attr( 'href', survayData.editLink ).show(); }
                 else{ $w.find('.-f-editLink').attr( 'href', '#' ).hide(); }
 
+                if( survayData.deleteLink ){ $w.find('.-f-reportLink').attr( 'href', survayData.reportLink ).show(); }
+                else{ $w.find('.-f-reportLink').attr( 'href', '#' ).hide(); }
+
                 if( survayData.deleteLink ){ $w.find('.-f-deleteLink').attr( 'href', survayData.deleteLink ).show(); }
                 else{ $w.find('.-f-deleteLink').attr( 'href', '#' ).hide(); }
 

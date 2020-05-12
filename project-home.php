@@ -231,13 +231,14 @@
 
                 <div class="infoCard">
                     <div class="col1">
-                        <div class="statusText -f-status_text">進行中</div>
-                        <div class="projectNo -f-survay_id">AAA0001</div>
+                        <div class="statusText -f-status_text"></div>
+                        <div class="projectNo -f-survay_id"></div>
                     </div>
                     <div class="col2">
-                        <div class="name -f-name">離岸風場鳥類生態調查監測標準作業 建立計畫</div>
+                        <div class="name -f-name"></div>
                         <div class="fn">
                             <a href="#" target="_blank" class="ebButton -f-editLink -action-goEditSurvay">編輯</a>
+                            <a href="#" target="_blank" class="ebButton -f-reportLink -action-goEditSurvay">回報</a>
                             <a href="#" target="_blank" class="ebButton -f-deleteLink -type-error -action-goDeleteSurvay">刪除</a>
                         </div>
                     </div>
@@ -249,7 +250,7 @@
                         <div class="itemList">
                             <div class="itemRow">
                                 <div class="label">狀態</div>
-                                <div class="value"><div class="ebDisplayText -s -f-status_text">進行中</div></div>
+                                <div class="value"><div class="ebDisplayText -s -f-status_text"></div></div>
                             </div>
                             <div class="itemRow">
                                 <div class="label">日期</div>
@@ -520,6 +521,7 @@
         boat_name     : "千陽號",
         editLink      : "#",  // 不提供參數或是null就不顯示
         deleteLink    : "#",  // 不提供參數或是null就不顯示
+        reportLink    : "#",  // 不提供參數或是null就不顯示
 
         folder_list : {
             type          : 'google-drive',
