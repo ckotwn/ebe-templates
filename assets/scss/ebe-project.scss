@@ -461,6 +461,11 @@ $paneTransition-3: all .99s $easeOutExpo;
                 }
             }
         }
+
+        .buttons{
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 
     .messagePane{

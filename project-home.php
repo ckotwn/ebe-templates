@@ -206,9 +206,11 @@
                                     <tbody></tbody>
                                 </table>
                             </div>
+
                             <div class="buttons">
                                 <a href="#" class="ebButton">建立作業規劃</a>
                             </div>
+
                         </div>
                     </div>
                 </div>

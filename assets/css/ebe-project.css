@@ -513,6 +513,15 @@
   line-height: 24px;
 }
 
+#pProjectDetailPane .group .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 #pProjectDetailPane .messagePane {
   position: absolute;
   display: none;
