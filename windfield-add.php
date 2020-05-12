@@ -2,11 +2,11 @@
 <?php include "header.v2.php" ?>
 
 
-<link rel='stylesheet' href='<?= SITE_URL; ?>/assets/lib/leaflet/leaflet.css' type='text/css' media='all' />
-<script type='text/javascript' src='<?= SITE_URL; ?>/assets/lib/leaflet/leaflet.js'></script>
+<link rel='stylesheet' href='<?= SITE_URL; ?>assets/lib/leaflet/leaflet.css' type='text/css' media='all' />
+<script type='text/javascript' src='<?= SITE_URL; ?>assets/lib/leaflet/leaflet.js'></script>
 
-<link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/ebe-windfield.css?ver=<?= rand(); ?>' type='text/css' media='all' />
-<script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/ebe-map.js?ver=<?= rand(); ?>'></script>
+<link rel='stylesheet' href='<?= SITE_URL; ?>assets/css/ebe-windfield.css?ver=<?= rand(); ?>' type='text/css' media='all' />
+<script type='text/javascript' src='<?= SITE_URL; ?>assets/js/ebe-map.js?ver=<?= rand(); ?>'></script>
 
 
 <?php /* content end */ ?>

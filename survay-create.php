@@ -2,9 +2,9 @@
 <?php include "header.v2.php" ?>
 
 
-<link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/ebe-project.css?ver=<?= rand(); ?>' type='text/css' media='all' />
-<script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/ebe-widget.js?ver=<?= rand(); ?>'></script>
-<script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/ebe-project.js?ver=<?= rand(); ?>'></script>
+<link rel='stylesheet' href='<?= SITE_URL; ?>assets/css/ebe-project.css?ver=<?= rand(); ?>' type='text/css' media='all' />
+<script type='text/javascript' src='<?= SITE_URL; ?>assets/js/ebe-widget.js?ver=<?= rand(); ?>'></script>
+<script type='text/javascript' src='<?= SITE_URL; ?>assets/js/ebe-project.js?ver=<?= rand(); ?>'></script>
 
 
 

@@ -2,9 +2,9 @@
 <?php include "header.v2.php" ?>
 
 
-<link rel='stylesheet' href='<?= SITE_URL; ?>/assets/css/ebe-project.css?ver=<?= rand(); ?>' type='text/css' media='all' />
-<script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/ebe-widget.js?ver=<?= rand(); ?>'></script>
-<script type='text/javascript' src='<?= SITE_URL; ?>/assets/js/ebe-project.js?ver=<?= rand(); ?>'></script>
+<link rel='stylesheet' href='<?= SITE_URL; ?>assets/css/ebe-project.css?ver=<?= rand(); ?>' type='text/css' media='all' />
+<script type='text/javascript' src='<?= SITE_URL; ?>assets/js/ebe-widget.js?ver=<?= rand(); ?>'></script>
+<script type='text/javascript' src='<?= SITE_URL; ?>assets/js/ebe-project.js?ver=<?= rand(); ?>'></script>
 <script>
     $(window).on('load', Ebe.Page.ProjectHome.init );
 </script>
@@ -199,12 +199,15 @@
                             </div>
                         </div>
                         <div class="group -g-survayList" data-collapse="expend">
-                            <div class="titlebar">測站</div>
+                            <div class="titlebar">作業規劃</div>
                             <div class="itemList">
                                 <table class="listTable -f-survay_list">
                                     <thead></thead>
                                     <tbody></tbody>
                                 </table>
+                            </div>
+                            <div class="buttons">
+                                <a href="#" class="ebButton">建立作業規劃</a>
                             </div>
                         </div>
                     </div>
@@ -292,7 +295,7 @@
                         </div>
                     </div>
                     <div class="group -g-stationList" data-collapse="expend">
-                        <div class="titlebar">調查規劃</div>
+                        <div class="titlebar">測站</div>
                         <div id="swg4" class="widgetBoxWrapper">
                         </div>
                     </div>

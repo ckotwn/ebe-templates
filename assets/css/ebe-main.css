@@ -421,16 +421,16 @@ body {
   top: 56px;
 }
 
-#headerPane + #bodyPane {
-  top: 104px;
-}
-
 #headerPane.-expend {
   height: 88px;
 }
 
 #headerPane.-expend + #bodyPane {
   top: 136px;
+}
+
+.-appMode #headerPane.-expend + * {
+  top: 88px;
 }
 
 #headerPane .titlePanel {
