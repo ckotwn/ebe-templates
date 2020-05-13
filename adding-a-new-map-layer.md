@@ -12,11 +12,7 @@
 |用途|檔案路徑|說明|
 |-|-|-|
 |首頁圖輯清單設定|`/mapset/mapset-list.json`|設定可於首頁顯示的 `圖輯`
-<<<<<<< HEAD
-|圖輯設定　　　　|`/mapset/mapset-y.json`   |`圖輯` 顯示設定，包含順序、圖層檔案、外觀等。
-=======
 |圖輯設定　　　　|`/mapset/mapset-****.json`|`圖輯` 顯示設定，包含順序、圖層檔案、外觀等。
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
 |圖層　　　　　　|`/mapset/files/*`         |`圖層` 檔案統一儲存於此。
 
 
@@ -33,49 +29,36 @@
 
 **結構：**
 
-<<<<<<< HEAD
-    [
-=======
     array(
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
         [MapSetListItem Object],
         [MapSetListItem Object],
         ...
         [MapSetListItem Object]
-<<<<<<< HEAD
-    ]
-=======
     )
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
 
 **MapSetListItem Object**
 
-|欄位|說明|
-|--|--|
-|`name`|圖輯的顯示名稱
-|`file`|圖輯的檔案路徑
+|欄位|資料型態|說明|
+|--|--|--|
+|`name`     |`String`           |圖輯的顯示名稱
+|`file`     |`String`           |圖輯的檔案路徑
+|`mapCenter`|`Array( lat, lng )`|地圖的中心點 (讀取時定位)
 
 
 **檔案範例：**
 
-<<<<<<< HEAD
-    Array(
-=======
     [
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
         {
-            "name" : "2019 年觀測資料集",
-            "file" : "/mapset/mapset-2019.json"
+            "name"      : "2019 年觀測資料集",
+            "file"      : "/mapset/mapset-2019.json",
+            "mapCenter" :  [ 24.708033, 120.842534 ]
         },
         {
-            "name" : "2018 年觀測資料集",
-            "file" : "/mapset/mapset-2018.json"
+            "name"      : "2018 年觀測資料集",
+            "file"      : "/mapset/mapset-2018.json",
+            "mapCenter" :  [ 24.708033, 120.842534 ]
         }
-<<<<<<< HEAD
-    );
-=======
     ]
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
 
 
 ### 4.2 圖輯設定 - `mapset.json`
@@ -94,7 +77,6 @@
 
 |欄位|資料類型|說明|
 |--|--|--|
-<<<<<<< HEAD
 |`type`      |`String [group|layer]`        |圖層類型，group 需包含一個或多個 layer
 |`icon`      |`String`                      |圖層圖示，僅用於 group layer，使用 fontawsome
 |`name`      |`String`                      |圖層名稱
@@ -104,18 +86,8 @@
 |`style`     |`LayerStyle Object`           |圖層外觀設定
 |`children`  |`Array([LayerConfig Object])` |子圖層清單
 
-=======
-|`type`      |`String [layer*|group]`       |圖層類型，group 需包含一個或多個 layer
-|`name`      |`String`                      |圖層名稱
-|`file`      |`String`                      |圖層檔案路徑，僅用於 layer
-|`graphType` |`String [polygon|path|point]` |圖層顯示方式，僅用於 layer，反應至圖層控制面板的圖示，<br>可用值為 多邊形、路徑、點，<br>
-|`visible`   |`Boolean [true*|false]`       |是否預設顯示
-|`style`     |`LayerStyle Object`           |圖層外觀設定
-|`children`  |`Array([LayerConfig Object])` |子圖層清單
-
 星號 (*) 標示為預設值
 
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
 **LayerStyle Object**
 
 |欄位|資料類型|說明|
@@ -133,31 +105,19 @@
 
 |欄位|資料類型|說明|
 |--|--|--|
-<<<<<<< HEAD
-|`type`  |`String [circle|marker]`|點的外觀類型，可使用圓點 (circle) 或是圖片 (Marker)
-|`option`|`Object`                |設定點外觀，若為 circle type 則參數同 `Leaflet Path Object` [說明文件↗](https://leafletjs.com/reference-1.6.0.html#path)<br>若為 marker type 則參數同 `Leaflet Marker` [說明文件↗](https://leafletjs.com/reference-1.6.0.html#marker)
-=======
 |`type`  |`String [circle|image]`|點的外觀類型，可使用圓點 (circle) 或是圖片 (image)
 |`option`|`Object`                |設定點外觀，若為 circle type 則參數同 `Leaflet Path Object` [說明文件↗](https://leafletjs.com/reference-1.6.0.html#path)<br>若為 image type 則參數同 `Leaflet Marker` [說明文件↗](https://leafletjs.com/reference-1.6.0.html#marker)
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
 
 
 **範例－顯示水下測站，內容為座標點，外觀為黑框淺綠色圓點顯示：**
 
     [
         {
-<<<<<<< HEAD
-            "name"    : "水下聲學風場區測站(施工期)",
-            "figType" : "points",
-            "file"    : "mapset/2019/St_2019_W_ITRITest_CAcoustics_pre_dev.geojson",
-            "style"   : {
-=======
             "type"      : "layer",
             "name"      : "水下聲學風場區測站(施工期)",
-            "graphType" : "points",
+            "graphType" : "point",
             "file"      : "mapset/2019/St_2019_W_ITRITest_CAcoustics_pre_dev.geojson",
             "style"     : {
->>>>>>> eda551316b35b21006b7d7e9b95b7517154d19d5
                 "point" : {
                     "type" : "circle",
                     "option" : {
