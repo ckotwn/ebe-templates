@@ -437,19 +437,20 @@
     var SAMPLE_PROJECT_DATA = {
 
         // 基本參數
-        id              : 1,
-        status          : "進行中",
-        status_text     : "進行中",
-        project_id      : "P000123",
-        name            : "離岸風場鳥類生態調查監測標準作業 建立計畫",
-        start_date      : "2018-02-01",
-        end_date        : "2018-12-10",
-        typeTextList    : [ "鳥類", "鯨豚" ],
-        windfield_name  : "海洋竹南風力發電場",
-        storageLink     : "#",
-        note            : "",
-        editLink        : "",    // 編輯的連結  不提供參數或是null就不顯示
-        deleteLink      : null,  // 刪除的連結  不提供參數或是null就不顯示
+        id               : 1,
+        status           : "進行中",
+        status_text      : "進行中",
+        project_id       : "P000123",
+        name             : "離岸風場鳥類生態調查監測標準作業 建立計畫",
+        start_date       : "2018-02-01",
+        end_date         : "2018-12-10",
+        typeTextList     : [ "鳥類", "鯨豚" ],
+        windfield_name   : "海洋竹南風力發電場",
+        storageLink      : "#",
+        note             : "",
+        editLink         : "",    // 編輯的連結  不提供參數或是null就不顯示
+        deleteLink       : null,  // 刪除的連結  不提供參數或是null就不顯示
+        createSurvayLink : null,  // 建立作業規劃的連結  不提供參數或是null就不顯示
 
         // 管理員
         admin_list : [
