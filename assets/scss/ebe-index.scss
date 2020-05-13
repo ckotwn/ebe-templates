@@ -1,0 +1,313 @@
+@charset "utf-8";
+
+@import "ebe/config";
+
+
+#indexMapPane{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 32px;
+}
+
+
+#indexMap{
+    position: absolute;
+    left: 320px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+#indexMapLayerPane{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 320px;
+    bottom: 0;
+    background: #fff;
+    box-shadow: $fx-paneShadow;
+
+    .mapsetNamePane{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 40px;
+        border-bottom: 1px solid #E8E8E8;
+
+        .nameBar{
+            position: absolute;
+            display: flex;
+            left: 0;
+            top: 0;
+            right: 0;
+            height: 40px;
+            line-height: 40px;
+
+            .icon{
+                flex: 0 0 40px;
+                font-size: 18px;
+                text-align: center;
+                line-height: inherit;
+            }
+
+            span{
+                flex: 1 1 auto;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .dropbown{
+                flex: 0 0 40px;
+                font-size: 18px;
+                text-align: center;
+                line-height: inherit;
+                cursor: pointer;
+            }
+        }
+
+        .mapsetSelect{
+            position: absolute;
+            z-index: $z-popupMenu;
+            display: none;
+            left: 100%;
+            top: 40px;
+            margin-left: -40px;
+            width: 160px;
+            background: #333;
+            color: #ccc;
+            box-shadow: $fx-paneShadow;
+
+            &.-active{
+                display: block;
+            }
+
+            .option{
+                padding: 0 8px;
+                font-size: 14px;
+                line-height: 32px;
+                height: 32px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                cursor: pointer;
+
+                &:hover{
+                    background: #000;
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+
+    .layerPane{
+        position: absolute;
+        left: 0;
+        top: 40px;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+
+        .content{
+            padding: 8px 8px 12px 0;
+        }
+    }
+
+    .layerItem{
+        position: relative;
+
+        .infoBar{
+            display: flex;
+        }
+
+        .legend{
+            position: relative;
+            flex: 0 0 32px;
+        }
+
+        .legend-polygon{
+            position: absolute;
+            left: 8px;
+            top: 14px;
+            right: 8px;
+            bottom: 14px;
+            border: 1px solid #fff;
+        }
+
+        .legend-path{
+            position: absolute;
+            left: 8px;
+            top: 20px;
+            right: 8px;
+            border-top: 1px solid #fff;
+        }
+
+        .legend-point-circle{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 14px;
+            height: 14px;
+            transform: translate(-50%, -50%);
+            border: 1px solid #fff;
+            border-radius: 100px;
+        }
+
+        .legend-point-image{
+            position: absolute;
+            left:   0px;
+            top:    4px;
+            right:  0px;
+            bottom: 4px;
+            background-size: contain;
+        }
+
+        .name{
+            flex: 1 1 auto;
+            font-size: 13px;
+            line-height: 32px;
+            height: 32px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .visibleToggle{
+            flex: 0 0 32px;
+            cursor: pointer;
+
+            > *{
+                width: 100%;
+                line-height: 32px;
+                text-align: center;
+            }
+        }
+
+        &[data-visible="1"]{
+            > .infoBar .visibleToggle > *:nth-child(1){ display: block; }
+            > .infoBar .visibleToggle > *:nth-child(2){ display: none; }
+        }
+
+        &[data-visible="0"]{
+            > .infoBar .visibleToggle > *:nth-child(1){ display: none; }
+            > .infoBar .visibleToggle > *:nth-child(2){ display: block; }
+        }
+
+        &[data-type="group"] > .infobar{
+            .legend{
+                .icon{
+                    width: 100%;
+                    line-height: 32px;
+                    text-align: center;
+                }
+            }
+            .name{
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+            .visibleToggle{
+                display: none;
+            }
+        }
+
+        &[data-level="1"]{
+
+            > .children{
+                margin-left: 32px;
+            }
+        }
+
+        &[data-type="group"][data-level="2"]{
+            margin-top: 8px;
+            background: #F0F0F0;
+            border-radius: 8px;
+
+            > .children{
+                border-top: 1px dashed #ccc;
+            }
+
+            &::before,
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+            }
+
+            &::before{
+                left: -16px;
+                top: -8px;
+                bottom: 0;
+                border-left: 1px solid #999;
+            }
+
+            &::after{
+                left: -16px;
+                top: 16px;
+                width: 14px;
+                border-top: 1px solid #999;
+            }
+
+            &:nth-child(1){
+
+                &::before{
+                    top: -8px;
+                }
+            }
+
+            &:last-child{
+                &::before{
+                    bottom: auto;
+                    height: 24px;
+                }
+            }
+        }
+
+        &[data-type="layer"]{
+
+            $h: 32px;
+
+            .name,
+            .visibleToggle > *{
+                line-height: $h;
+                height: $h;
+            }
+
+            .name{
+                cursor: pointer;
+
+                &:hover{
+                    font-weight: bold;
+                    color: #000;
+                }
+            }
+
+            & + .layerItem{
+
+                &::before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 24px;
+                    top: 0;
+                    right: 8px;
+                    border-top: 1px solid #E0E0E0;
+                }
+            }
+        }
+
+        &[data-type="group"] + .layerItem{
+        }
+    }
+}
+
+
+#indexMapFnPane{
+    position: absolute;
+    left: 16px;
+    top: 16px;
+
+}

@@ -140,7 +140,7 @@
                         "file"      : "/mapset/files/2019/cetasean-02.geojson",
                         "graphType" : "path",
                         "style"     : {
-                            "path" :{
+                            "path" : {
                                 "option" : {
                                     "stroke" : true,
                                     "weight" : 2.5,
@@ -154,7 +154,7 @@
                         "file"      : "/mapset/files/2019/cetasean-03.geojson",
                         "graphType" : "path",
                         "style"     : {
-                            "path" :{
+                            "path" : {
                                 "option" : {
                                     "stroke" : true,
                                     "weight" : 1,
@@ -168,7 +168,7 @@
                         "file"      : "/mapset/files/2019/cetasean-04.geojson",
                         "graphType" : "path",
                         "style"     : {
-                            "path" :{
+                            "path" : {
                                 "option" : {
                                     "stroke" : true,
                                     "weight" : 2.5,
@@ -183,7 +183,7 @@
                         "file"      : "/mapset/files/2019/cetasean-05.geojson",
                         "graphType" : "path",
                         "style"     : {
-                            "path" :{
+                            "path" : {
                                 "option" : {
                                     "stroke" : true,
                                     "weight" : 1,
@@ -198,7 +198,7 @@
                         "file"      : "/mapset/files/2019/cetasean-06.geojson",
                         "graphType" : "path",
                         "style"     : {
-                            "path" :{
+                            "path" : {
                                 "option" : {
                                     "stroke" : true,
                                     "weight" : 2.5,
@@ -221,12 +221,14 @@
                         "file"      : "/mapset/files/2019/fish-01.geojson",
                         "graphType" : "point",
                         "style"     : {
-                            "type" : "image",
-                            "option" : {
-                                "iconUrl"     : "/assets/img/mapIcon/circle-green-icon-plus.png",
-                                "iconSize"    : [ 40,  40],
-                                "iconAnchor"  : [ 20,  20],
-                                "popupAnchor" : [  0, -20]
+                            "point" : {
+                                "type" : "image",
+                                "option" : {
+                                    "iconUrl"     : "/assets/img/mapIcon/circle-green-icon-plus.png",
+                                    "iconSize"    : [ 40,  40],
+                                    "iconAnchor"  : [ 20,  20],
+                                    "popupAnchor" : [  0, -20]
+                                }
                             }
                         }
                     }
@@ -243,11 +245,12 @@
                         "file"      : "/mapset/files/2019/unoise-01.geojson",
                         "graphType" : "point",
                         "style"     : {
-                            "path" : {
+                            "point" : {
                                 "type" : "circle",
                                 "option" : {
                                     "stroke"      : true,
                                     "weight"      : 1.25,
+                                    "radius"      : 7,
                                     "color"       : "#000000",
                                     "fillColor"   : "#ff9e17",
                                     "fillOpacity" : 1
@@ -260,11 +263,12 @@
                         "file"      : "/mapset/files/2019/unoise-02.geojson",
                         "graphType" : "point",
                         "style"     : {
-                            "path" : {
+                            "point" : {
                                 "type" : "circle",
                                 "option" : {
                                     "stroke"      : true,
                                     "weight"      : 1.25,
+                                    "radius"      : 7,
                                     "color"       : "#000000",
                                     "fillColor"   : "#b2df8a",
                                     "fillOpacity" : 1
@@ -277,11 +281,12 @@
                         "file"      : "/mapset/files/2019/unoise-03.geojson",
                         "graphType" : "point",
                         "style"     : {
-                            "path" : {
+                            "point" : {
                                 "type" : "circle",
                                 "option" : {
                                     "stroke"      : true,
                                     "weight"      : 1.25,
+                                    "radius"      : 7,
                                     "color"       : "#000000",
                                     "fillColor"   : "#FFFFFF",
                                     "fillOpacity" : 1
@@ -298,58 +303,64 @@
 
     {
         "type"     : "group",
-        "name"     : "公告區域範圍",
+        "name"     : "參考資料",
         "children" : [
 
             {
-                "name"      : "海洋示範風場範圍",
-                "file"      : "/mapset/files/2019/area-01.geojson",
-                "graphType" : "polygon",
-                "style"     : {
-                    "path" : {
-                        "option" : {
-                            "stroke"      : true,
-                            "weight"      : 1.25,
-                            "color"       : "#000000",
-                            "fillColor"   : "#B3D399",
-                            "fillOpacity" : 0.2
-                        }
-                    }
-                }
-            },
-            {
-                "name"      : "中華白海豚野生動物重要棲息環境公告範圍",
-                "file"      : "/mapset/files/2019/area-02.geojson",
-                "graphType" : "polygon",
-                "style"     : {
-                    "path" : {
-                        "option" : {
-                            "stroke"      : true,
-                            "weight"      : 1.25,
-                            "color"       : "#4E95C3",
-                            "fillColor"   : "#4E95C3",
-                            "fillOpacity" : 0.2
-                        }
-                    }
-                }
-            },
-            {
-                "name"      : "底棲魚類調查對照區",
-                "file"      : "/mapset/files/2019/area-03.geojson",
-                "graphType" : "polygon",
-                "style"     : {
-                    "path" : {
-                        "option" : {
-                            "stroke"      : true,
-                            "weight"      : 1.25,
-                            "color"       : "#E5997E",
-                            "fillColor"   : "#E5997E",
-                            "fillOpacity" : 0.2
-                        }
-                    }
-                }
-            }
+                "type"     : "group",
+                "name"     : "政府公告範圍",
+                "children" : [
 
+                    {
+                        "name"      : "海洋示範風場範圍",
+                        "file"      : "/mapset/files/2019/area-01.geojson",
+                        "graphType" : "polygon",
+                        "style"     : {
+                            "path" : {
+                                "option" : {
+                                    "stroke"      : true,
+                                    "weight"      : 1.25,
+                                    "color"       : "#000000",
+                                    "fillColor"   : "#B3D399",
+                                    "fillOpacity" : 0.2
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name"      : "中華白海豚野生動物重要棲息環境公告範圍",
+                        "file"      : "/mapset/files/2019/area-02.geojson",
+                        "graphType" : "polygon",
+                        "style"     : {
+                            "path" : {
+                                "option" : {
+                                    "stroke"      : true,
+                                    "weight"      : 1.25,
+                                    "color"       : "#4E95C3",
+                                    "fillColor"   : "#4E95C3",
+                                    "fillOpacity" : 0.2
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name"      : "底棲魚類調查對照區",
+                        "file"      : "/mapset/files/2019/area-03.geojson",
+                        "graphType" : "polygon",
+                        "style"     : {
+                            "path" : {
+                                "option" : {
+                                    "stroke"      : true,
+                                    "weight"      : 1.25,
+                                    "color"       : "#E5997E",
+                                    "fillColor"   : "#E5997E",
+                                    "fillOpacity" : 0.2
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
         ]
     }
 ]
