@@ -207,7 +207,7 @@
                                 </table>
                             </div>
 
-                            <div class="buttons">
+                            <div class="buttons -f-createSurvayLink">
                                 <a href="#" class="ebButton">建立作業規劃</a>
                             </div>
 
@@ -237,8 +237,8 @@
                     <div class="col2">
                         <div class="name -f-name"></div>
                         <div class="fn">
-                            <a href="#" target="_blank" class="ebButton -f-editLink -action-goEditSurvay">編輯</a>
                             <a href="#" target="_blank" class="ebButton -f-reportLink -action-goEditSurvay">回報</a>
+                            <a href="#" target="_blank" class="ebButton -f-editLink -action-goEditSurvay">編輯</a>
                             <a href="#" target="_blank" class="ebButton -f-deleteLink -type-error -action-goDeleteSurvay">刪除</a>
                         </div>
                     </div>
@@ -450,7 +450,7 @@
         note             : "",
         editLink         : "",    // 編輯的連結  不提供參數或是null就不顯示
         deleteLink       : null,  // 刪除的連結  不提供參數或是null就不顯示
-        createSurvayLink : null,  // 建立作業規劃的連結  不提供參數或是null就不顯示
+        createSurvayLink : "#",  // 建立作業規劃的連結  不提供參數或是null就不顯示
 
         // 管理員
         admin_list : [

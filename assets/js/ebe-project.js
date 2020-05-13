@@ -436,6 +436,9 @@
                 if( projectData.deleteLink ){ $w.find('.-f-deleteLink').attr( 'href', projectData.deleteLink ).show(); }
                 else{ $w.find('.-f-deleteLink').attr( 'href', '#' ).hide(); }
 
+                if( projectData.createSurvayLink ){ $w.find('.-f-createSurvayLink').attr( 'href', projectData.createSurvayLink ).show(); }
+                else{ $w.find('.-f-createSurvayLink').attr( 'href', '#' ).hide(); }
+
                 $w.find('.-f-admin_list tbody') .empty();
                 $w.find('.-f-user_list tbody')  .empty();
                 $w.find('.-f-survay_list tbody').empty();
