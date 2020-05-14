@@ -207,8 +207,8 @@
                                 </table>
                             </div>
 
-                            <div class="buttons -f-createSurvayLink">
-                                <a href="#" class="ebButton">建立作業規劃</a>
+                            <div class="buttons">
+                                <a href="#" class="ebButton -f-createSurvayLink">建立作業規劃</a>
                             </div>
 
                         </div>
