@@ -754,7 +754,7 @@
 
             // 執行新增
             if( typeof wg.addItemHandler == "function" ){
-                wg.showMessage('請稍後');
+                wg.showMessage('請稍候');
                 return wg.addItemHandler( data );
             }
         }
@@ -917,7 +917,7 @@
 
             // 執行
             if( typeof wg.removeItemHandler == "function" ){
-                wg.showMessage('請稍後');
+                wg.showMessage('請稍候');
                 return wg.removeItemHandler( rowId );
             }
         }
@@ -1049,7 +1049,7 @@
             };
 
             if( typeof wg.addItemHandler == "function" ){
-                wg.showMessage('請稍後');
+                wg.showMessage('請稍候');
                 return wg.addItemHandler( entourageData );
             }else{
                 wg.addItem( entourageData );
@@ -1138,7 +1138,7 @@
             var entourageData = $row.data('data-row');
 
             if( typeof wg.removeItemHandler == "function" ){
-                wg.showMessage('請稍後');
+                wg.showMessage('請稍候');
                 return wg.removeItemHandler( entourageData.id, entourageData );
             }else{
                 $row.remove();
@@ -1238,7 +1238,7 @@
             }
 
             if( typeof wg.addItemHandler == "function" ){
-                wg.showMessage('請稍後');
+                wg.showMessage('請稍候');
                 return wg.addItemHandler( email );
             }
         }
