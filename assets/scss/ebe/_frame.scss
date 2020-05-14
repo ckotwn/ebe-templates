@@ -10,6 +10,7 @@
 
 html{
     height: 100%;
+    min-width: $s-minWidth;
     background: #f8f8f8;
 }
 
@@ -44,7 +45,7 @@ body{
     z-index: $z-frameUI;
     left: 0;
     top: 0;
-    right: 0;
+    width: 100%;
     height: $s-headerH;
     background: $c-main;
     box-shadow: $fx-frameUIShadow;
@@ -117,22 +118,35 @@ body{
             .trayIcon{
                 cursor: pointer;
                 line-height: 48px;
+                vertical-align: top;
 
                 .icon{
                     width: 48px;
                     font-size: 18px;
                     line-height: inherit;
+                    vertical-align: top;
                 }
 
                 a{
                     display: block;
                     line-height: inherit;
+                    text-decoration: none;
+                    vertical-align: top;
                 }
 
                 .textlabel{
                     display: inline-block;
                     margin-left: -4px;
                     margin-right: 16px;
+                }
+
+                .icon{
+                    text-align: center;
+                }
+
+                *{
+                    color: #fff;
+                    text-decoration: none;
                 }
             }
 
@@ -175,6 +189,9 @@ body{
                 }
 
                 a{
+                    color: #fff;
+                    text-decoration: none;
+
                     i{
                         display: inline-block;
                         width: 32px;
@@ -288,7 +305,7 @@ body{
     position: fixed;
     left: 0;
     bottom: 0;
-    right: 0;
+    width: 100%;
     height: $s-footerH;
     background: #fff;
     box-shadow: $fx-frameUIShadow;
@@ -337,19 +354,18 @@ body{
         position: absolute;
         z-index: $z-filter;
 
-        + *{
-            top: 56px;
-        }
+        + *{           top: 56px; }
+        &.-expend + *{ top: 88px; }
     }
 
-    + #bodyPane{
+    + *{
         top: 104px;
     }
 
     &.-expend{
         height: 88px;
 
-        + #bodyPane{
+        + *{
             top: 136px;
         }
     }
@@ -445,19 +461,21 @@ body{
 
 .bodyPane,
 #bodyPane{
-    position: absolute;
     z-index: 0;
     left: 0;
     right: 0;
-    top: $s-headerH;
-    padding-bottom: 48px + $s-footerH;
+    padding-bottom: 0;
+}
 
-    @at-root .-appMode #{&}{
+.-appMode{
+    .bodyPane,
+    #bodyPane{
+        position: absolute;
         left: 0;
         right: 0;
         top: $s-headerH;
         bottom: $s-footerH;
-        padding-bottom: 0;
+        padding-bottom: 32px + $s-footerH;
     }
 }
 

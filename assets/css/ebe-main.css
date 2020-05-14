@@ -46,6 +46,7 @@
 
 html {
   height: 100%;
+  min-width: 960px;
   background: #f8f8f8;
 }
 
@@ -73,7 +74,7 @@ body {
   z-index: 1000;
   left: 0;
   top: 0;
-  right: 0;
+  width: 100%;
   height: 48px;
   background: #0D7BC4;
   -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
@@ -166,23 +167,36 @@ body {
 #header .fnBlock .fnItem .trayIcon {
   cursor: pointer;
   line-height: 48px;
+  vertical-align: top;
 }
 
 #header .fnBlock .fnItem .trayIcon .icon {
   width: 48px;
   font-size: 18px;
   line-height: inherit;
+  vertical-align: top;
 }
 
 #header .fnBlock .fnItem .trayIcon a {
   display: block;
   line-height: inherit;
+  text-decoration: none;
+  vertical-align: top;
 }
 
 #header .fnBlock .fnItem .trayIcon .textlabel {
   display: inline-block;
   margin-left: -4px;
   margin-right: 16px;
+}
+
+#header .fnBlock .fnItem .trayIcon .icon {
+  text-align: center;
+}
+
+#header .fnBlock .fnItem .trayIcon * {
+  color: #fff;
+  text-decoration: none;
 }
 
 #header .fnBlock .fnItem:hover .trayIcon {
@@ -221,6 +235,11 @@ body {
   padding: 0 12px;
   color: #fff;
   background: #111;
+}
+
+#header .fnBlock .fnItem .dropdownMenu a {
+  color: #fff;
+  text-decoration: none;
 }
 
 #header .fnBlock .fnItem .dropdownMenu a i {
@@ -366,7 +385,7 @@ body {
   position: fixed;
   left: 0;
   bottom: 0;
-  right: 0;
+  width: 100%;
   height: 32px;
   background: #fff;
   -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
@@ -421,16 +440,20 @@ body {
   top: 56px;
 }
 
+.-appMode #headerPane.-expend + * {
+  top: 88px;
+}
+
+#headerPane + * {
+  top: 104px;
+}
+
 #headerPane.-expend {
   height: 88px;
 }
 
-#headerPane.-expend + #bodyPane {
+#headerPane.-expend + * {
   top: 136px;
-}
-
-.-appMode #headerPane.-expend + * {
-  top: 88px;
 }
 
 #headerPane .titlePanel {
@@ -524,20 +547,20 @@ body {
 
 .bodyPane,
 #bodyPane {
-  position: absolute;
   z-index: 0;
   left: 0;
   right: 0;
-  top: 48px;
-  padding-bottom: 80px;
+  padding-bottom: 0;
 }
 
-.-appMode .bodyPane, #bodyPane {
+.-appMode .bodyPane,
+.-appMode #bodyPane {
+  position: absolute;
   left: 0;
   right: 0;
   top: 48px;
   bottom: 32px;
-  padding-bottom: 0;
+  padding-bottom: 64px;
 }
 
 .-appMode .contentPane {
