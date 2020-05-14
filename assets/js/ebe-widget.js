@@ -1036,17 +1036,15 @@
             var email = $wg.find('.addPane .-f-email').val();
             var emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-            // if( email == '' ) return;
-            // if( emailRe.test( email) == false ){
-            //     alert( 'E-Mail 格式錯誤' );
-            //     return false;
-            // }
-
             var entourageData = {
-                name  : $wg.find('.addPane .-f-name').val(),
-                phone : $wg.find('.addPane .-f-phone').val(),
+                name  : $.trim( $wg.find('.addPane .-f-name').val() ),
+                phone : $.trim( $wg.find('.addPane .-f-phone').val() ),
                 email : email,
             };
+
+            if( entourageData.name == '' || entourageData.phone == '' ){
+                return false;
+            }
 
             if( typeof wg.addItemHandler == "function" ){
                 wg.showMessage('請稍候');
