@@ -199,10 +199,6 @@
   text-overflow: ellipsis;
 }
 
-#indexMapLayerPane .layerItem .children {
-  overflow: hidden;
-}
-
 #indexMapLayerPane .layerItem .visibleToggle,
 #indexMapLayerPane .layerItem .childListToggle {
   -webkit-box-flex: 0;
@@ -250,10 +246,6 @@
   display: none;
 }
 
-#indexMapLayerPane .layerItem[data-expend="1"] > .children {
-  height: auto;
-}
-
 #indexMapLayerPane .layerItem[data-expend="0"] > .infoBar .legend > *:nth-child(1) {
   display: none;
 }
@@ -272,7 +264,10 @@
 
 #indexMapLayerPane .layerItem[data-expend="0"] > .children {
   border: 0 !important;
-  height: 0;
+}
+
+#indexMapLayerPane .layerItem[data-expend="0"] > .children > * {
+  display: none;
 }
 
 #indexMapLayerPane .layerItem[data-type="group"] > .infobar .legend .icon {

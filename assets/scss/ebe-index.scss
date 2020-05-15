@@ -177,7 +177,6 @@
         }
 
         .children{
-            overflow: hidden;
         }
 
         .visibleToggle,
@@ -210,7 +209,6 @@
             > .infoBar .childListToggle > *:nth-child(1){ display: block; }
             > .infoBar .childListToggle > *:nth-child(2){ display: none; }
             > .children{
-                height: auto;
             }
         }
 
@@ -222,7 +220,10 @@
             > .infoBar .childListToggle > *:nth-child(2){ display: block; }
             > .children{
                 border: 0 !important;
-                height: 0;
+
+                > *{
+                    display: none;
+                }
             }
         }
 
