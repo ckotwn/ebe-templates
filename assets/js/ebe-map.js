@@ -480,13 +480,20 @@
                             + '</div>'
                             );
 
-            var $GROUP_EL_TPL = $('<div class="layerItem" data-level="1" data-type="group" data-visible="1">'
+            var $GROUP_EL_TPL = $('<div class="layerItem" data-level="1" data-type="group" data-visible="1" data-expend="1">'
                                 + '<div class="infoBar">'
-                                    + '<div class="legend"><div class="icon fal fa-folder-open"></div></div>'
+                                    + '<div class="legend">'
+                                        + '<div class="icon fal fa-folder-open"></div>'
+                                        + '<div class="icon fal fa-folder"></div>'
+                                    + '</div>'
                                     + '<div class="name"></div>'
                                     + '<div class="visibleToggle -action-toggleLayer">'
                                         + '<div class="icon fal fa-eye"></div>'
                                         + '<div class="icon fal fa-eye-slash"></div>'
+                                    + '</div>'
+                                    + '<div class="childListToggle -action-toggleExpend">'
+                                        + '<div class="icon fal fa-chevron-up"></div>'
+                                        + '<div class="icon fal fa-chevron-down"></div>'
                                     + '</div>'
                                 + '</div>'
                                 + '<div class="children"></div>'
@@ -560,6 +567,7 @@
 
                 // bind event
                 $layerItem.find('> .infoBar .-action-toggleLayer').on('click', toggleLayerHandler);
+                $layerItem.find('> .infoBar .-action-toggleExpend').on('click', toggleExpendHandler);
 
                 if( type == "layer" ){
                     $layerItem.attr('data-file', layerConfig.file);
@@ -589,6 +597,19 @@
                     $layerItem.attr('data-visible', "1");
                 }
 
+            }
+
+            function toggleExpendHandler( e ){
+                var $layerItem = $(e.currentTarget).parent().parent();
+
+                var expend = $layerItem.attr('data-expend');
+                var file   = $layerItem.attr('data-file');
+
+                if( expend == "1" ){
+                    $layerItem.attr('data-expend', "0");
+                }else{
+                    $layerItem.attr('data-expend', "1");
+                }
             }
 
             function infoBarClickHandler(e){

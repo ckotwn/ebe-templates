@@ -6,7 +6,7 @@
 #indexMapPane{
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 0;
     right: 0;
     bottom: 32px;
 }
@@ -176,7 +176,12 @@
             text-overflow: ellipsis;
         }
 
-        .visibleToggle{
+        .children{
+            overflow: hidden;
+        }
+
+        .visibleToggle,
+        .childListToggle{
             flex: 0 0 32px;
             cursor: pointer;
 
@@ -197,6 +202,30 @@
             > .infoBar .visibleToggle > *:nth-child(2){ display: block; }
         }
 
+        &[data-expend="1"]{
+
+            > .infoBar .legend > *:nth-child(1){ display: block; }
+            > .infoBar .legend > *:nth-child(2){ display: none; }
+
+            > .infoBar .childListToggle > *:nth-child(1){ display: block; }
+            > .infoBar .childListToggle > *:nth-child(2){ display: none; }
+            > .children{
+                height: auto;
+            }
+        }
+
+        &[data-expend="0"]{
+            > .infoBar .legend > *:nth-child(1){ display: none; }
+            > .infoBar .legend > *:nth-child(2){ display: block; }
+
+            > .infoBar .childListToggle > *:nth-child(1){ display: none; }
+            > .infoBar .childListToggle > *:nth-child(2){ display: block; }
+            > .children{
+                border: 0 !important;
+                height: 0;
+            }
+        }
+
         &[data-type="group"] > .infobar{
             .legend{
                 .icon{
@@ -215,6 +244,10 @@
         }
 
         &[data-level="1"]{
+
+            > .infoBar .childListToggle{
+                display: none;
+            }
 
             > .children{
                 margin-left: 32px;
