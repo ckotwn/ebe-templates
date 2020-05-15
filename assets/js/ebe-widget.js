@@ -530,12 +530,15 @@
             var $row = $('<tr></tr>');
             $row.attr( 'data-id',  row.id );
             $row.data( 'row', row );
-            $row.on('click', function(){
+            $row.on('click', function( e ){
                 var $chk   = $(this).find('input[type="checkbox"]');
                 $chk.prop('checked', !$chk.prop('checked'));
             })
 
             var $chk = $('<td><label class="wgSelectCheckbox"><input type="checkbox"></label></td>');
+            $chk.find('input').on('click', function( e ){
+                e.stopPropagation();
+            });
 
             $row.append( $chk );
 
