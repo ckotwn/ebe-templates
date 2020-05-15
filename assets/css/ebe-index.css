@@ -13,7 +13,7 @@
 #indexMapPane {
   position: absolute;
   left: 0;
-  top: 48px;
+  top: 0;
   right: 0;
   bottom: 32px;
 }
@@ -199,14 +199,16 @@
   text-overflow: ellipsis;
 }
 
-#indexMapLayerPane .layerItem .visibleToggle {
+#indexMapLayerPane .layerItem .visibleToggle,
+#indexMapLayerPane .layerItem .childListToggle {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 32px;
           flex: 0 0 32px;
   cursor: pointer;
 }
 
-#indexMapLayerPane .layerItem .visibleToggle > * {
+#indexMapLayerPane .layerItem .visibleToggle > *,
+#indexMapLayerPane .layerItem .childListToggle > * {
   width: 100%;
   line-height: 32px;
   text-align: center;
@@ -228,6 +230,22 @@
   display: block;
 }
 
+#indexMapLayerPane .layerItem[data-expend="1"] > .infoBar .childListToggle > *:nth-child(1) {
+  display: block;
+}
+
+#indexMapLayerPane .layerItem[data-expend="1"] > .infoBar .childListToggle > *:nth-child(2) {
+  display: none;
+}
+
+#indexMapLayerPane .layerItem[data-expend="0"] > .infoBar .childListToggle > *:nth-child(1) {
+  display: none;
+}
+
+#indexMapLayerPane .layerItem[data-expend="0"] > .infoBar .childListToggle > *:nth-child(2) {
+  display: block;
+}
+
 #indexMapLayerPane .layerItem[data-type="group"] > .infobar .legend .icon {
   width: 100%;
   line-height: 32px;
@@ -241,6 +259,10 @@
 
 #indexMapLayerPane .layerItem[data-type="group"] > .infobar .visibleToggle {
   display: none;
+}
+
+#indexMapLayerPane .layerItem[data-level="1"] > .infoBar .childListToggle {
+  display: hidden;
 }
 
 #indexMapLayerPane .layerItem[data-level="1"] > .children {
