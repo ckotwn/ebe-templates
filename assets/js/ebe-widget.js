@@ -5,107 +5,6 @@
     window.Ebe.Widget  = window.Ebe.Widget  || {};
 
 
-    $.datetimepicker.setLocale('zh-TW');
-
-
-    window.Ebe.Control.FileUpload = (function(){
-
-        var STRING = {
-            NOT_SELECT : '尚未選擇檔案'
-        };
-
-        $(window).on('load', function(){
-            init('.ebFileUpload');
-        });
-
-        function init( elQuery ){
-
-            $( elQuery ).each(function(){
-                var $ctrl     = $(this);
-                var $fileName = $(this).find('.fileName');
-                var $input    = $(this).find('input[type="file"]');
-
-                $ctrl.attr('data-inited', 1);
-
-                $input.on('change', function(e){
-                    var files = e.currentTarget.files;
-                    if( files.length == 0 ){
-                        $fileName.text( STRING.NOT_SELECT );
-                    }else{
-                        $fileName.text( files[0].name );
-                    }
-                })
-            });
-        }
-
-        return {
-            init : init
-        }
-    })();
-
-
-    window.Ebe.Control.ImageUpload = (function(){
-
-        var STRING = {
-            NOT_SELECT : '尚未選擇檔案'
-        };
-
-        $(window).on('load', function(){
-            init('.ebImageUpload');
-        });
-
-        function init( elQuery ){
-
-
-            $( elQuery ).each(function(){
-                var $ctrl     = $(this);
-                var $fileName = $(this).find('.fileName');
-                var $preview  = $(this).find('.preview');
-                var $input    = $(this).find('input[type="file"]');
-                var input     = $input[0];
-
-                $ctrl.attr('data-inited', 1);
-
-                $input.on('change', function(e){
-                    var files = e.currentTarget.files;
-                    if( files.length == 0 ){
-                        $fileName.text( STRING.NOT_SELECT );
-                        $preview.css('background-image', '');
-                    }else{
-                        $fileName.text( files[0].name );
-                        var reader = new FileReader();
-                        reader.onload = function(e) {
-                            $preview.css('background-image', 'url(' +  e.target.result  + ')');
-                        }
-                        reader.readAsDataURL(input.files[0]);
-                    }
-                })
-            });
-        }
-
-        return {
-            init : init
-        }
-    })();
-
-
-    window.Ebe.Control.DateTimePicker = (function(){
-
-        $(window).on('load', function(){
-
-            $('input.-type-date').each(function(){
-                var $input = $(this);
-
-                $input.datetimepicker({
-                    timepicker : false,
-                    format     : 'Y-m-d'
-                });
-            });
-        });
-
-    })();
-
-
     // 作業地點設定
     window.Ebe.Widget.Station = (function(){
 
@@ -119,6 +18,16 @@
                     { ref : 'longitude', label : '緯度',      width : null },
                     { ref : 'datum' ,    label : '大地基準',  width : null },
                     { ref : 'device',    label : '儀器',      width : null }
+                ]
+            },
+            CETACEAN  : {  // 鯨豚
+                cols : [
+                    { ref : 'ref_no',    label : '編號',     width : 32 },
+                    { ref : 'name',      label : '名稱',     width : null },
+                    { ref : 'port_name', label : '出入港口',  width : null },
+                    { ref : 'latitude',  label : '經度',      width : null },
+                    { ref : 'longitude', label : '緯度',      width : null },
+                    { ref : 'datum' ,    label : '大地基準',  width : null },
                 ]
             },
             BENTHOS  : {  // 底棲生物
@@ -201,6 +110,50 @@
                         label        : '儀器架設<br>方式',
                         controlType  : "input",
                         inputType    : "text",
+                        controlWidth : 192
+                    }
+                ]
+            },
+            CETACEAN  : {  // 鯨豚
+                cols : [
+                    {
+                        ref          : 'ref_no',
+                        label        : '編號',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'name',
+                        label        : '名稱',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'port',
+                        label        : '出入港口',
+                        controlType  : "select",
+                        controlWidth : 192
+                    },
+                    {
+                        ref          : 'latitude',
+                        label        : '經度',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'longitude',
+                        label        : '緯度',
+                        controlType  : "input",
+                        inputType    : "text",
+                        controlWidth : 128
+                    },
+                    {
+                        ref          : 'datum' ,
+                        label        : '大地基準',
+                        controlType  : "select",
                         controlWidth : 192
                     }
                 ]

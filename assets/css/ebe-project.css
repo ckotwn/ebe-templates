@@ -303,33 +303,6 @@
   text-align: right;
 }
 
-#pProjectListPane .messagePane {
-  position: absolute;
-  display: none;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#pProjectListPane .messagePane .messageBody {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 24px;
-  line-height: 32px;
-  text-align: center;
-  color: #999;
-}
-
-#pProjectListPane .messagePane .messageBody .icon {
-  font-size: 40px;
-  line-height: 64px;
-}
-
 #pProjectListPane .floatButtons {
   position: absolute;
   right: 16px;

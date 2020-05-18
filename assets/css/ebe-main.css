@@ -58,6 +58,14 @@ b {
   font-weight: bold;
 }
 
+.-c {
+  text-align: center;
+}
+
+.-r {
+  text-align: right;
+}
+
 body {
   min-height: 100%;
   padding-top: 48px;
@@ -533,6 +541,73 @@ body {
   padding-top: 24px;
 }
 
+#headerPane #tabPanel {
+  position: absolute;
+  left: 200px;
+  padding-left: 16px;
+  padding-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#headerPane #tabPanel .tabItemGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+#headerPane #tabPanel .tabItemGroup + .tabItemGroup {
+  margin-left: 16px;
+  padding-left: 16px;
+}
+
+#headerPane #tabPanel .tabItemGroup + .tabItemGroup::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: solid 1px #ccc;
+}
+
+#headerPane #tabPanel .tabItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 16px;
+  font-weight: bold;
+  line-height: 32px;
+  color: #333;
+  border-radius: 16px;
+  cursor: pointer;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+#headerPane #tabPanel .tabItem:hover {
+  background-color: #f0f0f0;
+}
+
+#headerPane #tabPanel .tabItem .label {
+  font-size: 15px;
+}
+
+#headerPane #tabPanel .tabItem .count {
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: 900;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#headerPane #tabPanel .tabItem.-active {
+  background-color: #E0E006;
+}
+
 #headerPane .subHeaderPanel {
   position: absolute;
   left: 200px;
@@ -558,7 +633,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 48px;
+  top: 56px;
   bottom: 32px;
   padding-bottom: 64px;
 }
@@ -590,6 +665,179 @@ body {
   background-color: #fff;
   -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.contentScrollPane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 48px;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.contentControlPane {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  right: 0;
+  height: 48px;
+  bottom: 0;
+  padding-top: 7px;
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+
+.listTable {
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.listTable thead {
+  border-bottom: 2px solid #ccc;
+}
+
+.listTable thead th {
+  font-size: 14px;
+  line-height: 32px;
+  text-align: left;
+  font-weight: bold;
+  color: #666;
+  white-space: nowrap;
+}
+
+.listTable thead th + th {
+  padding-left: 24px;
+}
+
+.listTable tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.listTable tbody td {
+  padding: 8px 0;
+}
+
+.listTable tbody td + td {
+  padding-left: 24px;
+}
+
+.listTable tbody td[data-datatype="datePeriod"] {
+  font-size: 85%;
+}
+
+.messagePane {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.messagePane .messageBody {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #999;
+}
+
+.messagePane .messageBody .icon {
+  font-size: 40px;
+  line-height: 64px;
+}
+
+.ebPager {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  height: 32px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 16px;
+  min-width: 48px;
+  line-height: 32px;
+}
+
+.ebPager.-disabled {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ebPager .pager {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 32px;
+          flex: 0 0 32px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ebPager .pager::before {
+  line-height: 32px;
+}
+
+.ebPager .pager.-active {
+  font-weight: bold;
+  color: #fff;
+}
+
+.ebPager .pager:first-child, .ebPager .pager:last-child {
+  background: #e8e8e8;
+  border-radius: 100%;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.ebPager .pager:first-child:hover, .ebPager .pager:last-child:hover {
+  background: #ccc;
+}
+
+.ebPager .numPage {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 0 16px;
+  font-size: 14px;
+  min-width: 48px;
+}
+
+.ebPager .pagerSelect {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-left: 16px;
+  padding: 0 0 0 8px;
+  font-size: 14px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ebPager .pagerSelect select {
+  vertical-align: top;
+  padding: 0 3px;
+  height: 30px;
+  background: transparent;
+  border: 0;
+}
+
+.ebPager .pagerSelect option {
+  text-align: right;
 }
 
 .fal-init, .ebDatePicker::after {

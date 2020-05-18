@@ -265,32 +265,6 @@ $paneTransition-3: all .99s $easeOutExpo;
         }
     }
 
-    .messagePane{
-        position: absolute;
-        display: none;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-
-        .messageBody{
-            position: absolute;
-            left: 0;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            line-height: 32px;
-            text-align: center;
-            color: #999;
-
-            .icon{
-                font-size: 40px;
-                line-height: 64px;
-            }
-        }
-    }
-
     .floatButtons{
         position: absolute;
         right: 16px;

@@ -5,13 +5,13 @@
         var _getListHandler   = null;
         var _getDetailHandler = null;
 
-        function setGetListHandler( handlerFn ){
-            _getListHandler = handlerFn;
+        function setGetListHandler( handler ){
+            _getListHandler = handler;
         }
 
 
-        function setGetDetailHandler( handlerFn ){
-            _getDetailHandler = handlerFn;
+        function setGetDetailHandler( handler ){
+            _getDetailHandler = handler;
         }
 
 
@@ -375,8 +375,8 @@
                 $('#pProjectListPane .projectItemListPane').append( $row );
             }
 
-            function showMessage( mesage, icon ){
-                if( mesage == undefined ) mesage = '發生錯誤';
+            function showMessage( message, icon ){
+                if( message == undefined ) mesage = '發生錯誤';
 
                 var $list    = $('#pProjectListPane .projectItemListPane');
                 var $msg     = $('#pProjectListPane .messagePane');
@@ -386,7 +386,7 @@
                 $list.empty().hide();
 
                 $msg.show();
-                $msgText.html( mesage );$msgIcon.show()
+                $msgText.html( message );$msgIcon.show()
                 $msgIcon.removeClass(function(i,c){return (c.match (/(^|\s)fa-\S+/g) || []).join(' ')});
 
                 if( icon != undefined ){
@@ -582,8 +582,8 @@
                 $w.show();
             }
 
-            function showMessage( mesage, icon ){
-                if( mesage == undefined ) mesage = '發生錯誤';
+            function showMessage( message, icon ){
+                if( message == undefined ) message = '發生錯誤';
 
                 var $content = $('#pProjectDetailPane .projectDetailContentPane');
                 var $msg     = $('#pProjectDetailPane .messagePane');
@@ -593,7 +593,8 @@
                 $content.hide();
 
                 $msg.show();
-                $msgText.html( mesage );$msgIcon.show()
+                $msgText.html( message );
+                $msgIcon.show()
                 $msgIcon.removeClass(function(i,c){return (c.match (/(^|\s)fa-\S+/g) || []).join(' ')});
 
                 if( icon != undefined ){

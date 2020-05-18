@@ -1,0 +1,82 @@
+@charset "UTF-8";
+.fal-init {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: inherit;
+}
+
+.statisticsControlPane .statisticsPane {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 24px;
+  height: 32px;
+  border-right: solid 1px #ccc;
+}
+
+.statisticsControlPane .statisticsPane .stGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.statisticsControlPane .statisticsPane .stGroup > * {
+  line-height: 32px;
+}
+
+.statisticsControlPane .statisticsPane .stGroup .lable {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+.statisticsControlPane .statisticsPane .stGroup .stItem {
+  padding: 0 12px;
+  border-radius: 100px;
+  font-size: 14px;
+  height: 32px;
+  background: #e8e8e8;
+  cursor: pointer;
+}
+
+.statisticsControlPane .statisticsPane .stGroup .stItem i {
+  font-weight: bold;
+}
+
+.statisticsControlPane .statisticsPane .stGroup .stItem + .stItem {
+  margin-left: 8px;
+}
+
+.statisticsControlPane .statisticsPane .stGroup .stItem[data-prop="執行中"] {
+  background-color: #62DE00;
+}
+
+.statisticsControlPane .statisticsPane .stGroup .stItem[data-prop="待執行"] {
+  background-color: #CCCCCC;
+}
+
+.statisticsControlPane .statisticsPane .stGroup .stItem[data-prop="已完成"] {
+  background-color: #63C1FF;
+}
+
+.statisticsControlPane .statisticsPane .stGroup + .stGroup {
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: solid 1px #ccc;
+}
+
+.statisticsControlPane .pagerPane {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+/*# sourceMappingURL=ebe-statistics.css.map */
