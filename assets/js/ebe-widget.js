@@ -869,19 +869,19 @@
             var wg  = $wg.data( 'obj' );
 
             var $row  = $( e.currentTarget ).parents('tr');
-            var rowId = $row.attr('data-id');
+            var ref_no = $row.attr('data-ref_no');
 
             // 執行
             if( typeof wg.removeItemHandler == "function" ){
                 wg.showMessage('請稍候');
-                return wg.removeItemHandler( rowId );
+                return wg.removeItemHandler( ref_no );
             }
         }
 
 
-        function removeItem( rowId ){
+        function removeItem( ref_no ){
             var $wg = this.$wg;
-            var $row = $wg.find('tbody tr[data-id="' + rowId +'"]');
+            var $row = $wg.find('tbody tr[data-ref_no="' + ref_no +'"]');
 
             this.hideMessage();
             $row.remove();
@@ -1137,7 +1137,7 @@
                     + '</table>'
                 + '</div>'
                 + '<div class="addPane">'
-                    + '<div class="emailField"><input class="-f-email" type="text" placeHolder="請輸入電子郵址新增計畫管理員"></div>'
+                    + '<div class="emailField"><input class="-f-email" type="text" placeHolder="請輸入電子郵址新增"></div>'
                     + '<div class="ebButton -action-addItem">新增</div>'
                 + '</div>'
                 + '<div class="messagePane">'
