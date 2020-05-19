@@ -103,11 +103,64 @@
             </div>
         </div>
 
-        <?php /* 計畫成員 */ ?>
+        <?php /* 計劃管理員 */ ?>
         <div class="fieldSection">
             <div class="fieldSet">
                 <div class="fieldRow">
                     <div class="label">計劃管理員</div>
+                    <div class="field">
+                        <div id="wg0"></div>
+                        <script>
+                        (function(){
+
+                            // ebe-widget.js
+                            // window.Ebe.Widget.ProjectUserManageBox
+
+                            // 建立元件
+                            var $wg = Ebe.Widget.ProjectUserManageBox.init('#wg0');
+
+                            // 查詢 email (這裡導向 ajax )
+                            // 會自動帶入 email
+                            $wg.setAddItemHandler(function( email ){
+
+                                // 這裡請進行其他 ajax 查詢
+                                // ...
+
+                                // 成功後請如以下呼叫：
+                                addItem({
+                                    id    : null,
+                                    name  : '名字',
+                                    email : email
+                                });
+                            });
+
+                            // 取得資料請執行以下：
+                            // $wg.getList();
+
+                            // 測試用新增資料
+                            $wg.addRow({
+                                id : null,
+                                name : '第1位',
+                                email : 'some@email.com'
+                            });
+
+                            $wg.addRow({
+                                id : null,
+                                name : '第2位',
+                                email : 'another@email.com'
+                            });
+                        })();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php /* 計畫成員 */ ?>
+        <div class="fieldSection">
+            <div class="fieldSet">
+                <div class="fieldRow">
+                    <div class="label">計畫成員</div>
                     <div class="field">
                         <div id="wg1"></div>
                         <ul class="note">
