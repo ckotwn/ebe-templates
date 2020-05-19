@@ -22,6 +22,7 @@
 
     window.Ebe.Control = window.Ebe.Control || {};
     window.Ebe.Widget  = window.Ebe.Widget  || {};
+    window.Ebe.Page    = window.Ebe.Page    || {};
 
 
     window.Ebe.Utility = (function(){
