@@ -1,0 +1,29 @@
+.fal-init {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: inherit;
+}
+
+.chartPane {
+  position: relative;
+  height: calc( 100vh - 48px - 88px - 32px - 64px);
+  min-height: 320px;
+  max-height: 664px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.chartPane .chartCanvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+}
+/*# sourceMappingURL=ebe-charts.css.map */

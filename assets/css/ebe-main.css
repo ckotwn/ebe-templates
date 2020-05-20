@@ -531,6 +531,15 @@ body {
   margin-left: 16px;
 }
 
+#headerPane #filterPanel .filterItem.-to {
+  margin-right: -8px;
+  margin-left: 8px;
+}
+
+#headerPane #filterPanel .filterItem.-to .input {
+  line-height: 32px;
+}
+
 #headerPane #filterPanel .filterItem .label {
   font-size: 14px;
   font-weight: bold;
@@ -539,6 +548,16 @@ body {
 
 #headerPane #filterPanel .filterItem.-submit {
   padding-top: 24px;
+}
+
+#headerPane #filterPanel .filterItem.-submit .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#headerPane #filterPanel .filterItem.-submit .button > * + * {
+  margin-left: 8px;
 }
 
 #headerPane #tabPanel {

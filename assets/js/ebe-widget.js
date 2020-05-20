@@ -1336,7 +1336,7 @@
             // set title
             var $title = $wg.find('.titlePane');
             $title.find('.icon').addClass( 'fa-' + folderTree.type );
-            $title.find('.name').text( folderTree.name );
+            $title.find('.name').html( folderTree.name );
             $title.find('.link').attr( 'href', folderTree.link );
 
             // set folder list

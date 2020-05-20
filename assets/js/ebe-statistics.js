@@ -1,6 +1,4 @@
 (function(){
-    window.Ebe.Page = window.Ebe.Page || {};
-
 
     window.Ebe.Page.Statistics = (function(){
 

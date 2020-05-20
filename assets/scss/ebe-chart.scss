@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@import "ebe/config";
+
+
+.contentScrollPane{
+    padding: 0;
+    bottom: 0;
+}
+
+
+#chartPane{
+    position: relative;
+    padding: 20px 20px;
+    background-color: #fff;
+    overflow: hidden;
+
+    #chartCanvasWrapper{
+        margin: 0 auto;
+        max-width: 900px;
+        overflow: hidden;
+    }
+
+    #chartCanvasWrapper2{
+        height: 0;
+        padding-bottom: 66.67%;
+        background: #f00;
+    }
+
+    #chartCanvas{
+        position: absolute;
+        background-color: #ff0;
+        transform-origin: 0 0;
+    }
+}
+
+
+#tablePane{
+    padding: 24px 24px 64px;
+    border-top: 1px solid #ccc;
+
+    .listTable{
+        margin: 0 auto;
+        max-width: 640px;
+    }
+}

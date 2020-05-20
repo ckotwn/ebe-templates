@@ -433,6 +433,16 @@ body{
                 margin-left: 16px;
             }
 
+            &.-to{
+                margin-right: -8px;
+                margin-left: 8px;
+
+
+                .input{
+                    line-height: 32px;
+                }
+            }
+
             .label{
                 font-size: 14px;
                 font-weight: bold;
@@ -444,8 +454,15 @@ body{
             }
 
             &.-submit{
-
                 padding-top: 24px;
+
+                .button{
+                    display: flex;
+
+                    > * + *{
+                        margin-left: 8px;
+                    }
+                }
             }
         }
     }
