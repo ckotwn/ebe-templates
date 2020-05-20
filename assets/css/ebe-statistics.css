@@ -79,4 +79,23 @@
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
+
+#survayListTable .-f-status span {
+  display: inline-block;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+#survayListTable tr[data-status_text="執行中"] .-f-status span {
+  background-color: #62DE00;
+}
+
+#survayListTable tr[data-status_text="待執行"] .-f-status span {
+  background-color: #CCCCCC;
+}
+
+#survayListTable tr[data-status_text="已完成"] .-f-status span {
+  background-color: #63C1FF;
+}
 /*# sourceMappingURL=ebe-statistics.css.map */

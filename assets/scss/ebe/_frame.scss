@@ -614,10 +614,47 @@ body{
             font-weight: bold;
             color: #666;
             white-space: nowrap;
-        }
 
-        th{
-            & + th{ padding-left: 24px; }
+            &.-action-sort{
+                cursor: ns-resize;
+
+                &:hover{
+                    color: #000;
+                }
+
+                .sort{
+                    display: inline-block;
+                    width: 12px;
+                    font-size: 12px;
+                    line-height: 32px;
+
+                    > *{
+                        display: none;
+                    }
+
+                    .sort-null{
+                        display: inline;
+                    }
+
+                    .sort-asc,
+                    .sort-desc{
+                        color: $c-main;
+                    }
+                }
+
+                &[data-sort-dir="asc"]{
+                    .sort-null{ display: none }
+                    .sort-asc{ display: inline }
+                }
+
+                &[data-sort-dir="desc"]{
+                    .sort-null{ display: none }
+                    .sort-desc{ display: inline }
+                }
+
+            }
+
+            & + th{ padding-left: 16px; }
         }
     }
 
@@ -629,7 +666,7 @@ body{
         td{
             padding: 8px 0;
 
-            & + td{ padding-left: 24px; }
+            & + td{ padding-left: 16px; }
 
             &[data-datatype="text"]{}
             &[data-datatype="datePeriod"]{ font-size: 85%; }

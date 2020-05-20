@@ -710,8 +710,52 @@ body {
   white-space: nowrap;
 }
 
+.listTable thead th.-action-sort {
+  cursor: ns-resize;
+}
+
+.listTable thead th.-action-sort:hover {
+  color: #000;
+}
+
+.listTable thead th.-action-sort .sort {
+  display: inline-block;
+  width: 12px;
+  font-size: 12px;
+  line-height: 32px;
+}
+
+.listTable thead th.-action-sort .sort > * {
+  display: none;
+}
+
+.listTable thead th.-action-sort .sort .sort-null {
+  display: inline;
+}
+
+.listTable thead th.-action-sort .sort .sort-asc,
+.listTable thead th.-action-sort .sort .sort-desc {
+  color: #0D7BC4;
+}
+
+.listTable thead th.-action-sort[data-sort-dir="asc"] .sort-null {
+  display: none;
+}
+
+.listTable thead th.-action-sort[data-sort-dir="asc"] .sort-asc {
+  display: inline;
+}
+
+.listTable thead th.-action-sort[data-sort-dir="desc"] .sort-null {
+  display: none;
+}
+
+.listTable thead th.-action-sort[data-sort-dir="desc"] .sort-desc {
+  display: inline;
+}
+
 .listTable thead th + th {
-  padding-left: 24px;
+  padding-left: 16px;
 }
 
 .listTable tbody tr {
@@ -723,7 +767,7 @@ body {
 }
 
 .listTable tbody td + td {
-  padding-left: 24px;
+  padding-left: 16px;
 }
 
 .listTable tbody td[data-datatype="datePeriod"] {

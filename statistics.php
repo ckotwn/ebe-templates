@@ -97,11 +97,33 @@ $(function(){
 
         /* 資料格式
             conds = {
-                sort       : [STATUS]
-                order      : [ASC|DESC]
+                status     :
+                type       :
+                windfield  :
+                port       :
+                boat       :
+                start_date :
+                end_date   :
+                order_by   : {
+                    col    : 欄位
+                    dir    : 方向 [asc|desc]
+                }
                 page       : number 分頁
                 perPage    : number 每頁
             };
+
+            conds.order_by.col = [
+                status                : 狀態
+                project_name          : 名稱，順序 = project.type, project.abbreviation
+                survay_type           :
+                date                  :
+                total_hour            :
+                windfield             :
+                port                  :
+                boat                  :
+                contact_name          :
+                report_departure_time : 時間，順序 = departure_time, inbound_time
+            ]
 
             handlers = {
                 success : function( projectList, pager ) array 專案物件列表
@@ -255,17 +277,17 @@ $(function(){
             <table class="listTable" id="survayListTable">
                 <thead>
                     <tr>
-                        <th style="width:  64px" class="-action-thSort">狀態</th>
-                        <th style="width: 128px" >作業規劃</th>
-                        <th style="width:  88px" >監測計畫</th>
-                        <th style="width:  96px" class="-action-thSort">日期</th>
-                        <th style="width:  80px" >預計時間</th>
-                        <th style="width: 176px" >風場</th>
-                        <th style="width:  88px" >港口</th>
-                        <th style="width:  88px" >船隻</th>
-                        <th style="width:  88px" >進出港時間</th>
-                        <th style="width:  auto" >執行內容</th>
-                        <th style="width:  80px" >聯絡人</th>
+                        <th class="-action-sort" data-sort-col="status" data-sort-dir="null" style="width:  64px">狀態</th>
+                        <th class="-action-sort" data-sort-col="project_name" data-sort-dir="null" style="width: 128px">作業規劃</th>
+                        <th class="-action-sort" data-sort-col="survay_type" data-sort-dir="null" style="width:  88px">監測計畫</th>
+                        <th class="-action-sort" data-sort-col="date" data-sort-dir="null" style="width:  96px">日期</th>
+                        <th class="-action-sort" data-sort-col="total_hour" data-sort-dir="null" style="width:  80px">預計時間</th>
+                        <th class="-action-sort" data-sort-col="windfield" data-sort-dir="null" style="width: 176px">風場</th>
+                        <th class="-action-sort" data-sort-col="port" data-sort-dir="null" style="width:  88px">港口</th>
+                        <th class="-action-sort" data-sort-col="boat" data-sort-dir="null" style="width:  88px">船隻</th>
+                        <th class="-action-sort" data-sort-col="report_departure_time" data-sort-dir="null" style="width:  88px">進出港時間</th>
+                        <th style="width:  auto">執行內容</th>
+                        <th class="-action-sort" data-sort-col="contact_name" data-sort-dir="null" style="width:  80px">聯絡人</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
