@@ -145,6 +145,7 @@
                             <div class="name -f-name"></div>
                             <div class="fn">
                                 <a href="#" target="_blank" class="ebButton -f-editLink -action-goEditProject">編輯</a>
+                                <a href="#" target="_blank" class="ebButton -f-completeProjectLink -action-goCompleteProject">完成</a>
                                 <a href="#" target="_blank" class="ebButton -f-deleteLink -type-error -action-goDeleteProject">刪除</a>
                             </div>
                         </div>
@@ -155,8 +156,12 @@
                             <div class="titlebar">計畫屬性</div>
                             <div class="itemList">
                                 <div class="itemRow">
+                                    <div class="label">簡稱</div>
+                                    <div class="value"><div class="ebDisplayText -s -f-abbr"></div></div>
+                                </div>
+                                <div class="itemRow">
                                     <div class="label">狀態</div>
-                                    <div class="value"><div class="ebDisplayText -s -f-status_text">進行中</div></div>
+                                    <div class="value"><div class="ebDisplayText -s -f-status_text"></div></div>
                                 </div>
                                 <div class="itemRow">
                                     <div class="label">期間</div>
@@ -414,6 +419,7 @@
             status_text     : "進行中",
             project_id      : "P000123",
             name            : "離岸風場鳥類生態調查監測標準作業 建立計畫",
+            abbreviation    : "鳥類18",
             start_date      : "2018-02-01",
             end_date        : "2018-12-10",
             typeTextList    : [ "鳥類", "鯨豚" ],
@@ -426,6 +432,7 @@
             status_text     : "進行中",
             project_id      : "P000123",
             name            : "離岸風場鳥類生態調查監測標準作業 建立計畫 2",
+            abbreviation    : "鳥類19",
             start_date      : "2018-02-01",
             end_date        : "2018-12-10",
             typeTextList    : [ "鳥類", "鯨豚" ],
@@ -442,15 +449,17 @@
         status_text      : "進行中",
         project_id       : "P000123",
         name             : "離岸風場鳥類生態調查監測標準作業 建立計畫",
+        abbreviation     : "鳥類18",
         start_date       : "2018-02-01",
         end_date         : "2018-12-10",
         typeTextList     : [ "鳥類", "鯨豚" ],
         windfield_name   : "海洋竹南風力發電場",
         storageLink      : "#",
         note             : "",
-        editLink         : "",    // 編輯的連結  不提供參數或是null就不顯示
-        deleteLink       : null,  // 刪除的連結  不提供參數或是null就不顯示
-        createSurvayLink : "#",  // 建立作業規劃的連結  不提供參數或是null就不顯示
+        editLink            : "#",  // 編輯的連結  不提供參數或是null就不顯示
+        deleteLink          : "#",  // 刪除的連結  不提供參數或是null就不顯示
+        completeProjectLink : "#",  // 完成任務連結  不提供參數或是null就不顯示；如要連結 JS 可以用 javascript:function()
+        createSurvayLink    : "#",  // 建立作業規劃的連結  不提供參數或是null就不顯示
 
         // 管理員
         admin_list : [

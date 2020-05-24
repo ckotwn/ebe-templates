@@ -213,6 +213,12 @@
           box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
+#pProjectListPane .projectItem.-active .openDetial {
+  background: #0D7BC4;
+  border-left: 1px solid #0D7BC4;
+  color: #fff;
+}
+
 #pProjectListPane .projectItemListPager {
   position: absolute;
   display: none;

@@ -327,18 +327,14 @@
                             + '<div class="projectNo -f-project_id"></div>'
                         + '</div>'
                         + '<div class="name -f-name"></div>'
-                        + '<div class="period">'
-                            + '<div class="label">計畫期間</div>'
-                            + '<div class="value"><span class="-f-start_date"></span> - <span class="-f-end_date"><span></div>'
-                        + '</div>'
+                        + '<div class="type"><div class="label">簡　　稱</div><div class="value"><span class="-f-abbr"></span></div></div>'
                     + '</div>'
                     + '<div class="col2">'
                         + '<div class="type"><div class="label">調查類型</div><div class="value -f-type_list"></div></div>'
                         + '<div class="windfield"><div class="label">風　　場</div><div class="value -f-windfield_name"></div></div>'
-                        + '<div class="openFolder">'
-                            + '<a class="ebButton -s -f-storageLink" target="_blank" href="#">'
-                                + '<i class="fab fa-google-drive"></i>開啟計畫檔案資料夾<i class="fa fal fa-external-link tail"></i>'
-                            + '</a>'
+                        + '<div class="period">'
+                            + '<div class="label">計畫期間</div>'
+                            + '<div class="value"><span class="-f-start_date"></span> - <span class="-f-end_date"><span></div>'
                         + '</div>'
                     + '</div>'
                     + '<div class="openDetial -action-viewProjectDetail">'
@@ -357,6 +353,7 @@
                 $row.find('.-f-project_id')    .text( row.project_id );
                 $row.find('.-f-type_list')     .text( row.typeTextList.join('、') );
                 $row.find('.-f-name')          .text( row.name );
+                $row.find('.-f-abbr')          .text( row.abbreviation );
                 $row.find('.-f-start_date')    .text( row.start_date );
                 $row.find('.-f-end_date')      .text( row.end_date );
                 $row.find('.-f-windfield_name').text( row.windfield_name );
@@ -421,6 +418,7 @@
                 // 計畫屬性
                 $w.attr( 'data-status', projectData.status );
                 $w.find('.-f-name')          .text( projectData.name );
+                $w.find('.-f-abbr')          .text( projectData.abbreviation );
                 $w.find('.-f-project_id')    .text( projectData.project_id );
                 $w.find('.-f-status_text')   .text( projectData.status_text );
                 $w.find('.-f-start_date')    .text( projectData.start_date );
@@ -438,6 +436,9 @@
 
                 if( projectData.createSurvayLink ){ $w.find('.-f-createSurvayLink').attr( 'href', projectData.createSurvayLink ).show(); }
                 else{ $w.find('.-f-createSurvayLink').attr( 'href', '#' ).hide(); }
+
+                if( projectData.completeProjectLink ){ $w.find('.-f-completeProjectLink').attr( 'href', projectData.completeProjectLink ).show(); }
+                else{ $w.find('.-f-completeProjectLink').attr( 'href', '#' ).hide(); }
 
                 $w.find('.-f-admin_list tbody') .empty();
                 $w.find('.-f-user_list tbody')  .empty();

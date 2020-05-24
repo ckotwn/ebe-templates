@@ -183,6 +183,12 @@ $paneTransition-3: all .99s $easeOutExpo;
         &.-active{
             color: #000;
             box-shadow: $fx-itemActiveShadow;
+
+            .openDetial{
+                background: $c-main;
+                border-left: 1px solid $c-main;
+                color: #fff;
+            }
         }
     }
 
