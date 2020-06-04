@@ -89,7 +89,7 @@
                     if( files.length == 0 ){
                         $fileName.text( STRING.NOT_SELECT );
                     }else{
-                        $fileName.text( files[0].name );
+                        $fileName.text( "已選擇 " + files.length + " 個檔案" );
                     }
                 })
             });

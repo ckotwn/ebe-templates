@@ -104,6 +104,18 @@
                     </div>
                 </div>
 
+                <div class="fieldRow -required">
+                    <div class="label">多檔案</div>
+                    <div class="field">
+                        <div class="ebFileUpload">
+                            <div class="ebButton -s">選擇檔案</div>
+                            <div class="fileName">尚未選擇檔案</div>
+                            <div class="input"><input class="input" type="file" multiple="multiple"></div>
+                        </div>
+                        <div class="note">請上傳出海文件，可接受之格式為 JPG、PNG、PDF。</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
